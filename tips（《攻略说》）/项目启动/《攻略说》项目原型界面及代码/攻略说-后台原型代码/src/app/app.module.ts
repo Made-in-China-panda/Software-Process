@@ -1,18 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClient } from 'selenium-webdriver/http';
-import { ComponentnameComponent } from './components/componentname/componentname.component';
+import { BaseComponent } from './components/base/base.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ComponentnameComponent
+    BaseComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
