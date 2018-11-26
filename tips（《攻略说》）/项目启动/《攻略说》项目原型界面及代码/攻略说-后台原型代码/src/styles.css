@@ -24,5 +24,29 @@
     -moz-osx-font-smoothing: grayscale;}
 .icon-fangzi:before { content: "\e60f"; 
     
-    color: bisque;
+    
 }
+.icon-yonghu:before { content: "\e662"; 
+    
+    
+}
+.icon-tiezi:before { content: "\e628"; 
+    
+    
+}
+.icon-shoucang:before { content: "\e736"; 
+    
+}
+.icon-tuijian:before { content: "\e663"; 
+    
+
+}
+.icon-guanjianzi:before { content: "\e6eb"; 
+    
+
+}
+.icon-renyuan:before { content: "\e60d"; 
+    
+  
+}
+.icon-sousuo:before { content: "\e623"; }

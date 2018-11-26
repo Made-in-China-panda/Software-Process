@@ -1,0 +1,79 @@
+h1{border-bottom: 2px solid #ccc;
+    margin: 0 auto;
+    margin-top:10px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    width: 99.5%;
+    color: rgb(77, 76, 76);
+}
+#input{border-bottom: 2px solid #ccc;
+    margin-top: 10px;
+    margin: 0 auto;
+    padding-top: 10px;
+    width: 90%;
+    
+}
+#search{
+    font-size: 1.2em;
+    color: rgb(136, 134, 134);
+
+}
+#text{ margin-left: 5px;
+    width: 230px;
+    height: 30px;
+    font-size: 1.2em;
+    border-color: rgb(136, 134, 134);
+    border-style: double;
+    border-radius:0.3em;
+    margin-bottom: 6px;
+    outline:none;
+    background-image: url('/assets/img/search.png');
+    background-repeat:no-repeat;
+    background-position:184px 1px;
+}
+h2{
+    color: rgb(73, 73, 73);
+    margin-top: 10px;
+    margin-left:45px;
+}
+#table{border: 0px solid rgb(226, 225, 225);
+    width: 95%;
+    height: 75%;
+    margin: 0 auto;
+
+}
+#tab01{border: 0px solid #ccc;
+    text-align: center;
+}
+#tab02{border: 0px solid #ccc;
+    text-align: center;
+    margin-top: -20px;
+}
+.int{
+    width:63px;
+    border: 0px;
+    margin-top: 20px;
+    background-color: transparent;
+    text-align: center;
+}
+.int2{
+    width:80px;
+    margin-top: 20px;
+    border: 0px;
+    background-color: transparent;
+    text-align: center;
+}
+.int3{
+    width:99%;
+    height: 60px;
+    
+    border: 0px;
+    background-color: transparent;
+    text-align: center;
+}
+.btn-default{
+    height: 30px;
+    font-size: 0.9em;
+    padding-top:-10px;outline:none;
+}
