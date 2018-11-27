@@ -37,13 +37,14 @@ export class DengluComponent implements OnInit {
     }
   }
 
- 
+
   changePassword(e) {
     this.password = e.target.value;
 
     if (this.useName.indexOf(this.name) > -1 && this.password === this.usePassword) {
-      e.target.parentNode.removeChild(this.correct);
       this.buttonKey = !this.buttonKey;
+      e.target.parentNode.removeChild(this.correct);
+      
     }
     if (this.password !== this.usePassword) {
       this.correct = document.createTextNode('密码不正确');
