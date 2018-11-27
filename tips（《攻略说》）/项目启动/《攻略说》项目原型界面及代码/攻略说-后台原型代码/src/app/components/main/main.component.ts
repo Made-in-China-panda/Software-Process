@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -8,11 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class MainComponent implements OnInit {
   options: any;
   options02: any;
-  constructor() { }
+  constructor(private router: ActivatedRoute) { }
   userName = '张翼鹏';
   newPeople = 520;
   allPeople = 741;
   notes = 1314;
+  name;
+
   focus(e) {
     e.target.placeholder = '';
   }
@@ -21,6 +24,7 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.name = this.router.snapshot.params['name'];
     this.options =  {
       title: {
           text: '上周总用户数量'

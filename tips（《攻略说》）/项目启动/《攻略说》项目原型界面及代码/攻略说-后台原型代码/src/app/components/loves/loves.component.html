@@ -5,3 +5,31 @@
     
   <input type="text" id="text" placeholder=" 请输入关键字查找" (focus)='focus($event)' (blur)='blur($event)'>
 </div>
+<h2>收藏管理</h2>
+<div id="table">
+  <table id="tab01" class="table table-striped" border="1px">
+    <tr>
+      <td width='80px'>用户名</td>
+      <td width='80px'>类型</td>
+      <td>收藏标题</td>
+      <td width='100px'>时间</td>
+     
+      <td width='130px'>操作</td>
+    </tr>
+  </table>
+  <table id="tab02" class="table table-striped table-hover" border="1px">
+    <tr *ngFor="let love of loves;let i = index">
+      <td width='80px'><input (change)="changeName($event,i)" class="intType" type="text" value="{{love.name}}"></td>
+      <td width='80px'><input (change)="changeType($event,i)" class="intType" type="text" value="{{love.type}}"></td>
+      <td><input (change)="changeText($event,i)"  class="intText" type="text" value="{{love.text}}"></td>
+      <td width='100px'><input (change)="changeTime($event,i)"  class="intTime" type="text" value="{{love.time}}"></td>
+      
+
+      <td width='130px'>
+        <button class="btn btn-default" type="submit" (click)="add(i)">保存</button>
+        <button class="btn btn-default" type="submit" (click)="del(i)">删除</button>
+      </td>
+    </tr>
+
+  </table>
+</div>

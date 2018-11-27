@@ -1,7 +1,9 @@
 h1{border-bottom: 2px solid #ccc;
     margin: 0 auto;
+    margin-top:10px;
     text-align: center;
     width: 99.5%;
+    color: rgb(73, 73, 73);
 }
 #input{border-bottom: 2px solid #ccc;
     margin-top: 10px;
@@ -26,5 +28,36 @@ h1{border-bottom: 2px solid #ccc;
     outline:none;
     background-image: url('/assets/img/search.png');
     background-repeat:no-repeat;
-    background-position:185px 4px;
+    background-position:185px 1px;
+}
+h2{
+    color: rgb(73, 73, 73);
+    margin-top: 10px;
+    margin-left:45px;
+}
+#icon{border: 0px solid #ccc;
+    width: 90%;
+    
+    margin: 0 auto;
+    height: auto;
+    margin-top: -20px;
+    margin-left: 45px;
+}
+a{
+    text-decoration: none;
+}
+i:hover{
+    font-size: 10em;
+}
+i{border: 0px solid #ccc;
+    margin-left: 55px;
+    font-size: 9em;
+}
+h3{
+    display:block;
+}
+#area{border: 0px solid #ccc;
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
 }

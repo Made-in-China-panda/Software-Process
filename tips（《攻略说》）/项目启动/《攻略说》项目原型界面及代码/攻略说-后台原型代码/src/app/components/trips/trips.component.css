@@ -1,0 +1,46 @@
+#table{border: 0px solid rgb(226, 225, 225);
+    width: 100%;
+    height: 75%;
+    margin: 0 auto;
+
+}
+#tab01{border: 0px solid #ccc;
+    text-align: center;
+}
+#tab02{border: 0px solid #ccc;
+    text-align: center;
+    margin-top: -20px;
+}
+.intIN{
+    width:63px;
+    border: 0px;
+    margin-top: 10px;
+    background-color: transparent;
+    text-align: center;
+}
+.intName{
+    width:110px;
+    border: 0px;
+    margin-top: 10px;
+    background-color: transparent;
+    text-align: center;
+}
+.intText{
+    width:99%;
+    height: 40px;
+    border: 0px;
+    background-color: transparent;
+    text-align: center;
+}
+.intTime{
+    width:80px;
+    border: 0px;
+    margin-top: 10px;
+    background-color: transparent;
+    text-align: center;
+}
+.btn-default{
+    height: 30px;
+    font-size: 0.9em;
+    padding-top:-10px;outline:none;
+}

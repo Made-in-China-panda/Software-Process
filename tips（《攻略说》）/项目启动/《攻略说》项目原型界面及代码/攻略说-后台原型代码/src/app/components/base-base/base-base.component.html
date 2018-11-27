@@ -1,0 +1,39 @@
+<div id="base">
+    <div id="list">
+      <div id="hang"></div>
+      
+          <img id="logo" src="../../../favicon.ico" alt="">
+      
+      <ul>
+        <li>
+          <a [routerLink]="['/main']"><i class="iconfont icon-fangzi"></i> 首页</a>
+        </li>
+        <li>
+          <a [routerLink]="['/user']"><i class="iconfont icon-yonghu"></i>用户管理</a>
+        </li>
+        <li>
+          <a [routerLink]="['/notes']"><i class="iconfont icon-tiezi"></i>评论管理</a>
+        </li>
+        <li>
+          <a [routerLink]="['/loves']"><i class="iconfont icon-shoucang"></i>收藏管理</a>
+        </li>
+        <li>
+          <a [routerLink]="['/tuijian']"><i class="iconfont icon-tuijian"></i>攻略管理</a>
+        </li>
+        <li>
+          <a [routerLink]="['/fonts']"><i class="iconfont icon-guanjianzi"></i>关键字管理</a>
+        </li>
+        <li>
+          <a [routerLink]="['/owner']"><i class="iconfont icon-renyuan"></i>人员管理</a>
+        </li>
+      </ul>
+  
+      
+     
+    </div>
+    <div id="main">
+      
+      <router-outlet></router-outlet>
+    </div>
+     
+  </div>

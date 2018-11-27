@@ -6,3 +6,31 @@
   <input type="text" id="text" placeholder=" 请输入关键字查找" (focus)='focus($event)' (blur)='blur($event)'>
 </div>
 
+<h2>评论管理</h2>
+<div id="table">
+  <table id="tab01" class="table table-striped" border="1px">
+    <tr>
+      <td width='80px'>序号</td>
+      <td width='80px'>用户名</td>
+      <td>评论内容</td>
+      <td width='100px'>时间</td>
+      <td width='148px'>操作</td>
+    </tr>
+  </table>
+  <table id="tab02" class="table table-striped table-hover" border="1px">
+    <tr *ngFor="let message of messages;let i = index" >
+      <td width='80px'><input (change)="changeId($event,i)" class="int" type="text" value="{{message.id}}"></td>
+
+      <td width='80px'><input (change)="changeId($event,i)" class="int" type="text" value="{{message.name}}"></td>
+      <td ><textarea (change)="changeName($event,i)" id="textArea" type="text" value="{{message.text}}"></textarea>
+      <td width='100px'><input (change)="changeTime($event,i)"  class="intTime" type="text" value="{{message.time}}"></td>
+      
+
+      <td width='148px'>
+        <button class="btn btn-default" type="submit" (click)="add(i)">保存</button>
+        <button class="btn btn-default" type="submit" (click)="del(i)">删除</button>
+      </td>
+    </tr>
+
+  </table>
+</div>

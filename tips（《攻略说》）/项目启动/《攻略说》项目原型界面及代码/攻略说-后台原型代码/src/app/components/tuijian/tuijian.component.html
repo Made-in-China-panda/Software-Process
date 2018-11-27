@@ -1,7 +1,16 @@
 
 <h1>攻略说后台管理系统</h1>
 <div id="input">
-  
-    
   <input type="text" id="text" placeholder=" 请输入关键字查找" (focus)='focus($event)' (blur)='blur($event)'>
+</div>
+<h2>攻略管理</h2>
+<div id="icon">
+    <a [routerLink]="['/base/tuijian/foods']"><i class="iconfont icon-meishi"></i></a>
+    <a [routerLink]="['/base/tuijian/videos']"><i class="iconfont icon-dianying"></i></a>
+    <a [routerLink]="['/base/tuijian/trips']"><i class="iconfont icon-lvxing"></i></a>
+    <a [routerLink]="['/base/tuijian/games']"><i class="iconfont icon-youxi"></i></a>
+    
+</div>
+<div id="area">
+    <router-outlet></router-outlet>
 </div>

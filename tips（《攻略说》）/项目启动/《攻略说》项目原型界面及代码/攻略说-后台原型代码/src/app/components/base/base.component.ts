@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-base',
@@ -7,26 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BaseComponent implements OnInit {
 
-  options: any;
-  
-  constructor() { }
+
+
+  name;
+
+  constructor(private router: ActivatedRoute) { }
 
   ngOnInit() {
-    this.options =  {
-      xAxis: {
-          type: 'category',
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-      },
-      yAxis: {
-          type: 'value'
-      },
-      series: [{
-          data: [820, 932, 901, 934, 1290, 1330, 1320],
-          type: 'line'
-      }]
-  };
-    const myecharts = echarts.init(document.getElementById('echarts'));
-    myecharts.setOption(this.options);
+    this.name = this.router.snapshot.params['name'];
   }
 
 }

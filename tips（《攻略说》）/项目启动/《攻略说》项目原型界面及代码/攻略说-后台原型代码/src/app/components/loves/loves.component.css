@@ -26,5 +26,49 @@ h1{border-bottom: 2px solid #ccc;
     outline:none;
     background-image: url('/assets/img/search.png');
     background-repeat:no-repeat;
-    background-position:185px 4px;
+    background-position:185px 1px;
+}
+h2{
+    color: rgb(73, 73, 73);
+    margin-top: 10px;
+    margin-left:45px;
+}
+#table{border: 0px solid rgb(226, 225, 225);
+    width: 95%;
+    height: 75%;
+    margin: 0 auto;
+
+}
+#tab01{border: 0px solid #ccc;
+    text-align: center;
+}
+#tab02{border: 0px solid #ccc;
+    text-align: center;
+    margin-top: -20px;
+}
+.intTime{
+    width:80px;
+    margin-top: 5px;
+    border: 0px;
+    background-color: transparent;
+    text-align: center;
+}
+.intType{
+    width:60px;
+    margin-top: 5px;
+    border: 0px;
+    background-color: transparent;
+    text-align: center;
+}
+.intText{
+    width:98%;
+    margin-top: 5px;
+    border: 0px;
+    background-color: transparent;
+    text-align: center;
+}
+.btn-default{
+    height: 30px;
+    font-size: 0.9em;
+    padding-top:-10px;outline:none;
 }

@@ -1,0 +1,29 @@
+#area{border: 2px solid #ccc;
+    width: 600px;
+    height: 450px;
+    margin: 0 auto;
+    margin-top: 100px;
+    border-radius:0.3em;
+}
+#logo{border: 2px solid #ccc;
+    width: 170px;
+    height: 170px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius:6em;
+    padding-left: 27px;
+}
+i{
+    color:rgb(75, 75, 75);
+    font-size: 8em;
+}
+#user{border: 0px solid #ccc;
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 70%;
+    height: 200px;
+
+}
+.btn-default{
+    width: 265px;
+}
