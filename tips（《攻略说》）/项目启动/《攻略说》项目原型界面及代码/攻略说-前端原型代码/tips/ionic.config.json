@@ -1,15 +1,6 @@
 {
-<<<<<<< HEAD
   "name": "tips",
   "app_id": "",
   "type": "ionic-angular",
   "integrations": {}
-=======
-  "name": "myAPP",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "ionic-angular",
-  "app_id": ""
->>>>>>> 7dc88e50fa0c6b816c66c27a08004c840bff5d76
 }

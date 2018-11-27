@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Camera, CameraOptions } from '@ionic-native/camera';
+// import { Camera, CameraOptions } from '@ionic-native/camera';
 
 @Component({
   selector: 'page-contact',
@@ -8,7 +8,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 })
 export class ContactPage {
 
-  constructor(private camera: Camera,public navCtrl: NavController) {
+  constructor(/*private camera: Camera */ public navCtrl: NavController) {
 
   }
 
