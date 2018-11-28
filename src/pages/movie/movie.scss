@@ -1,12 +1,26 @@
-page-contact {
+page-movie {
+    ion-header{
+        ion-navbar{
+            #my
+            {
+               font-size: 30px!important;
+            }
+            #search{
+                font-size: 30px!important;
+            }
+        }
+    }
     ion-content{
         .iconfont{
             float: left;
             font-family:"iconfont" !important;
-            font-size:35px!important;font-style:normal;
+            font-size:40px!important;font-style:normal;
             -webkit-font-smoothing: antialiased;
             -webkit-text-stroke-width: 0.2px;
             -moz-osx-font-smoothing: grayscale;
+            // position: relative;
+            // top:12px;
+            // left: 5px;
             margin: 10px 5px;
             width: 15%;
         }
@@ -14,6 +28,9 @@ page-contact {
             margin: 0 auto;
             float: right;
             width: 80%;
+        }
+        .sli{
+            height: 30%;
         }
     }
 }
