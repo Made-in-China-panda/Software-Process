@@ -6,3 +6,14 @@
   url('//at.alicdn.com/t/font_938532_mzog6cecfij.ttf') format('truetype'),
   url('//at.alicdn.com/t/font_938532_mzog6cecfij.svg#iconfont') format('svg');
 }
+ion-header{
+  ion-navbar{
+      #my
+      {
+         font-size: 30px!important;
+      }
+      #search{
+          font-size: 30px!important;
+      }
+  }
+}
