@@ -8,6 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class OwnerComponent implements OnInit {
 
   constructor() { }
+  my = {
+    tel:'1522222222',
+    id: 100001,
+    name: '张翼鹏',
+    email: '286801343@qq.com',
+    style: '我不知在何处呼唤着绿子',
+  };
+  users = [this.my];
   focus(e) {
     e.target.placeholder = '';
   }

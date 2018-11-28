@@ -50,3 +50,7 @@
   
 }
 .icon-sousuo:before { content: "\e623"; }
+.icon-meishi:before { content: "\e646"; }
+.icon-dianying:before { content: "\e642"; }
+.icon-lvxing:before { content: "\e600"; }
+.icon-youxi:before { content: "\e622"; }

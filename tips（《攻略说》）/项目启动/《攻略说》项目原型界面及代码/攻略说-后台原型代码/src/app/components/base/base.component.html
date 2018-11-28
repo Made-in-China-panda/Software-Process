@@ -3,36 +3,38 @@
     <div id="hang"></div>
     
         <img id="logo" src="../../../favicon.ico" alt="">
+        <h2>欢迎回来！{{name}}</h2>
     
     <ul>
       <li>
-        <a [routerLink]="['/main']"><i class="iconfont icon-fangzi"></i> 首页</a>
+        <a [routerLink]="['/base/:name/main']"><i class="iconfont icon-fangzi"></i> 首页</a>
       </li>
       <li>
-        <a [routerLink]="['/user']"><i class="iconfont icon-yonghu"></i>用户管理</a>
+        <a [routerLink]="['/base/:name/user']"><i class="iconfont icon-yonghu"></i>用户管理</a>
       </li>
       <li>
-        <a [routerLink]="['/notes']"><i class="iconfont icon-tiezi"></i>帖子管理</a>
+        <a [routerLink]="['/base/:name/notes']"><i class="iconfont icon-tiezi"></i>评论管理</a>
       </li>
       <li>
-        <a [routerLink]="['/loves']"><i class="iconfont icon-shoucang"></i>收藏管理</a>
+        <a [routerLink]="['/base/:name/loves']"><i class="iconfont icon-shoucang"></i>收藏管理</a>
       </li>
       <li>
-        <a [routerLink]="['/tuijian']"><i class="iconfont icon-tuijian"></i>推荐管理</a>
+        <a [routerLink]="['/base/:name/tuijian']"><i class="iconfont icon-tuijian"></i>攻略管理</a>
       </li>
       <li>
-        <a [routerLink]="['/fonts']"><i class="iconfont icon-guanjianzi"></i>关键字管理</a>
+        <a [routerLink]="['/base/:name/fonts']"><i class="iconfont icon-guanjianzi"></i>关键字管理</a>
       </li>
       <li>
-        <a [routerLink]="['/owner']"><i class="iconfont icon-renyuan"></i>人员管理</a>
+        <a [routerLink]="['/base/:name/owner']"><i class="iconfont icon-renyuan"></i>人员管理</a>
       </li>
+    
     </ul>
-
+    <br>
+   <a [routerLink]="['/base']">&nbsp;退出登录</a>
     
    
   </div>
   <div id="main">
-    
     <router-outlet></router-outlet>
   </div>
    

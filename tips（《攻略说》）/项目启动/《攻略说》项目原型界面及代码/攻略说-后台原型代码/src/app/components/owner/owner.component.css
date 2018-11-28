@@ -28,3 +28,35 @@ h1{border-bottom: 2px solid #ccc;
     background-repeat:no-repeat;
     background-position:185px 4px;
 }
+h2{
+    color: rgb(73, 73, 73);
+    margin-top: 10px;
+    margin-left:45px;
+}
+#table{border: 0px solid rgb(226, 225, 225);
+    width: 95%;
+    height: 75%;
+    margin: 0 auto;
+
+}
+#tab01{border: 0px solid #ccc;
+    text-align: center;
+}
+#tab02{border: 0px solid #ccc;
+    text-align: center;
+    margin-top: -20px;
+}
+.int{
+    width:90px;
+    border: 0px;
+    margin-top: 7px;
+    background-color: transparent;
+    text-align: center;
+}
+.intEmail{
+    width:200px;
+    border: 0px;
+    margin-top: 7px;
+    background-color: transparent;
+    text-align: center;
+}
