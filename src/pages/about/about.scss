@@ -1,0 +1,27 @@
+page-about {
+ion-content{
+    ion-grid{
+        img{width:80%;}
+    }
+    #hot{
+        position:absolute;
+        left:2rem;
+        
+    }
+    #rank1{position: absolute;left:14rem;top:21rem;font-size: 6rem;}
+    #rank2{position: absolute;left:4rem;top:23rem;font-size: 6rem;}
+    #rank3{position: absolute;left:24rem;top:25rem;font-size: 6rem;}
+}
+
+
+}
+
+
+
+@font-face{ font-family: WebFont;
+    src: url('../../assets/fonts/singlemalta-webfont.ttf');      
+    } 
+    #rank1,#rank2,#rank3{ font-family: WebFont;text-shadow:		
+        3px 3px 3px black;
+color:#FF7E67;
+}

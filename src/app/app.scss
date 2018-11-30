@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'iconfont';  /* project id 938532 */
+  src: url('//at.alicdn.com/t/font_938532_mzog6cecfij.eot');
+  src: url('//at.alicdn.com/t/font_938532_mzog6cecfij.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_938532_mzog6cecfij.woff') format('woff'),
+  url('//at.alicdn.com/t/font_938532_mzog6cecfij.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_938532_mzog6cecfij.svg#iconfont') format('svg');
+}
+ion-header{
+  background-color: #F0FFF3;
+  ion-navbar{
+      #my
+      {
+         font-size: 30px!important;
+      }
+      #search{
+          font-size: 30px!important;
+      }
+  }
+ 
+}
+
+ion-content{
+  background-color: #F0FFF3 !important;
+  .sli{
+    height: 30%;
+}
+}
+
+
