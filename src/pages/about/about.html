@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="bgblue">
     <button ion-button menuToggle>
         <ion-icon name="md-contact" id="my"></ion-icon>
       </button>
@@ -20,17 +20,38 @@
   </ion-menu>
   <ion-nav #mycontent [root]="rootPage"></ion-nav>
   <ion-content>
+      <ion-grid text-center >
+          <ion-row>
+            <ion-col col-3>
+              <img src="../../assets/imgs/美食/lu.png">
+            </ion-col>
+            <ion-col col-3>
+             <img src="../../assets/imgs/美食/chuan.png">
+            </ion-col >
+            <ion-col col-3>
+              <img src="../../assets/imgs/美食/su.png">
+            </ion-col>
+            <ion-col col-3>
+             <img src="../../assets/imgs/美食/yue.png"> 
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+
       <ion-slides pager="true" autoplay="1000" loop="true" class="sli">
           <ion-slide>
-            <h1>Slide 1</h1>
+            <img src="../../assets/imgs/美食/轮播图/lun1.png">
           </ion-slide>
           <ion-slide>
-            <h1>Slide 2</h1>
+            <img src="../../assets/imgs/美食/轮播图/lun2.png">
           </ion-slide>
           <ion-slide>
-            <h1>Slide 3</h1>
+            <img src="../../assets/imgs/美食/轮播图/lun3.png">
           </ion-slide>
       </ion-slides>
-
+      <div id="rank1">1</div>
+      <div id="rank2">2</div>
+      <div id="rank3">3</div>
+      <h1 ng-model="Food.name"></h1>
+<h1>{{item}}</h1>
   </ion-content>
 
