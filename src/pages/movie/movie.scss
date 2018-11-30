@@ -1,15 +1,4 @@
 page-movie {
-    // ion-header{
-    //     ion-navbar{
-    //         #my
-    //         {
-    //            font-size: 30px!important;
-    //         }
-    //         #search{
-    //             font-size: 30px!important;
-    //         }
-    //     }
-    // }
     ion-content{
         .iconfont{
             float: left;
@@ -28,9 +17,6 @@ page-movie {
             margin: 0 auto;
             float: right;
             width: 80%;
-        }
-        .sli{
-            height: 30%;
         }
     }
 }
