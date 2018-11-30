@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <ion-navbar color="bgblue">
+    <ion-navbar>
       <button ion-button menuToggle>
           <ion-icon name="md-contact" id="my"></ion-icon>
         </button>
@@ -36,5 +36,99 @@
             <ion-slide>
               <h1>Slide 3</h1>
             </ion-slide>
-          </ion-slides>
+        </ion-slides>
+        <ul class="navList" [ngSwitch] ="num">
+          <li class="first" (click)="isClick(0)" [class.first]="isActive==0">
+            <i class="iconfont" id="hot">&#xe68a;</i>正在热映
+          </li>
+          <li (click)="isClick(1)" [class.first]="isActive==1">
+            <i class="iconfont" id="hot">&#xe73c;</i>即将上映
+          </li>
+          <li (click)="isClick(2)" [class.first]="isActive==2">
+            <i class="iconfont" id="hot">&#xe60c;</i>佳片鉴赏
+          </li>
+        </ul>
+        <div [ngSwitch] = "isActive">
+          <div *ngSwitchCase="0">
+            <div class="subtitle">
+              <h3 text-center>正|在|热|映</h3>
+                <p text-center>M O V I E S - S H O W I N G</p>
+            </div>
+                  <ul class="goods">
+                    <li>
+                      <img src="../../assets/imgs/img1.png" alt="">
+                      <p>——北欧原木色——</p>
+                      <span><ion-icon name="md-star-half"></ion-icon></span>
+                    </li>
+                    <li>
+                      <img src="../../assets/imgs/img2.png" alt="">
+                      <p>——简约黑檀木茶几——</p>
+                      <span><ion-icon name="md-star-half"></ion-icon></span>
+                    </li>
+                    <li>
+                      <img src="../../assets/imgs/img3.png" alt="">
+                      <p>——北欧白橡木书架——</p>
+                      <span><ion-icon name="md-star-half"></ion-icon></span>
+                    </li>
+                    <li>
+                      <img src="../../assets/imgs/img4.png" alt="">
+                      <p>——北欧风餐边柜——</p>
+                      <span><ion-icon name="md-star-half"></ion-icon></span>
+                    </li>
+                    <li>
+                      <img src="../../assets/imgs/img5.png" alt="">
+                      <p>——北欧原木色——</p>
+                      <span><ion-icon name="md-star-half"></ion-icon></span>
+                    </li>
+                    <li>
+                      <img src="../../assets/imgs/img6.png" alt="">
+                      <p>——北欧原木色—— </p>
+                      <span><ion-icon name="md-star-half"></ion-icon></span>
+                    </li>
+                  </ul>
+                </div>
+                <div *ngSwitchCase="1">
+                  <ion-slides pager="true" autoplay="1000" loop="true" class="sli">
+                    <ion-slide>
+                      <img src="../../assets/imgs/轮播1.png">
+                    </ion-slide>
+                    <ion-slide>
+                      <img src="../../assets/imgs/轮播1.png">
+                    </ion-slide>
+                    <ion-slide>
+                      <img src="../../assets/imgs/轮播1.png">
+                    </ion-slide>
+                  </ion-slides>
+                  <div class="show" id="show1">客厅</div>
+                  <div class="show" id="show2">书房</div>
+                  <div class="show" id="show3">门厅</div>
+                  <h3 text-center>桔|子|家|居</h3>
+                  <p text-center>O r a n g e &nbsp;&nbsp; h o u s e h o l d</p>
+                  <ul class="goods">
+                      <li>
+                        <img src="../../assets/imgs/img1.png" alt="">
+                        <p>——北欧原木色——</p>
+                        <span><ion-icon name="md-star-half"></ion-icon></span>
+                      </li>
+                      <li>
+                        <img src="../../assets/imgs/img2.png" alt="">
+                        <p>——简约黑檀木茶几——</p>
+                        <span><ion-icon name="md-star-half"></ion-icon></span>
+                      </li>
+                      <li>
+                        <img src="../../assets/imgs/img3.png" alt="">
+                        <p>——北欧白橡木书架——</p>
+                        <span><ion-icon name="md-star-half"></ion-icon></span>
+                      </li>
+                      <li>
+                        <img src="../../assets/imgs/img4.png" alt="">
+                        <p>——北欧风餐边柜——</p>
+                        <span><ion-icon name="md-star-half"></ion-icon></span>
+                      </li>
+                  </ul>
+                </div>
+                <div *ngSwitchCase="2"></div>
+                <div *ngSwitchCase="3"></div>
+          
+              </div>
     </ion-content>

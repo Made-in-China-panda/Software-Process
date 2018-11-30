@@ -15,7 +15,10 @@ import { SearchPage} from '../search/search';
   templateUrl: 'movie.html',
 })
 export class MoviePage {
-
+  isActive = 0;
+  isClick(i){
+    this.isActive = i;
+  }
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
