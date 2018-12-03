@@ -1,0 +1,25 @@
+page-l-details {
+    ion-title{
+        margin-left: 45px;
+    }
+    ion-content{
+        ul{border: 0px solid #ccc;
+            margin-top: -12px;
+            margin-left: -10px;
+            width: 106%;
+            li{
+                list-style: none;
+                margin-left: -40px;
+                h6{border:1px solid #ccc;
+                    
+                    font-weight: bold;
+                    ion-icon{
+                        float: right;
+                        font-size: 0.9em;
+                    }
+                }
+            }
+        }
+    }
+
+}
