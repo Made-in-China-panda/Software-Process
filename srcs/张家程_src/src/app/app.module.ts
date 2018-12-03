@@ -12,6 +12,8 @@ import { SearchPage } from '../pages/search/search';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { LDetailsPage } from '../pages/l-details/l-details';
+import { WherePage } from '../pages/where/where';
 
 @NgModule({
   declarations: [
@@ -21,11 +23,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     MoviePage,
     TabsPage,
-    SearchPage
+    SearchPage,
+    LDetailsPage,
+    WherePage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{
+      tabsHideOnSubPages: 'true',
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -35,7 +41,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     MoviePage,
     TabsPage,
-    SearchPage
+    SearchPage,
+    LDetailsPage,
+    WherePage
   ],
   providers: [
     StatusBar,
