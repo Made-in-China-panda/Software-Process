@@ -1,0 +1,67 @@
+<ion-header>
+    <ion-navbar >
+      <ion-title text-center>{{food.name}}</ion-title>
+      <ion-buttons end>
+        <button ion-button ion-only (click)="collect()" id="search">
+            <ion-icon class="star" ios="md-star-outline" md="md-star-outline" [ngClass]="{'star':flag}"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content >
+  <img src="{{food.pic}}" style="width:100%;height: 35%">
+  <h3>食材明细</h3>
+  <div *ngFor="let item of materials;" class="material">
+    <div >&nbsp;&nbsp;{{item}}&nbsp;&nbsp; </div>
+  </div>
+  <!-- 清除浮动 -->
+  <div class="clear"></div>
+  <h3 >做法步骤</h3>
+  <ion-list>
+    <ion-item *ngFor="let item of items;" no-padding>
+      <ion-grid>
+        <ion-row >
+          <ion-col col-5><img src="{{item.steppic}}"></ion-col>
+          <ion-col col-7>
+            {{item.stepname}}
+            <p>{{item.stepcontent}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+  <h4 class="h4">这道菜的评论</h4>
+  <div *ngFor="let item of foodcomment" class="pinglun">
+    <ion-grid >
+      <ion-row>
+        <ion-col col-3 text-center>
+          <img src="{{item.userhead}}">
+          <p id="username">{{item.username}}</p>
+        </ion-col>
+        <ion-col col-9>
+          <p id="content">{{item.content}}</p>
+          <p style="text-align:end">{{item.time}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <img src="../../assets/imgs/xiahuaxian4.png">
+  </div>
+  <h4>我要评论 <ion-icon  md="md-text"></ion-icon></h4>
+  <ion-grid class="pinglun" id="mypinglun">
+    <ion-row>
+      <ion-col col-3 text-center>
+        <img src="{{foodcomment[0].userhead}}">
+        <p id="username">{{foodcomment[0].username}}</p>
+      </ion-col>
+      <ion-col col-9>
+          <textarea row="20" cols="30"></textarea>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="btn">
+
+  <button ion-button color="myorange" type="submit" small (click)="submit()">提交</button>
+  </div>
+</ion-content>
