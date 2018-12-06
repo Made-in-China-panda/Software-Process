@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar color="nav">
+    <ion-title>设置</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item (click)="gotozhanghao()">账号资料<span> > </span></ion-item>
+    <ion-item (click)="gotojieshao()">攻略说介绍<span> > </span></ion-item>
+    <ion-item (click)="gotohelp()">帮助<span> > </span></ion-item>
+    <ion-item detail-push></ion-item>
+  </ion-list>
+  <button ion-button round (click)="gotodenglu()">退出登录</button>
+</ion-content>

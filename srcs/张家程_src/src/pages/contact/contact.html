@@ -41,14 +41,14 @@
     
     <!-- 灵感 -->
     <!-- *************************----- -->
-    <div id="linggan">
+    <div id="linggan" (click) = "denglu()">
       <h2>旅行灵感</h2><h6>探索你内心的目的地&nbsp;</h6>
       <img  src="../../assets/imgs/旅游/分割线.png" alt="">
     </div>
     <div id="city">
       <ul>
         <li *ngFor="let citySrc of citysSrc" (click) = "lDetail($event)" >
-          <img src='{{citySrc.src}}' alt="{{citySrc.name}}"><br>
+          <img src='{{citySrc.imgSrc}}' alt="{{citySrc.name}}"><br>
           <span>&nbsp;{{citySrc.name}}</span>
         </li>
       </ul>
@@ -62,9 +62,9 @@
     </div>
     <div id="zhutiImg">
       <ul>
-        <li *ngFor="let zhuti of zhutis">
-          <img src={{zhuti.src}} alt=""><br>
-          <div>{{zhuti.name}}</div>
+        <li *ngFor="let zhuti of zhutis" (click) = "detail($event)">
+          <img src={{zhuti.imgSrc}} alt="{{zhuti.name}}"><br>
+          <div id="name">{{zhuti.name}}</div>
         </li>
       </ul>
     </div>
@@ -79,8 +79,8 @@
     <div id="finallyText">
       <ul>
         <li *ngFor="let finally of finallys">
-          <p>{{finally.text}}</p>
-          <img src="{{finally.src}}" alt="">
+          <p>{{finally.texts}}</p>
+          <img src="{{finally.imgSrc}}" alt="">
         </li>
       </ul>
     </div>

@@ -1,11 +1,20 @@
-<ion-header>
+<ion-header no-border>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>景点详情</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
  
   <ion-icon class="ion-md-myName"></ion-icon>
   <div #container1 class="div-charts"></div>
+  <div id="text"> 
+    <ul>
+      <li *ngFor="let place of allplace">
+        <h5>{{place.name}}&nbsp;<small>{{place.h1}}</small></h5>
+        <p>{{place.texts}}</p>
+        
+      </li>
+    </ul>
+  </div>
 </ion-content>

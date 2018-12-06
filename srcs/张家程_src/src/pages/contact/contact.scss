@@ -27,15 +27,17 @@ page-contact {
             margin: 0 auto;
             margin-top: 10px;
             overflow:hidden;
+            
         }
         ion-slides{
+            
             margin: 0 auto;
             border-radius: 0.5em;
+            
             img{
                 border-radius: 0.5em;
-                width: 100px;
                 height: 100px;
-                
+                box-shadow:2px 2px 5px rgb(85, 84, 84);
             }
         }
         #linggan{border: 0px solid #ccc;
@@ -106,6 +108,10 @@ page-contact {
             img{
                 margin-top: -40px;
             }
+            #name{border: 1px solid #ccc;
+                float: left;
+               margin: 0 auto;
+            }
         }
         #zhutiImg{border: 0px solid #ccc;
             width: 97%;
@@ -123,6 +129,8 @@ page-contact {
                     img{
                         box-shadow:1px 1px 5px rgb(158, 141, 141);
                         border-radius: 0.3em;
+                        width: 100px;
+                        height: 160px;
                     }
                     div{
                         margin-left: 5px;
@@ -175,6 +183,7 @@ page-contact {
                     }
                     img{
                         height: 150px;
+                        width: 316.5px;
                         margin-left: 10px;
                         margin-top: -10px;
                         border-radius: 3px;

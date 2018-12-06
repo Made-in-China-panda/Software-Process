@@ -7,7 +7,7 @@
 <ion-header no-border>
 
   <ion-navbar>
-    <ion-title>圆一个{{userInfo}}梦</ion-title>
+    <ion-title (click)="where($event)" >圆一个{{userInfo}}梦</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,8 +15,14 @@
 
 <ion-content padding>
   <ul>
-    <li *ngFor="let place of places">
-      <h6>{{place.name}}<ion-icon name="md-pin" (click)="where($event)">&nbsp;关于行程</ion-icon></h6>
+    <li (click)="where($event)" *ngFor="let place of place">
+      <h6>{{place.name}}<ion-icon name="md-pin">&nbsp;关于行程</ion-icon></h6>
+      <img id="liImg" src="../../assets/imgs/旅游/分割线.png" alt="">
+      <div id="area">
+        <img src={{place.src}} alt="">
+        <p>{{place.texts}}</p>
+      </div>
+      
     </li>
   </ul>
 </ion-content>

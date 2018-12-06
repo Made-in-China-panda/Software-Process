@@ -1,0 +1,21 @@
+page-zhanghao {
+    ion-content{
+        background-color: #fafafa !important;
+        ion-list{
+            ion-item{
+                background-color: #fafafa !important;
+                span{
+                    float: right;
+                }
+                #img {
+                    max-width:40px;
+                    max-height:40px;
+                    width:"100px";
+                    height:"100px";
+                    border-radius:50%;
+                    margin-bottom: 0px !important;
+                }                
+            }
+        }
+    }
+}

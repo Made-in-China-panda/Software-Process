@@ -1,7 +1,40 @@
 page-where {
-    .div-charts{
-        width:100%;
-        height:100%;
+    
+    ion-title{
+        margin-left: 60px;
+    }
+    .div-charts{border: 1px solid #ccc;
+        box-shadow:1px 1px 5px rgb(73, 72, 72);
+        border-radius: 10px;
+        width:97%;
+        height:80%;
+        margin: 0 auto;
+        margin-top: -15px;
+        overflow:hidden;
+    }
+    #text{
+        ul{
+            margin-top: 0px;
+            margin: 5px;
+            padding: 0px;
+            
+            li{border: 1px solid #ccc;
+                background-image: url('../../assets/imgs/旅游/background.jpg');
+                background-size:cover;
+                margin-top: 5px;
+                border-radius: 5px;
+                padding: 10px;
+                list-style: none;
+                
+                small{
+                    color:rgb(59, 58, 58);
+                }
+                p{
+                    text-indent: 2em;
+                    margin-top: -5px;
+                }
+            }
+        }
     }
 
 }
