@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar color="nav">
+    <ion-title>我的收藏</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel"
+    (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
+  </ion-searchbar>
+  <span id="span1">编辑</span>
+  <ul>
+    <li *ngFor="let obj of objs; let i=index">
+      <div class="left"><img src="{{obj.head}}"></div>
+      <div class="center">
+        <div>{{obj.headName}}</div>
+        <div class="content">
+          <img src="{{obj.images}}">
+          <span class="title">{{obj.title}}</span>
+        </div>
+      </div>
+      <div class="right">{{obj.data}}</div>
+      <div class="bottom"><img src="../../assets/imgs/line.png"></div>
+    </li>
+  </ul>
+  <div id="cont-bottom"><img src="../../assets/imgs/bottom.png"></div>
+</ion-content>

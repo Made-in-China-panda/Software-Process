@@ -1,0 +1,84 @@
+page-venom {
+    ion-content{
+    *{
+    margin: 0!important;
+    padding: 0!important;
+    }
+        #mov{
+            float: left;
+            width: 50%;
+            height: 6%;
+            line-height: 200%;
+            text-align: center;
+            margin-top:0;
+            color: #86ccc1;
+            border: 1px solid #ea6953;
+            border-radius: 10px;
+            background-color: #ea6953;
+        }
+        #dec3{
+            float: right;
+            width: 50%;
+            height: 6%;
+        }
+        p{
+            float: left;
+            margin-top: 5%!important;
+            height: 20%;
+            text-indent:2em;
+            // border: 1px solid #FAFAFA;
+        }
+        #dec4{
+            margin-top: -9%!important;
+        }
+        #dec5{
+            float: left;
+            width: 50%;
+            height: 6%;
+            margin-top: -5%!important;
+        }
+        #role{
+            float: right!important;
+            width: 50%!important;
+            height: 6%!important;
+            line-height: 200%;
+            text-align: center;
+            margin-top:-5%!important;
+            color: #ea6953;
+            border: 1px solid #86ccc1;
+            border-radius: 10px;
+            background-color:#86ccc1;
+        }
+        
+        .roles{
+            float: left;
+            width: 30%;
+            margin-top: 10%!important;
+            margin-left: 4%!important;
+        }
+        .text{
+            float: left;
+            width: 60%;
+            margin-top: 10%!important;
+            margin-left: 3%!important;
+            padding-top: 0;
+            line-height:1.4em;
+            h6{
+                line-height: 1em;
+                margin: 0!important;
+            }
+        }
+        #role{
+            float: left;
+            height: 30%;
+            width: 30%;
+            margin-top: 15%;
+            // padding: 0;
+            margin: 0
+        }
+        .dec6{
+            margin-top: 5%!important;
+            margin-bottom: -5%!important;
+        }
+    }
+}

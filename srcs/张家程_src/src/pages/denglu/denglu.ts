@@ -41,7 +41,7 @@ export class DengluPage {
         this.usersId[i] = data[i].id;
         this.usersPassword[i] = data[i].password;
       }
-      //console.log(this.usersId,this.usersPassword);
+      console.log(this.usersId,this.usersPassword);
     });
   }
 
@@ -75,7 +75,7 @@ export class DengluPage {
       
     }else if(!this.usersId.indexOf(this.id) || this.password != this.code){
       
-      if(!this.correct){
+      if(!this.correct && this.password != this.code){
         this.correct = document.createTextNode('账号与密码不符！');
         e.target.parentNode.parentNode.appendChild(this.correct);
       }

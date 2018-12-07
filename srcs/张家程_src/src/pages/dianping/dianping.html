@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="nav">
+    <ion-title>我的点评</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ul>
+    <li *ngFor="let obj of objs">
+      <div class="top">
+        <div class="one">
+          <span class="one-left"><img src="{{obj.img}}"></span>
+          <span class="one-right">{{obj.headname}}</span>
+        </div>
+        <div class="two">
+          <span style="color:lightgray">{{obj.data}}</span>
+          <span>{{obj.title}}</span>
+        </div>
+        <div class="three">
+          <p>{{obj.text}}</p>
+        </div>
+        <div class="four" style="color:lightgray;">
+          <span>浏览{{obj.num1}}次</span>
+          <span>点赞{{obj.num2}}次</span>
+        </div>
+      </div>
+      <div class="bottom"><img src="../../assets/imgs/line.png"></div>
+    </li>
+  </ul>
+  <div id="cont-bottom"><img src="../../assets/imgs/bottom.png"></div>
+</ion-content>

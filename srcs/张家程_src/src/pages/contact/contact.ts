@@ -5,6 +5,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ZDetailPage } from '../z-detail/z-detail';
 import { DengluPage } from '../denglu/denglu';
 import { ShezhiPage } from '../shezhi/shezhi';
+import { HomePage } from '../home/home';
+import { SearchPage } from '../search/search';
 // import { Camera, CameraOptions } from '@ionic-native/camera';
 
 @Component({
@@ -26,6 +28,12 @@ export class ContactPage {
   }
   denglu(){
     this.navCtrl.push(ShezhiPage);
+  }
+  back(){
+    this.navCtrl.pop();
+  }
+  search(){
+    this.navCtrl.push(SearchPage);
   }
 
   constructor(private http: HttpClient,public navCtrl: NavController) {
