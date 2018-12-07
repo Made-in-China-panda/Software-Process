@@ -28,6 +28,12 @@ import { ShouyePage } from '../pages/shouye/shouye';
 import { ShoucangPage } from '../pages/shoucang/shoucang';
 import { DianpingPage } from '../pages/dianping/dianping';
 import { XiaoxiPage } from '../pages/xiaoxi/xiaoxi';
+import { VenomPage } from '../pages/venom/venom';
+import { ChuanPage } from '../pages/chuan/chuan';
+import { LuPage } from '../pages/lu/lu';
+import { SuPage } from '../pages/su/su';
+import { YuePage } from '../pages/yue/yue';
+import { SweetPage } from '../pages/sweet/sweet';
 
 @NgModule({
   declarations: [
@@ -51,7 +57,13 @@ import { XiaoxiPage } from '../pages/xiaoxi/xiaoxi';
     ShouyePage,
     ShoucangPage,
     DianpingPage,
-    XiaoxiPage
+    XiaoxiPage,
+    VenomPage,
+    ChuanPage,
+    LuPage,
+    SuPage,
+    YuePage,
+    SweetPage
   ],
   imports: [
     HttpClientModule,
@@ -82,7 +94,13 @@ import { XiaoxiPage } from '../pages/xiaoxi/xiaoxi';
     ShouyePage,
     ShoucangPage,
     DianpingPage,
-    XiaoxiPage
+    XiaoxiPage,
+    VenomPage,
+    ChuanPage,
+    LuPage,
+    SuPage,
+    YuePage,
+    SweetPage
   ],
   providers: [
     StatusBar,

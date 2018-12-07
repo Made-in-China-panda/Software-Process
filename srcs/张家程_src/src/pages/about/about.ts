@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SearchPage} from '../search/search';
+import { YuePage } from '../yue/yue';
+import { SuPage } from '../su/su';
+import { ChuanPage } from '../chuan/chuan';
+import { LuPage } from '../lu/lu';
 
 //import { LuPage } from '../lu/lu';
 
@@ -33,10 +37,10 @@ goSweet(){
 }
 goRibang(){this.num=0;}
 goYuebang(){this.num=1;}
-//goLu(){this.navCtrl.push(LuPage);}
-//goChuan(){this.navCtrl.push(ChuanPage);}
-//goSu(){this.navCtrl.push(SuPage);}
-//goYue(){this.navCtrl.push(YuePage);}
+goLu(){this.navCtrl.push(LuPage);}
+goChuan(){this.navCtrl.push(ChuanPage);}
+goSu(){this.navCtrl.push(SuPage);}
+goYue(){this.navCtrl.push(YuePage);}
 goFoodstep(){
   //this.navCtrl.push(FoodstepPage);
 }
