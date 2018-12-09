@@ -1,7 +1,8 @@
 <ion-header>
   <ion-navbar color="bgblue">
-    <button ion-button menuToggle>
-        <ion-icon name="md-contact" id="my"></ion-icon>
+    <button ion-button menuToggle (click)="back()">
+      <ion-icon name="md-arrow-round-back"></ion-icon>
+
       </button>
     <ion-title text-center>攻略说</ion-title>
     <ion-buttons end>
@@ -41,7 +42,7 @@
     
     <!-- 灵感 -->
     <!-- *************************----- -->
-    <div id="linggan" (click) = "denglu()">
+    <div id="linggan">
       <h2>旅行灵感</h2><h6>探索你内心的目的地&nbsp;</h6>
       <img  src="../../assets/imgs/旅游/分割线.png" alt="">
     </div>

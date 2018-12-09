@@ -5,10 +5,11 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <ion-navbar color="bgblue">
-      <button ion-button menuToggle>
-          <ion-icon name="md-contact" id="my"></ion-icon>
-        </button>
+    <ion-navbar>
+        <button ion-button menuToggle (click)="back()">
+            <ion-icon name="md-arrow-round-back"></ion-icon>
+      
+            </button>
       <ion-title text-center>攻略说</ion-title>
       <ion-buttons end>
         <button ion-button ion-only (click)="search()" id="search">
@@ -18,11 +19,11 @@
     </ion-navbar>
 </ion-header>
     <ion-menu [content]="mycontent">
-      <ion-content>
+      <!-- <ion-content> -->
         <ion-list>
           <p>some menu content, could be list items</p>
         </ion-list>
-      </ion-content>
+      <!-- </ion-content> -->
     </ion-menu>
     <ion-nav #mycontent [root]="rootPage"></ion-nav>
     <ion-content>
@@ -36,5 +37,300 @@
             <ion-slide>
               <h1>Slide 3</h1>
             </ion-slide>
-          </ion-slides>
+        </ion-slides>
+        <ul class="navList" [ngSwitch] ="num">
+          <li class="first" (click)="isClick(0)" [class.first]="isActive==0">
+            <i class="iconfont" id="hot">&#xe68a;</i>正在热映
+          </li>
+          <li (click)="isClick(1)" [class.first]="isActive==1">
+            <i class="iconfont" id="hot">&#xe73c;</i>即将上映
+          </li>
+          <li (click)="isClick(2)" [class.first]="isActive==2">
+            <i class="iconfont" id="hot">&#xe60c;</i>佳片鉴赏
+          </li>
+        </ul>
+        <div [ngSwitch] = "isActive">
+          <div *ngSwitchCase="0" class="movpage">
+            <div class="subtitle">
+              <h4 text-center>正|在|热|映</h4><br/>
+                <p text-center>M O V I E S - S H O W I N G</p>
+            </div>
+            <div class="movIntro">
+              <div class="movImg1">
+                <img src="{{movies.moviesImg}}" (click)="movDetail()">
+              </div>
+              <div class="movDet1">
+                <h5 (click)="movDetail()">{{movies.moviesName}}</h5>
+                <p>主演：{{moviesRoles.rolesActor}}</p>
+                <p>豆瓣评分：{{movies.moviesSco}}</p>
+                <p class="pIntro">影片简介：{{movies.moviesIntro}}</p>
+              </div>
+            </div>
+            <div>
+              <img src="../../assets/imgs/movies/dec2.png" style="margin-top:5%">
+            </div>
+            <div class="movIntro">
+              <div class="movImg1">
+                <img src="{{movies.moviesImg}}" (click)="movDetail()">
+              </div>
+              <div class="movDet1">
+                <h5 (click)="movDetail()">{{movies.moviesName}}</h5>
+                <p>主演：{{moviesRoles.rolesActor}}</p>
+                <p>豆瓣评分：{{movies.moviesSco}}</p>
+                <p class="pIntro">影片简介：{{movies.moviesIntro}}</p>
+              </div>
+            </div>
+            <div>
+              <img src="../../assets/imgs/movies/dec2.png" style="margin-top:5%">
+            </div>
+            <div class="movIntro">
+              <div class="movImg1">
+                <img src="{{movies.moviesImg}}" (click)="movDetail()">
+              </div>
+              <div class="movDet1">
+                <h5 (click)="movDetail()">{{movies.moviesName}}</h5>
+                <p>主演：{{moviesRoles.rolesActor}}</p>
+                <p>豆瓣评分：{{movies.moviesSco}}</p>
+                <p class="pIntro">影片简介：{{movies.moviesIntro}}</p>
+              </div>
+            </div>
+          </div>
+          <div *ngSwitchCase="1" class="movpage">
+              <div class="subtitle">
+                <h4 text-center>即|将|上|映</h4><br/>
+                <p text-center>M O V I E S - C O M I N G S O O N</p>
+              </div>
+            <ul class="detail" [ngSwitch] ="num">
+              <li class="first" (click)="detClick(0)" [class.first]="detActive==0">
+                近一月
+              </li>
+              <li (click)="detClick(1)" [class.first]="detActive==1">
+                近两月
+              </li>
+              <li (click)="detClick(2)" [class.first]="detActive==2">
+                近三月
+              </li>
+            </ul>
+              <div [ngSwitch] = "detActive">
+                <div *ngSwitchCase="0">
+                  <div class="movIntro">
+                    <div class="movImg2">
+                      <img src="{{movies.moviesImg}}" (click)="movDetail()">
+                    </div>
+                    <div class="movDet2">
+                      <h5 (click)="movDetail()">{{movies.moviesName}}</h5>
+                      <p>主演：{{moviesRoles.rolesActor}}</p>
+                      <p>豆瓣评分：{{movies.moviesSco}}</p>
+                      <p class="pIntro">影片简介：{{movies.moviesIntro}}</p>
+                    </div>
+                  </div>
+                  <div>
+                    <img src="../../assets/imgs/movies/dec2.png" style="margin-top:7%">
+                  </div>
+                  <div class="movIntro">
+                    <div class="movImg2">
+                      <img src="{{movies.moviesImg}}" (click)="movDetail()">
+                    </div>
+                    <div class="movDet2">
+                      <h5 (click)="movDetail()">{{movies.moviesName}}</h5>
+                      <p>主演：{{moviesRoles.rolesActor}}</p>
+                      <p>豆瓣评分：{{movies.moviesSco}}</p>
+                      <p class="pIntro">影片简介：{{movies.moviesIntro}}</p>
+                    </div>
+                  </div>
+                  <div>
+                    <img src="../../assets/imgs/movies/dec2.png" style="margin-top:7%">
+                  </div>
+                  <div class="movIntro">
+                    <div class="movImg2">
+                      <img src="{{movies.moviesImg}}" (click)="movDetail()">
+                    </div>
+                    <div class="movDet2">
+                      <h5 (click)="movDetail()">{{movies.moviesName}}</h5>
+                      <p>主演：{{moviesRoles.rolesActor}}</p>
+                      <p>豆瓣评分：{{movies.moviesSco}}</p>
+                      <p class="pIntro">影片简介：{{movies.moviesIntro}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div *ngSwitchCase="1">
+                    <div class="movIntro">
+                        <div class="movImg2">
+                          <img src="{{movies.moviesImg}}" (click)="movDetail()">
+                        </div>
+                        <div class="movDet2">
+                          <h5 (click)="movDetail()">{{movies.moviesName}}</h5>
+                          <p>主演：{{moviesRoles.rolesActor}}</p>
+                          <p>豆瓣评分：{{movies.moviesSco}}</p>
+                          <p class="pIntro">影片简介：{{movies.moviesIntro}}</p>
+                        </div>
+                      </div>
+                      <div>
+                        <img src="../../assets/imgs/movies/dec2.png" style="margin-top:7%">
+                      </div>
+                      <div class="movIntro">
+                        <div class="movImg2">
+                          <img src="{{movies.moviesImg}}" (click)="movDetail()">
+                        </div>
+                        <div class="movDet2">
+                          <h5 (click)="movDetail()">{{movies.moviesName}}</h5>
+                          <p>主演：{{moviesRoles.rolesActor}}</p>
+                          <p>豆瓣评分：{{movies.moviesSco}}</p>
+                          <p class="pIntro">影片简介：{{movies.moviesIntro}}</p>
+                        </div>
+                      </div>
+                      <div>
+                        <img src="../../assets/imgs/movies/dec2.png" style="margin-top:7%">
+                      </div>
+                      <div class="movIntro">
+                        <div class="movImg2">
+                          <img src="{{movies.moviesImg}}" (click)="movDetail()">
+                        </div>
+                        <div class="movDet2">
+                          <h5 (click)="movDetail()">{{movies.moviesName}}</h5>
+                          <p>主演：{{moviesRoles.rolesActor}}</p>
+                          <p>豆瓣评分：{{movies.moviesSco}}</p>
+                          <p class="pIntro">影片简介：{{movies.moviesIntro}}</p>
+                        </div>
+                      </div>
+                </div>
+                <div *ngSwitchCase="2">
+                    <div class="movIntro">
+                        <div class="movImg2">
+                          <img src="{{movies.moviesImg}}" (click)="movDetail()">
+                        </div>
+                        <div class="movDet2">
+                          <h5 (click)="movDetail()">{{movies.moviesName}}</h5>
+                          <p>主演：{{moviesRoles.rolesActor}}</p>
+                          <p>豆瓣评分：{{movies.moviesSco}}</p>
+                          <p class="pIntro">影片简介：{{movies.moviesIntro}}</p>
+                        </div>
+                      </div>
+                      <div>
+                        <img src="../../assets/imgs/movies/dec2.png" style="margin-top:7%">
+                      </div>
+                      <div class="movIntro">
+                        <div class="movImg2">
+                          <img src="{{movies.moviesImg}}" (click)="movDetail()">
+                        </div>
+                        <div class="movDet2">
+                          <h5 (click)="movDetail()">{{movies.moviesName}}</h5>
+                          <p>主演：{{moviesRoles.rolesActor}}</p>
+                          <p>豆瓣评分：{{movies.moviesSco}}</p>
+                          <p class="pIntro">影片简介：{{movies.moviesIntro}}</p>
+                        </div>
+                      </div>
+                      <div>
+                        <img src="../../assets/imgs/movies/dec2.png" style="margin-top:7%">
+                      </div>
+                      <div class="movIntro">
+                        <div class="movImg2">
+                          <img src="{{movies.moviesImg}}" (click)="movDetail()">
+                        </div>
+                        <div class="movDet2">
+                          <h5 (click)="movDetail()">{{movies.moviesName}}</h5>
+                          <p>主演：{{moviesRoles.rolesActor}}</p>
+                          <p>豆瓣评分：{{movies.moviesSco}}</p>
+                          <p class="pIntro">影片简介：{{movies.moviesIntro}}</p>
+                        </div>
+                      </div>
+                </div>
+              </div>
+          </div>
+          <div *ngSwitchCase="2" class="movpage">
+            <div class="subtitle">
+              <h4 text-center>佳|片|鉴|赏</h4><br/>
+              <p text-center>M O V I E S - A P P R E C I A T I N G</p>
+            </div>
+            <ion-grid>
+              <ion-row>
+                <ion-col col-4>
+                  <img src="{{movies.moviesImg}}" (click)="movDetail()">
+                  <h6 text-center>
+                    {{movies.moviesName}}
+                  </h6>
+                  <h6 text-center  class="score">
+                    {{movies.moviesSco}}
+                  </h6>
+                </ion-col>
+                <ion-col col-4>
+                    <img src="{{movies.moviesImg}}" (click)="movDetail()">
+                    <h6 text-center>
+                      {{movies.moviesName}}
+                    </h6>
+                    <h6 text-center class="score">
+                      {{movies.moviesSco}}
+                    </h6>
+                </ion-col>
+                <ion-col col-4>
+                    <img src="{{movies.moviesImg}}" (click)="movDetail()">
+                    <h6 text-center>
+                        {{movies.moviesName}}
+                      </h6>
+                      <h6 text-center class="score">
+                        {{movies.moviesSco}}
+                      </h6>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-4>
+                  <img src="{{movies.moviesImg}}" (click)="movDetail()">
+                  <h6 text-center>
+                    {{movies.moviesName}}
+                  </h6>
+                  <h6 text-center class="score">
+                    {{movies.moviesSco}}
+                  </h6>
+                </ion-col>
+                <ion-col col-4>
+                  <img src="{{movies.moviesImg}}" (click)="movDetail()">
+                  <h6 text-center>
+                    {{movies.moviesName}}
+                  </h6>
+                  <h6 text-center class="score">
+                    {{movies.moviesSco}}
+                  </h6>
+                </ion-col>
+                <ion-col col-4>
+                  <img src="{{movies.moviesImg}}" (click)="movDetail()">
+                  <h6 text-center>
+                    {{movies.moviesName}}
+                  </h6>
+                  <h6 text-center class="score">
+                    {{movies.moviesSco}}
+                  </h6>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-4>
+                  <img src="{{movies.moviesImg}}" (click)="movDetail()">
+                  <h6 text-center>
+                    {{movies.moviesName}}
+                  </h6>
+                  <h6 text-center class="score">
+                    {{movies.moviesSco}}
+                  </h6>
+                </ion-col>
+                <ion-col col-4>
+                  <img src="{{movies.moviesImg}}" (click)="movDetail()">
+                  <h6 text-center>
+                    {{movies.moviesName}}
+                  </h6>
+                  <h6 text-center class="score">
+                    {{movies.moviesSco}}
+                  </h6>
+                </ion-col>
+                <ion-col col-4>
+                  <img src="{{movies.moviesImg}}" (click)="movDetail()">
+                  <h6 text-center>
+                    {{movies.moviesName}}
+                  </h6>
+                  <h6 text-center class="score">
+                    {{movies.moviesSco}}
+                  </h6>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </div>
     </ion-content>

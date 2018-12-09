@@ -4,6 +4,10 @@ import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 import { MoviePage } from '../movie/movie';
+import { ModalController } from 'ionic-angular';
+import { ZhanghaoPage } from '../zhanghao/zhanghao';
+import { DianpingPage } from '../dianping/dianping';
+import { ShoucangPage } from '../shoucang/shoucang';
 
 
 @Component({
@@ -12,10 +16,11 @@ import { MoviePage } from '../movie/movie';
 export class TabsPage {
 
   tab1Root = HomePage;
-  tab2Root = AboutPage;
-  tab3Root = ContactPage;
-  tab4Root = MoviePage;
-  constructor() {
+  tab2Root = ShoucangPage;
+  tab3Root = DianpingPage;
+  tab4Root = ZhanghaoPage;
+  constructor(public modalCtrl: ModalController,) {
 
   }
+  
 }

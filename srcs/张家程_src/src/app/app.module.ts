@@ -24,6 +24,16 @@ import { ShezhiPage } from '../pages/shezhi/shezhi';
 import { HelpPage } from '../pages/help/help';
 import { ZhanghaoPage } from '../pages/zhanghao/zhanghao';
 import { MimaPage } from '../pages/mima/mima';
+import { ShouyePage } from '../pages/shouye/shouye';
+import { ShoucangPage } from '../pages/shoucang/shoucang';
+import { DianpingPage } from '../pages/dianping/dianping';
+import { XiaoxiPage } from '../pages/xiaoxi/xiaoxi';
+import { VenomPage } from '../pages/venom/venom';
+import { ChuanPage } from '../pages/chuan/chuan';
+import { LuPage } from '../pages/lu/lu';
+import { SuPage } from '../pages/su/su';
+import { YuePage } from '../pages/yue/yue';
+import { SweetPage } from '../pages/sweet/sweet';
 
 @NgModule({
   declarations: [
@@ -43,13 +53,23 @@ import { MimaPage } from '../pages/mima/mima';
     ShezhiPage,
     HelpPage,
     ZhanghaoPage,
-    MimaPage
+    MimaPage,
+    ShouyePage,
+    ShoucangPage,
+    DianpingPage,
+    XiaoxiPage,
+    VenomPage,
+    ChuanPage,
+    LuPage,
+    SuPage,
+    YuePage,
+    SweetPage
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(MyApp,{
-      tabsHideOnSubPages: 'true',
+      tabsHideOnSubPages: 'false',
     })
   ],
   bootstrap: [IonicApp],
@@ -70,7 +90,17 @@ import { MimaPage } from '../pages/mima/mima';
     ShezhiPage,
     HelpPage,
     ZhanghaoPage,
-    MimaPage
+    MimaPage,
+    ShouyePage,
+    ShoucangPage,
+    DianpingPage,
+    XiaoxiPage,
+    VenomPage,
+    ChuanPage,
+    LuPage,
+    SuPage,
+    YuePage,
+    SweetPage
   ],
   providers: [
     StatusBar,

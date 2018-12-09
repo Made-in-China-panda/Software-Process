@@ -1,0 +1,60 @@
+<!--
+  Generated template for the VenomPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{movies.moviesName}}</ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+
+
+<ion-content>
+  <img src="{{movies.moviesPic}}">
+  <h5 id="mov">影片简介</h5>
+  <img src="../../assets/imgs/movies/dec3.png" id="dec3">
+  <!-- <div class="intro"> -->
+    <p>{{movies.moviesIntro}}</p>
+  <!-- </div> -->
+  <img src="../../assets/imgs/movies/dec4.png" id="dec4">
+  <img src="../../assets/imgs/movies/dec3.png" id="dec5">
+  <h5 id="role">角色介绍</h5>
+  <div class="desc">
+    <img src="{{moviesRoles.rolesImg}}" class="roles">
+    <div class="text">
+      <h6>{{moviesRoles.rolesName}}</h6>
+      {{moviesRoles.rolesIntro}}
+    </div>
+    <img src="../../assets/imgs/movies/dec2.png"  class="dec6">
+  </div>  
+  <div class="desc">
+    <img src="{{moviesRoles.rolesImg}}" class="roles">
+    <div class="text">
+      <h6>{{moviesRoles.rolesName}}</h6>
+      {{moviesRoles.rolesIntro}}
+    </div>
+    <img src="../../assets/imgs/movies/dec2.png"  class="dec6">
+  </div>  
+  <div class="desc">
+    <img src="{{moviesRoles.rolesImg}}" class="roles">
+    <div class="text">
+      <h6>{{moviesRoles.rolesName}}</h6>
+      {{moviesRoles.rolesIntro}}
+    </div>
+  </div>
+  <img src="../../assets/imgs/movies/dec4.png">
+  <div>
+      <h5>精彩影评</h5>
+      <h5>精彩影评</h5>
+      <h5>精彩影评</h5>
+      <h5>精彩影评</h5>
+      <h5>精彩影评</h5>
+      <h5>精彩影评</h5>
+      <h5>精彩影评</h5>
+  </div>
+  
+</ion-content>

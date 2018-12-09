@@ -1,6 +1,97 @@
 page-home {
-    .div-charts{
-        width:100%;
-        height:100%;
+    #my{
+        float: left;
+        ion-icon{
+            font-size:2.5em;
+        }
+    }
+    h5{
+        font-size: 20px;
+    }
+    ion-menu{
+        #header{
+            font: 2em sans-serif;
+        }
+        ion-list{
+            .picture{
+                width: 100%;
+                img{
+                    width: 100%;
+                    height: 100px;
+                }
+            }
+            ion-row{
+                margin-top: -5px;
+            }
+            ion-col{
+                div{
+                    margin-left: 14%;
+                }
+                p{
+                    margin-left: 14%;
+                }
+                #head-pic{
+                    border: 1px grey solid;
+                    width: 30%;
+                    height: 30%;
+                }
+                #name{
+                    border: 1px grey solid;
+                    
+                }
+            }
+        }
+        i{
+            font-size: 1.6em !important;
+        }
+        #left{
+            display: inline-block;
+            margin-left: 10%;
+            font-size: 18px;
+        }
+        #right{
+            display: inline-block;
+            position: relative;
+            margin-left: 28%;
+            font-size: 18px;
+        }
+    }
+    ion-content{
+        background-image: url(../assets/imgs/zhuye.png);
+        background-size: 100% 100%;
+        #search{
+            float: right;
+            i{
+                font-size: 2em !important;
+            }
+        }
+        #movie{
+            i{
+                color: aliceblue !important;
+                font-size: 4em !important;
+                
+            }
+            position: absolute;
+            margin-left: 25%;
+            margin-top: 20%;
+        }
+        #trip{
+            i{
+                color: aliceblue !important;
+                font-size: 4em !important;
+            }
+            position: absolute;
+            margin-left: 50%;
+            margin-top: 45%;
+        }
+        #food{
+            i{
+                color: aliceblue !important;
+                font-size: 4em !important;
+            }
+            position: absolute;
+            margin-left: 75%;
+            margin-top: 20%;
+        }
     }
 }
