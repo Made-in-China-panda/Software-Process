@@ -44,7 +44,7 @@ export class DengluComponent implements OnInit {
     if (this.useName.indexOf(this.name) > -1 && this.password === this.usePassword) {
       this.buttonKey = !this.buttonKey;
       e.target.parentNode.removeChild(this.correct);
-      
+
     }
     if (this.password !== this.usePassword) {
       this.correct = document.createTextNode('密码不正确');

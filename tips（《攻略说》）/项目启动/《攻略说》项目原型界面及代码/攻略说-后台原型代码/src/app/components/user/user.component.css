@@ -41,21 +41,28 @@ h2{
     width: 95%;
     height: 75%;
     margin: 0 auto;
+    border-radius:0.3em;
 
 }
+
 #tab01{border: 0px solid #ccc;
     text-align: center;
+    border-radius:0.3em;
 }
 #tab02{border: 0px solid #ccc;
     text-align: center;
     margin-top: -20px;
+    border-radius:0.3em;
+}
+#tab02 img{
+    border-radius:0.5em;
 }
 .int{
-    width:63px;
+    width:90px;
     border: 0px;
     margin-top: 20px;
     background-color: transparent;
-    text-align: center;
+    padding:0px !important;
 }
 .int2{
     width:80px;
@@ -76,4 +83,39 @@ h2{
     height: 30px;
     font-size: 0.9em;
     padding-top:-10px;outline:none;
+}
+.h4{
+    float:left;
+    line-height:30px;
+    height:30px;
+    margin-left:700px;
+    background:green;
+    border-radius:4px;
+    width:50px;
+    text-align:center;
+    font-size:20px;
+    color:white;
+    cursor:pointer;
+}
+#alert1{
+    position:fixed;
+    top:30%;
+    left:40%;
+    border:1px solid #eee;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:5px 5px 30px 1px #999;
+    display:none;
+    width:400px;
+}
+#alert1 table{
+    margin:10px auto;
+}
+#alert1 table td{
+    font-size:16px;
+    height:32px;
+    padding-right:30px;
+}
+.alter1{
+    width:216px;
 }

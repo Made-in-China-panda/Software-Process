@@ -5,11 +5,9 @@
 </div>
 <h2>攻略管理</h2>
 <div id="icon">
-    <a [routerLink]="['/base/tuijian/foods']"><i class="iconfont icon-meishi"></i></a>
-    <a [routerLink]="['/base/tuijian/videos']"><i class="iconfont icon-dianying"></i></a>
-    <a [routerLink]="['/base/tuijian/trips']"><i class="iconfont icon-lvxing"></i></a>
-    <a [routerLink]="['/base/tuijian/games']"><i class="iconfont icon-youxi"></i></a>
-    
+    <a [routerLink]="['/base/:name/tuijian/foods']"><i class="iconfont icon-meishi"></i></a>
+    <a [routerLink]="['/base/:name/tuijian/videos']"><i class="iconfont icon-dianying"></i></a>
+    <a [routerLink]="['/base/:name/tuijian/trips']"><i class="iconfont icon-lvxing"></i></a>    
 </div>
 <div id="area">
     <router-outlet></router-outlet>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-main',
@@ -9,12 +10,16 @@ import { ActivatedRoute } from '@angular/router';
 export class MainComponent implements OnInit {
   options: any;
   options02: any;
-  constructor(private router: ActivatedRoute) { }
-  userName = '张翼鹏';
-  newPeople = 520;
-  allPeople = 741;
-  notes = 1314;
+  constructor(private http: HttpClient, private router: ActivatedRoute) { }
+  userName;
   name;
+  newPeople;
+  allPeople;
+  notes;
+  datas;
+  dataNotes = [];
+  dataPeople = [];
+  numbers;
 
   focus(e) {
     e.target.placeholder = '';
@@ -24,6 +29,17 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
+
+        this.http.get('http://192.168.56.144:8080' + '/main').subscribe((data) => { // 监听
+          this.numbers = data[0];
+          console.log(data);
+          this.newPeople = this.numbers.newPeople;
+          console.log(this.numbers.newPeople);
+          this.allPeople = this.numbers.allPeople;
+          this.notes = this.numbers.notes; 
+        });
+
+
     this.name = this.router.snapshot.params['name'];
     this.options =  {
       title: {
@@ -76,12 +92,12 @@ export class MainComponent implements OnInit {
                   }
               },
               areaStyle: {normal: {}},
-              data: [203, 350, 372, 380, 456, 500, 521]
+              data: [1,2,3,4,5,6,7]
           }
       ]
   };
     const myecharts = echarts.init(document.getElementById('echarts'));
-    myecharts.setOption(this.options);
+            myecharts.setOption(this.options);
 
   this.options02 =  {
     title: {
@@ -134,13 +150,15 @@ export class MainComponent implements OnInit {
                 }
             },
             areaStyle: {normal: {}},
-            data: [500, 650, 910, 1000, 1200, 1210, 1314]
+            data: [1,2,3,4,5,6,7]
         }
     ]
 };
   const notes = echarts.init(document.getElementById('notes'));
   notes.setOption(this.options02);
+
 }
+
 
 }
 

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="nav">
+    <ion-title>我的消息</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ul>
+    <li *ngFor="let obj of objs">
+      <div class="top">
+        <span class="left"><img src="{{obj.img}}"></span>
+        <span class="right">
+          <h5>{{obj.headname}}</h5>
+          <span class="content">{{obj.content}}</span>
+          <span class="right-fly">{{obj.data}}</span>
+        </span>
+      </div>
+      <div class="bottom"><img src="../../assets/imgs/line.png"></div>
+    </li>
+  </ul>
+  <div id="cont-bottom"><img src="../../assets/imgs/bottom.png"></div>
+</ion-content>

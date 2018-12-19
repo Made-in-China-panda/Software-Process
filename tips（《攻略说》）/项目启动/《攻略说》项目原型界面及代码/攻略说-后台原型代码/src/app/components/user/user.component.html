@@ -4,28 +4,32 @@
   <input type="text" id="text" placeholder=" 请输入关键字查找" (focus)='focus($event)' (blur)='blur($event)'>
 </div>
 <h2>用户管理</h2>
+
+<div style="margin-top:30px !important;margin-bottom:90px;margin-left:30px">
+  <h4 style="float:left;">用户管理</h4>
+  <div class="h4" (click)="addtable()">添加</div>
+</div>
 <div id="table">
   <table id="tab01" class="table table-striped" border="1px">
     <tr>
-      <td width='80px'>头像</td>
-      <td width='80px'>ID</td>
-      <td width='80px'>昵称</td>
-      <td width='100px'>出生年月</td>
-      <td>个性签名</td>
-      <td width='110px'>操作</td>
+      <td width='153px'>ID</td>
+      <td width='139px'>名称</td>
+      <td width='139px'>密码</td>
+      <td width='244px'>密保问题</td>
+      <td width='175px'>操作</td>
     </tr>
   </table>
-  <table id="tab02" class="table table-striped table-hover" border="1px">
+  <table id="tab02" class="table table-striped" border="1px">
     <tr *ngFor="let user of users;let i = index">
-      <td width='80px'><img src="{{user.img}}" alt=""></td>
-      <td width='80px'><input (change)="changeId($event,i)" class="int" type="text" value="{{user.id}}"></td>
-      <td width='80px'><input (change)="changeName($event,i)"  class="int" type="text" value="{{user.name}}"></td>
-      <td width='100px'><input (change)="changeBrithday($event,i)"  class="int2" type="text" value="{{user.brithday}}"></td>
-      <td>
-        <textarea (change)="changeStyle($event,i)"  class="int3" cols="10" rows="10" value="{{user.style}}"></textarea>
+
+      <td col-md-2><input (change)="changeId($event,i)" type="text"  class="int" style="margin: 20px auto" value="{{user.id}}"></td>
+      <td col-md-2><input (change)="changeName($event,i)"  class="int2" type="text" value="{{user.name}}"></td>
+      <td col-md-3><input (change)="changeName($event,i)"  class="int2" type="text" value="{{user.password}}"></td>
+      <td col-md-3>
+      <input type='text'(change)="changeStyle($event,i)"  class="int3"  value="{{user.mibao}}">
       </td>
 
-      <td width='110px'>
+      <td col-md-2>
         <button class="btn btn-default" type="submit" (click)="add(i)">保存</button>
         <button class="btn btn-default" type="submit" (click)="del(i)">删除</button>
       </td>
@@ -33,5 +37,42 @@
 
   </table>
 </div>
-
+<div id='alert1'>
+  <h4 style="margin:30px">用户管理</h4>
+  <table>
+    <tr>
+      <td>用户ID:</td>
+      <td><input type="text" (change)="changeId1($event,0,0)" class='alter1'></td>
+    </tr>
+    <tr>
+      <td>名称:</td>
+      <td><input type="text" (change)="changeName1($event,1,0)" class='alter1'></td>
+    </tr>
+    <tr>
+      <td>用户密码:</td>
+      <td><input type="text" (change)="changeUsername1($event,2,0)" class='alter1'></td>
+    </tr>
+    <tr>
+      <td>密保问题:</td>
+      <td>
+        <select id="select" (click)="res1($event.target.value)">
+          <option value='您母亲的名字是？' >您母亲的名字是？
+          <option value='您父亲的名字是？'>您父亲的名字是？
+          <option value='您的出生地是？'>您的出生地是？
+          <option value='您的高中班主任的名字是？' >您的高中班主任的名字是？
+          <option value='您的初中班主任的名字是？'>您的初中班主任的名字是？
+          <option value='您的小学班主任的名字是？'>您的小学班主任的名字是？
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>密保答案:</td>
+      <td><input type="text" (change)="changeUserhead1($event,3,0)" class='alter1'></td>
+    </tr>
+    <tr height="40px">
+      <td><button (click)="button1(0)">确定</button></td>
+      <td style="text-align:center;"><button (click)='button2()'>取消</button></td>
+    </tr>
+  </table>
+</div>
 

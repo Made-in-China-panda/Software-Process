@@ -1,0 +1,21 @@
+<ion-content padding>
+ 
+  <ion-grid>
+    <ion-row>
+      <ion-col><img src="../../assets/imgs/denglu.png"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-2 style="text-align: center; line-height: 53px;"><i class="iconfont">&#xe632;</i></ion-col>
+      <ion-col class="list-1" col-10><ion-input (change)="change02()" type="number" placeholder="请输入你的账号" [(ngModel)]="id"></ion-input></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-2 style="text-align: center; line-height: 53px;"><i class="iconfont">&#xe63c;</i></ion-col>
+      <ion-col class="list-1" col-10><ion-input placeholder="输入密码" (change)="change($event)" type="password" [(ngModel)]="password"></ion-input></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><button ion-button round block (click)="gotoroot()">登录</button></ion-col>
+    </ion-row>
+  </ion-grid>
+  <span (click)="gotoZhuce()" id="span1">没有账号？<a>立即注册</a></span>
+  <span (click)="gotoMima()"  id="span2">忘记密码</span>
+</ion-content>

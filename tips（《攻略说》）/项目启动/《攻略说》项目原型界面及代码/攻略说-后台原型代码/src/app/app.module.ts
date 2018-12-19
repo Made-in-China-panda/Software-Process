@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BaseComponent } from './components/base/base.component';
 import { MainComponent } from './components/main/main.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './components/user/user.component';
 import { NotesComponent } from './components/notes/notes.component';
 import { LovesComponent } from './components/loves/loves.component';
@@ -62,7 +63,8 @@ import { BaseBaseComponent } from './components/base-base/base-base.component';
       ]},
       {path: '**', component: DengluComponent},
     ]),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,30 +1,379 @@
+<div style="margin-top:30px !important;margin-bottom:90px;margin-left:30px">
+  <h4 style="float:left;">四川</h4>
+  <div class="h4" (click)="addtable1(1)">添加</div>
+</div>
 <div id="table">
   <table id="tab01" class="table table-striped" border="1px">
     <tr>
-      <td width='80px'>序号</td>
-      <td width='127.5px'>名称</td>
-      <td>内容</td>
-      <td width='100px'>上传时间</td>
+      <td width='80px'>名称</td>
+      <td width='151px'>图片</td>
+      <td width='151px'>地点</td>
+      <td width='151px'>标题</td>
+      <td width='152px'>内容</td>
       <td width='120px'>操作</td>
     </tr>
   </table>
   <table id="tab02" class="table table-striped table-hover" border="1px">
-    <tr *ngFor="let food of foods;let i = index">
+    <tr *ngFor="let place of sichuan;let i = index">
       
-      <td width='80px'><input (change)="changeId($event,i)" class="intIN" type="text" value="{{food.id}}"></td>
-      <td width='110px'><input (change)="changeName($event,i)"  class="intName" type="text" value="{{food.name}}"></td>
-      <td>
-        <textarea (change)="changeStyle($event,i)"  class="intText" cols="10" rows="10" value="{{food.text}}"></textarea>
+        <td width='80px'>
+            <textarea (change)="changeName($event,i,0)"  class="intText" cols="10" rows="10" value="{{place.name}}"></textarea>
+          </td>
+      
+      <td width='151px'>
+        <textarea (change)="changeSrc($event,i,0)"  class="intText" cols="10" rows="10" value="{{place.src}}"></textarea>
       </td>
-      <td width='100px'><input (change)="changeTime($event,i)"  class="intTime" type="text" value="{{food.time}}"></td>
+
+      <td width='151px'>
+        <textarea (change)="changeWheres($event,i,0)"  class="intText" cols="10" rows="10" value="{{place.wheres}}"></textarea>
+      </td>
+
+      <td width='151px'>
+        <textarea (change)="changeH1($event,i,0)"  class="intText" cols="10" rows="10" value="{{place.h1}}"></textarea>
+      </td>
      
+      <td>
+        <textarea (change)="changeTexts($event,i,0)"  class="intText" cols="10" rows="10" value="{{place.texts}}"></textarea>
+      </td>
 
       <td width='120px'>
-        <button class="btn btn-default" type="submit" (click)="add(i)">保存</button>
-        <button class="btn btn-default" type="submit" (click)="del(i)">删除</button>
+        <button class="btn btn-default" type="submit" (click)="add(i,0)">保存</button>
+        <button class="btn btn-default" type="submit" (click)="del(i,0)">删除</button>
       </td>
     </tr>
 
   </table>
 </div>
 
+<div style="margin-top:30px !important;margin-bottom:90px;margin-left:30px">
+  <h4 style="float:left;">山东</h4>
+  <div class="h4" (click)="addtable1(2)">添加</div>
+</div>
+<div id="table">
+  <table id="tab01" class="table table-striped" border="1px">
+    <tr>
+      <td width='80px'>名称</td>
+      <td width='151px'>图片</td>
+      <td width='151px'>地点</td>
+      <td width='151px'>标题</td>
+      <td width='152px'>内容</td>
+      <td width='120px'>操作</td>
+    </tr>
+  </table>
+  <table id="tab02" class="table table-striped table-hover" border="1px">
+    <tr *ngFor="let place of shandong;let i = index">
+      
+        <td width='80px'>
+            <textarea (change)="changeName($event,i,1)"  class="intText" cols="10" rows="10" value="{{place.name}}"></textarea>
+          </td>
+      
+      <td width='151px'>
+        <textarea (change)="changeSrc($event,i,1)"  class="intText" cols="10" rows="10" value="{{place.src}}"></textarea>
+      </td>
+
+      <td width='151px'>
+        <textarea (change)="changeWheres($event,i,1)"  class="intText" cols="10" rows="10" value="{{place.wheres}}"></textarea>
+      </td>
+
+      <td width='151px'>
+        <textarea (change)="changeH1($event,i,1)"  class="intText" cols="10" rows="10" value="{{place.h1}}"></textarea>
+      </td>
+     
+      <td>
+        <textarea (change)="changeTexts($event,i,1)"  class="intText" cols="10" rows="10" value="{{place.texts}}"></textarea>
+      </td>
+
+      <td width='120px'>
+        <button class="btn btn-default" type="submit" (click)="add(i,1)">保存</button>
+        <button class="btn btn-default" type="submit" (click)="del(i,1)">删除</button>
+      </td>
+    </tr>
+
+  </table>
+</div>
+
+<div style="margin-top:30px !important;margin-bottom:90px;margin-left:30px">
+  <h4 style="float:left;">内蒙</h4>
+  <div class="h4" (click)="addtable1(3)">添加</div>
+</div>
+<div id="table">
+  <table id="tab01" class="table table-striped" border="1px">
+    <tr>
+      <td width='80px'>名称</td>
+      <td width='151px'>图片</td>
+      <td width='151px'>地点</td>
+      <td width='151px'>标题</td>
+      <td width='152px'>内容</td>
+      <td width='120px'>操作</td>
+    </tr>
+  </table>
+  <table id="tab02" class="table table-striped table-hover" border="1px">
+    <tr *ngFor="let place of neimeng;let i = index">
+      
+        <td width='80px'>
+            <textarea (change)="changeName($event,i,2)"  class="intText" cols="10" rows="10" value="{{place.name}}"></textarea>
+          </td>
+      
+      <td width='151px'>
+        <textarea (change)="changeSrc($event,i,2)"  class="intText" cols="10" rows="10" value="{{place.src}}"></textarea>
+      </td>
+
+      <td width='151px'>
+        <textarea (change)="changeWheres($event,i,2)"  class="intText" cols="10" rows="10" value="{{place.wheres}}"></textarea>
+      </td>
+
+      <td width='151px'>
+        <textarea (change)="changeH1($event,i,2)"  class="intText" cols="10" rows="10" value="{{place.h1}}"></textarea>
+      </td>
+     
+      <td>
+        <textarea (change)="changeTexts($event,i,2)"  class="intText" cols="10" rows="10" value="{{place.texts}}"></textarea>
+      </td>
+
+      <td width='120px'>
+        <button class="btn btn-default" type="submit" (click)="add(i,2)">保存</button>
+        <button class="btn btn-default" type="submit" (click)="del(i,2)">删除</button>
+      </td>
+    </tr>
+
+  </table>
+</div>
+
+<div style="margin-top:30px !important;margin-bottom:90px;margin-left:30px">
+  <h4 style="float:left;">香港</h4>
+  <div class="h4" (click)="addtable1(4)">添加</div>
+</div>
+<div id="table">
+  <table id="tab01" class="table table-striped" border="1px">
+    <tr>
+      <td width='80px'>名称</td>
+      <td width='151px'>图片</td>
+      <td width='151px'>地点</td>
+      <td width='151px'>标题</td>
+      <td width='152px'>内容</td>
+      <td width='120px'>操作</td>
+    </tr>
+  </table>
+  <table id="tab02" class="table table-striped table-hover" border="1px">
+    <tr *ngFor="let place of xianggang;let i = index">
+      
+        <td width='80px'>
+            <textarea (change)="changeName($event,i,3)"  class="intText" cols="10" rows="10" value="{{place.name}}"></textarea>
+          </td>
+      
+      <td width='151px'>
+        <textarea (change)="changeSrc($event,i,3)"  class="intText" cols="10" rows="10" value="{{place.src}}"></textarea>
+      </td>
+
+      <td width='151px'>
+        <textarea (change)="changeWheres($event,i,3)"  class="intText" cols="10" rows="10" value="{{place.wheres}}"></textarea>
+      </td>
+
+      <td width='151px'>
+        <textarea (change)="changeH1($event,i,3)"  class="intText" cols="10" rows="10" value="{{place.h1}}"></textarea>
+      </td>
+     
+      <td>
+        <textarea (change)="changeTexts($event,i,3)"  class="intText" cols="10" rows="10" value="{{place.texts}}"></textarea>
+      </td>
+
+      <td width='120px'>
+        <button class="btn btn-default" type="submit" (click)="add(i,3)">保存</button>
+        <button class="btn btn-default" type="submit" (click)="del(i,3)">删除</button>
+      </td>
+    </tr>
+
+  </table>
+</div>
+
+<div style="margin-top:30px !important;margin-bottom:90px;margin-left:30px">
+  <h4 style="float:left;">西藏</h4>
+  <div class="h4" (click)="addtable1(5)">添加</div>
+</div>
+<div id="table">
+  <table id="tab01" class="table table-striped" border="1px">
+    <tr>
+      <td width='80px'>名称</td>
+      <td width='151px'>图片</td>
+      <td width='151px'>地点</td>
+      <td width='151px'>标题</td>
+      <td width='152px'>内容</td>
+      <td width='120px'>操作</td>
+    </tr>
+  </table>
+  <table id="tab02" class="table table-striped table-hover" border="1px">
+    <tr *ngFor="let place of xizang;let i = index">
+      
+        <td width='80px'>
+            <textarea (change)="changeName($event,i,4)"  class="intText" cols="10" rows="10" value="{{place.name}}"></textarea>
+          </td>
+      
+      <td width='151px'>
+        <textarea (change)="changeSrc($event,i,4)"  class="intText" cols="10" rows="10" value="{{place.src}}"></textarea>
+      </td>
+
+      <td width='151px'>
+        <textarea (change)="changeWheres($event,i,4)"  class="intText" cols="10" rows="10" value="{{place.wheres}}"></textarea>
+      </td>
+
+      <td width='151px'>
+        <textarea (change)="changeH1($event,i,4)"  class="intText" cols="10" rows="10" value="{{place.h1}}"></textarea>
+      </td>
+     
+      <td>
+        <textarea (change)="changeTexts($event,i,4)"  class="intText" cols="10" rows="10" value="{{place.texts}}"></textarea>
+      </td>
+
+      <td width='120px'>
+        <button class="btn btn-default" type="submit" (click)="add(i,4)">保存</button>
+        <button class="btn btn-default" type="submit" (click)="del(i,4)">删除</button>
+      </td>
+    </tr>
+
+  </table>
+</div>
+<div id='alert1'>
+  <h4 style="margin:30px">四川攻略</h4>
+  <table>
+    <tr>
+      <td>地点:</td>
+      <td><input type="text" (change)="changeName1($event,0,0)" value=''></td>
+    </tr>
+    <tr>
+      <td>图片:</td>
+      <td><input type="text" (change)="changeSrc1($event,0,0)"></td>
+    </tr>
+    <tr>
+      <td>经纬度:</td>
+      <td><input type="text" (change)="changeWheres1($event,0,0)" value=''></td>
+    </tr>
+    <tr>
+      <td>标题:</td>
+      <td><input type="text" (change)="changeH11($event,0,0)" value=''></td>
+    </tr>
+    <tr>
+      <td>内容:</td>
+      <td><input type="text" (change)="changeTexts1($event,0,0)" value=''></td>
+    </tr>
+    <tr height="40px">
+      <td><button (click)="button1(0)">确定</button></td>
+      <td style="text-align:center;"><button (click)='button2(1)'>取消</button></td>
+    </tr>
+  </table>
+</div>
+<div id='alert2'>
+  <h4 style="margin:30px">山东攻略</h4>
+  <table>
+    <tr>
+      <td>地点:</td>
+      <td><input type="text" (change)="changeName1($event,1,0)" value=''></td>
+    </tr>
+    <tr>
+      <td>图片:</td>
+      <td><input type="text" (change)="changeSrc1($event,1,0)"></td>
+    </tr>
+    <tr>
+      <td>经纬度:</td>
+      <td><input type="text" (change)="changeWheres1($event,1,0)" value=''></td>
+    </tr>
+    <tr>
+      <td>标题:</td>
+      <td><input type="text" (change)="changeH11($event,1,0)" value=''></td>
+    </tr>
+    <tr>
+      <td>内容:</td>
+      <td><input type="text" (change)="changeTexts1($event,1,0)" value=''></td>
+    </tr>
+    <tr height="40px">
+      <td><button (click)="button1(1)">确定</button></td>
+      <td style="text-align:center;"><button (click)='button2(2)'>取消</button></td>
+    </tr>
+  </table>
+</div>
+<div id='alert3'>
+  <h4 style="margin:30px">内蒙攻略</h4>
+  <table>
+    <tr>
+      <td>地点:</td>
+      <td><input type="text" (change)="changeName1($event,2,0)" value=''></td>
+    </tr>
+    <tr>
+      <td>图片:</td>
+      <td><input type="text" (change)="changeSrc1($event,2,0)"></td>
+    </tr>
+    <tr>
+      <td>经纬度:</td>
+      <td><input type="text" (change)="changeWheres1($event,2,0)" value=''></td>
+    </tr>
+    <tr>
+      <td>标题:</td>
+      <td><input type="text" (change)="changeH11($event,2,0)" value=''></td>
+    </tr>
+    <tr>
+      <td>内容:</td>
+      <td><input type="text" (change)="changeTexts1($event,2,0)" value=''></td>
+    </tr>
+    <tr height="40px">
+      <td><button (click)="button1(2)">确定</button></td>
+      <td style="text-align:center;"><button (click)='button2(3)'>取消</button></td>
+    </tr>
+  </table>
+</div>
+<div id='alert4'>
+  <h4 style="margin:30px">香港攻略</h4>
+  <table>
+    <tr>
+      <td>地点:</td>
+      <td><input type="text" (change)="changeName1($event,3,0)" value=''></td>
+    </tr>
+    <tr>
+      <td>图片:</td>
+      <td><input type="text" (change)="changeSrc1($event,3,0)"></td>
+    </tr>
+    <tr>
+      <td>经纬度:</td>
+      <td><input type="text" (change)="changeWheres1($event,3,0)" value=''></td>
+    </tr>
+    <tr>
+      <td>标题:</td>
+      <td><input type="text" (change)="changeH11($event,3,0)" value=''></td>
+    </tr>
+    <tr>
+      <td>内容:</td>
+      <td><input type="text" (change)="changeTexts1($event,3,0)" value=''></td>
+    </tr>
+    <tr height="40px">
+      <td><button (click)="button1(3)">确定</button></td>
+      <td style="text-align:center;"><button (click)='button2(4)'>取消</button></td>
+    </tr>
+  </table>
+</div>
+<div id='alert5'>
+  <h4 style="margin:30px">西藏攻略</h4>
+  <table>
+    <tr>
+      <td>地点:</td>
+      <td><input type="text" (change)="changeName1($event,4,0)" value=''></td>
+    </tr>
+    <tr>
+      <td>图片:</td>
+      <td><input type="text" (change)="changeSrc1($event,4,0)"></td>
+    </tr>
+    <tr>
+      <td>经纬度:</td>
+      <td><input type="text" (change)="changeWheres1($event,4,0)" value=''></td>
+    </tr>
+    <tr>
+      <td>标题:</td>
+      <td><input type="text" (change)="changeH11($event,4,0)" value=''></td>
+    </tr>
+    <tr>
+      <td>内容:</td>
+      <td><input type="text" (change)="changeTexts1($event,4,0)" value=''></td>
+    </tr>
+    <tr height="40px">
+      <td><button (click)="button1(4)">确定</button></td>
+      <td style="text-align:center;"><button (click)='button2(5)'>取消</button></td>
+    </tr>
+  </table>
+</div>

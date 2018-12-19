@@ -20,8 +20,8 @@
     <tr *ngFor="let user of users;let i = index">
       <td width='110px'><input (change)="changeId($event,i)" class="int" type="text" value="{{user.id}}"></td>
       <td width='110px'><input (change)="changeName($event,i)"  class="int" type="text" value="{{user.name}}"></td>
-      <td width='140px'><input (change)="changeName($event,i)"  class="int" type="text" value="{{user.tel}}"></td>
-      <td><input (change)="changeBrithday($event,i)"  class="intEmail" type="text" value="{{user.email}}"></td>
+      <td width='140px'><input (change)="changePhone($event,i)"  class="int" type="text" value="{{user.phone}}"></td>
+      <td><input (change)="changeEmail($event,i)"  class="intEmail" type="text" value="{{user.email}}"></td>
       
 
       <td width='130px'>

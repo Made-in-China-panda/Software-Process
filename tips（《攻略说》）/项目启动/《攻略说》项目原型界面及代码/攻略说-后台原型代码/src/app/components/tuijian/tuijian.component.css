@@ -41,7 +41,7 @@ h2{
     margin: 0 auto;
     height: auto;
     margin-top: -20px;
-    margin-left: 45px;
+    margin-left: 100px;
 }
 a{
     text-decoration: none;
@@ -50,7 +50,7 @@ i:hover{
     font-size: 10em;
 }
 i{border: 0px solid #ccc;
-    margin-left: 55px;
+    margin-left: 70px;
     font-size: 9em;
 }
 h3{

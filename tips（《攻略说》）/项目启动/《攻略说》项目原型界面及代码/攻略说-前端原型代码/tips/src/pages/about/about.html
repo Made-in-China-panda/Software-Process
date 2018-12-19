@@ -1,11 +1,198 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
+  <ion-navbar color="bgheader">
+    <button ion-button menuToggle>
+        <ion-icon name="" id="my"></ion-icon>
+      </button>
+      <ion-title text-center><ion-icon name="md-arrow-round-back" (click)="back()"></ion-icon>攻略说</ion-title>
+    <ion-buttons end>
+      <button ion-button ion-only (click)="search()" id="search">
+        <ion-icon name = "search"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
 
-</ion-content>
+  <ion-content>
+<!-- 轮播图 -->
+      
+      <div id="slides">
+        <ion-slides pager="true" autoplay="1500" loop="true" class="sli">
+            <ion-slide>
+              <img src="../../assets/imgs/美食/轮播图/lun1.png">
+            </ion-slide>
+            <ion-slide>
+              <img src="../../assets/imgs/美食/轮播图/lun2.png">
+            </ion-slide>
+            <ion-slide>
+              <img src="../../assets/imgs/美食/轮播图/lun3.png">
+            </ion-slide>
+        </ion-slides>
+      </div>
+<!-- 四大菜系菜单 -->
+      <ion-grid text-center >
+          <ion-row>
+            <ion-col col-3>
+              <img src="../../assets/imgs/美食/lu.png" (click)="goLu()">
+            </ion-col>
+            <ion-col col-3>
+             <img src="../../assets/imgs/美食/chuan.png" (click)="goChuan()">
+            </ion-col >
+            <ion-col col-3>
+              <img src="../../assets/imgs/美食/su.png" (click)="goSu()">
+            </ion-col>
+            <ion-col col-3>
+             <img src="../../assets/imgs/美食/yue.png" (click)="goYue()"> 
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+
+      <div [ngSwitch]="num">
+ <!-- 日榜 -->
+        <div  *ngSwitchDefault>
+          <div id="rank">
+            <div id="rank1">1</div>
+            <img src="{{first.pic}}" id="rimg1" (click)="goFoodstep(first.name)" >    
+           
+            <div id="rank2">2</div>
+            <img src="{{second.pic}}" id="rimg2" (click)="goFoodstep(second.name)" >
+           
+            <div id="rank3">3</div>
+            <img src="{{third.pic}}" id="rimg3" (click)="goFoodstep(third.name)" >
+           
+            </div>
+      
+            <ion-grid>
+              <ion-row>
+                <ion-col col-3 text-center>
+                    <h6 (click)="goFoodstep(second.name)" id="r1">{{second.name}}</h6>
+                    <p>{{second.taste}}</p>
+                    <p>{{second.collection}}人收藏</p>
+                </ion-col>
+                <ion-col col-6 text-center>
+                    <h4 (click)="goFoodstep(first.name)" id="r2">{{first.name}}</h4>
+                    <p>{{first.taste}}</p>
+                    <p>{{first.collection}}人收藏</p>
+                </ion-col>
+                <ion-col col-3 text-center>
+                    <h6 (click)="goFoodstep(third.name)" id="r3">{{third.name}}</h6>
+                    <p>{{third.taste}}</p>
+                    <p>{{third.collection}}人收藏</p>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+      
+            <img src="../../assets/imgs/xiahuaxian1.png" class="xiahuaxian">
+       
+            <ion-list>
+              <ion-item *ngFor="let item of items;" detail-push>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col col-4>
+                      <img src="{{item[0].pic}}" (click)="goFoodstep(item[0].name)">
+                      <h6 (click)="goFoodstep(item[0].name)">{{item[0].name}}</h6>
+                      <p>{{item[0].taste}}</p>
+                      <p>{{item[0].collection}}人收藏</p>
+                    </ion-col>
+                    <ion-col col-8>
+                      <ion-row>
+                        <img src="{{item[3].pic}}" style="float: left" (click)="goFoodstep(item[3].name)">
+                        <div style="margin-left: 10px">
+                          <h6 (click)="goFoodstep(item[3].name)">{{item[3].name}}</h6>
+                          <p>{{item[3].taste}}</p>
+                          <p>{{item[3].collection}}人收藏</p>
+                        </div>
+                      </ion-row>
+                      <ion-row>
+                        <img src="{{item[2].pic}}" style="float: left" (click)="goFoodstep(item[2].name)">
+                        <div style="margin-left: 10px">
+                          <h6 (click)="goFoodstep(item[2].name)">{{item[2].name}}</h6>
+                          <p>{{item[2].taste}}</p>
+                          <p>{{item[2].collection}}人收藏</p>
+                        </div>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+                <img src="../../assets/imgs/xiahuaxian4.png" class="xiahuaxian">
+              </ion-item>
+            </ion-list>
+      
+        </div>
+
+ <!-- 月榜 -->
+        <!-- <div *ngSwitchCase="1">
+          <div id="rank">
+            <div id="rank1">1</div>
+            <img src="{{food.pic}}" id="rimg1" (click)="goFoodstep()">    
+           
+            <div id="rank2">2</div>
+            <img src="{{food.pic}}" id="rimg2" (click)="goFoodstep()">
+           
+            <div id="rank3">3</div>
+            <img src="{{food.pic}}" id="rimg3" (click)="goFoodstep()">
+           
+            </div>
+      
+            <ion-grid>
+              <ion-row>
+                <ion-col col-3 text-center>
+                    <h6 (click)="goFoodstep()">{{food.name}}</h6>
+                    <p>{{food.taste}}</p>
+                    <p>{{food.collection}}人收藏</p>
+                </ion-col>
+                <ion-col col-6 text-center>
+                    <h4 (click)="goFoodstep()">{{food.name}}</h4>
+                    <p>{{food.taste}}</p>
+                    <p>{{food.collection}}人收藏</p>
+                </ion-col>
+                <ion-col col-3 text-center>
+                    <h6 (click)="goFoodstep()">{{food.name}}</h6>
+                    <p>{{food.taste}}</p>
+                    <p>{{food.collection}}人收藏</p>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+      
+            <img src="../../assets/imgs/xiahuaxian1.png" class="xiahuaxian">
+       
+            <ion-list>
+              <ion-item *ngFor="let item of items;" detail-push>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col col-4>
+                      <img src="{{food.pic}}" (click)="goFoodstep()">
+                      <h6>{{food.name}}</h6>
+                      <p>{{food.taste}}</p>
+                      <p>{{food.collection}}人收藏</p>
+                    </ion-col>
+                    <ion-col col-8>
+                      <ion-row>
+                        <img src="{{food.pic}}" style="float: left" (click)="goFoodstep()">
+                        <div style="margin-left: 10px">
+                          <h6>{{food.name}}</h6>
+                          <p>{{food.taste}}</p>
+                          <p>{{food.collection}}人收藏</p>
+                        </div>
+                      </ion-row>
+                      <ion-row>
+                        <img src="{{food.pic}}" style="float: left" (click)="goFoodstep()">
+                        <div style="margin-left: 10px">
+                          <h6>{{food.name}}</h6>
+                          <p>{{food.taste}}</p>
+                          <p>{{food.collection}}人收藏</p>
+                        </div>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+                <img src="../../assets/imgs/xiahuaxian4.png" class="xiahuaxian">
+              </ion-item>
+            </ion-list>
+      
+        </div> -->
+      </div>
+      
+
+  </ion-content>
+

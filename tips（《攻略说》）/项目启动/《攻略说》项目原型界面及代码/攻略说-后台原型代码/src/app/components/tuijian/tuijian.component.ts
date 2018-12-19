@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router' ;
 @Component({
   selector: 'app-tuijian',
   templateUrl: './tuijian.component.html',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TuijianComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient,private router:ActivatedRoute) { }
   focus(e) {
     e.target.placeholder = '';
   }

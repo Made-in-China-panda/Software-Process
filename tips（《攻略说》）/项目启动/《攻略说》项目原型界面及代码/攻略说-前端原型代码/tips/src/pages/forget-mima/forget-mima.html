@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="nav">
+    <ion-title>忘记密码</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col id="picture"><img src="../../assets/imgs/mima-1.png"></ion-col>
+    </ion-row>
+    <ion-row class="list-1">
+      <ion-col col-2 style="line-height: 50px;">    <i class="iconfont">&#xe632;</i></ion-col>
+      <ion-col col-10><ion-input (change)="change()" type="number" placeholder="请输入您的账号" [(ngModel)]="count"></ion-input></ion-col>
+    </ion-row>
+    <ion-row class="list-1">
+      <ion-col col-2 style="text-align: center; line-height: 53px;"><i class="iconfont">&#xe72d;</i></ion-col>
+      <ion-col col-10><span>{{text}}</span></ion-col>
+    </ion-row>
+    <ion-row class="list-1">
+      <ion-col col-2 style="text-align: center; line-height: 53px;"><i class="iconfont">&#xe625;</i></ion-col>
+      <ion-col col-10><ion-input type="text" placeholder="输入答案" [(ngModel)]="answer"></ion-input></ion-col>
+    </ion-row>
+    <ion-row>
+      <button ion-button round id="button2" (click)="back($event)">确定</button>
+    </ion-row>
+  </ion-grid>
+</ion-content>

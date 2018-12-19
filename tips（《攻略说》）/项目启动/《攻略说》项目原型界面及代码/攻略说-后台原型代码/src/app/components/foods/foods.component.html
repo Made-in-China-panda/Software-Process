@@ -1,32 +1,453 @@
+<div style="margin-top:30px !important;margin-bottom:90px;margin-left:30px">
+  <h4 style="float:left;">鲁菜</h4>
+  <div class="h4" (click)="addtable1(1)">添加</div>
+</div>
 <div id="table">
     <table id="tab01" class="table table-striped" border="1px">
       <tr>
-        <td width='80px'>序号</td>
-        <td width='127.5px'>名称</td>
-        <td>内容</td>
-        <td width='100px'>上传时间</td>
-        <td width='120px'>操作</td>
+        <td width='127px'>菜名</td>
+        <td width='127px'>taste</td>
+        <td width='100px'>收藏数</td>
+        <td>图片</td>
+        <td width='176px'>材料</td>
+        <td width='100px'>操作</td>
       </tr>
     </table>
     <table id="tab02" class="table table-striped table-hover" border="1px">
-      <tr *ngFor="let food of foods;let i = index">
-        
-        <td width='80px'><input (change)="changeId($event,i)" class="intIN" type="text" value="{{food.id}}"></td>
-        <td width='110px'><input (change)="changeName($event,i)"  class="intName" type="text" value="{{food.name}}"></td>
-        <td>
-          <textarea (change)="changeStyle($event,i)"  class="intText" cols="10" rows="10" value="{{food.text}}"></textarea>
+      <tr *ngFor="let food of foods_lu;let i = index">
+
+        <td width='80px'><input (change)="changeName($event,i,0)"  class="intName" type="text" value="{{food.name}}"></td>
+
+        <td width='80px'><input (change)="changeTaste($event,i,0)" class="intName" type="text" value="{{food.taste}}"></td>
+
+        <td width='100px'><input (change)="changeCollection($event,i,0)"  class="intTime" type="text" value="{{food.collection}}"></td>
+
+        <td >
+        <textarea (change)="changePic($event,i,0)"  class="intText" cols="10" rows="10" value="{{food.pic}}"></textarea>
         </td>
-        <td width='100px'><input (change)="changeTime($event,i)"  class="intTime" type="text" value="{{food.time}}"></td>
-       
-  
-        <td width='120px'>
-          <button class="btn btn-default" type="submit" (click)="add(i)">保存</button>
-          <button class="btn btn-default" type="submit" (click)="del(i)">删除</button>
+
+        <td>
+        <textarea (change)="changeMaterial($event,i)"  class="intText" cols="10" rows="10" value="{{food.material}}"></textarea>
+        </td>
+
+        <td width='100px'>
+          <button class="btn btn-default" type="submit" (click)="add(i,0)">保存</button>
+          <button class="btn btn-default" type="submit" (click)="del(i,0)">删除</button>
         </td>
       </tr>
   
     </table>
   </div>
+
+
+  <div style="margin-top:30px !important;margin-bottom:90px;margin-left:30px">
+    <h4 style="float:left;">川菜</h4>
+    <div class="h4" (click)="addtable1(2)">添加</div>
+  </div>
+<div id="table">
+    <table id="tab01" class="table table-striped" border="1px">
+      <tr>
+        <td width='127px'>菜名</td>
+        <td width='127px'>taste</td>
+        <td width='100px'>收藏数</td>
+        <td>图片</td>
+        <td width='176px'>材料</td>
+        <td width='100px'>操作</td>
+      </tr>
+    </table>
+    <table id="tab02" class="table table-striped table-hover" border="1px">
+      <tr *ngFor="let food of foods_chuan;let i = index">
+
+        <td width='80px'><input (change)="changeName($event,i,1)"  class="intName" type="text" value="{{food.name}}"></td>
+
+        <td width='80px'><input (change)="changeTaste($event,i,1)"  class="intName" type="text" value="{{food.taste}}"></td>
+
+        <td width='100px'><input (change)="changeCollection($event,i,1)"  class="intTime" type="text" value="{{food.collection}}"></td>
+
+        <td >
+        <textarea (change)="changePic($event,i,1)"  class="intText" cols="10" rows="10" value="{{food.pic}}"></textarea>
+        </td>
+
+        <td>
+        <textarea (change)="changeMaterial($event,i,1)"  class="intText" cols="10" rows="10" value="{{food.material}}"></textarea>
+        </td>
+
+        <td width='100px'>
+          <button class="btn btn-default" type="submit" (click)="add(i,1)">保存</button>
+          <button class="btn btn-default" type="submit" (click)="del(i,1)">删除</button>
+        </td>
+      </tr>
+  
+    </table>
+  </div>
+
+  <div style="margin-top:30px !important;margin-bottom:90px;margin-left:30px">
+    <h4 style="float:left;">苏菜</h4>
+    <div class="h4" (click)="addtable1(3)">添加</div>
+  </div>
+<div id="table">
+    <table id="tab01" class="table table-striped" border="1px">
+      <tr>
+        <td width='127px'>菜名</td>
+        <td width='127px'>taste</td>
+        <td width='100px'>收藏数</td>
+        <td>图片</td>
+        <td width='176px'>材料</td>
+        <td width='100px'>操作</td>
+      </tr>
+    </table>
+    <table id="tab02" class="table table-striped table-hover" border="1px">
+      <tr *ngFor="let food of foods_su;let i = index">
+
+        <td width='80px'><input (change)="changeName($event,i,2)"  class="intName" type="text" value="{{food.name}}"></td>
+
+        <td width='80px'><input (change)="changeTaste($event,i,2)"  class="intName" type="text" value="{{food.taste}}"></td>
+
+        <td width='100px'><input (change)="changeCollection($event,i,2)"  class="intTime" type="text" value="{{food.collection}}"></td>
+
+        <td >
+        <textarea (change)="changePic($event,i,2)"  class="intText" cols="10" rows="10" value="{{food.pic}}"></textarea>
+        </td>
+
+        <td>
+        <textarea (change)="changeMaterial($event,i,2)"  class="intText" cols="10" rows="10" value="{{food.material}}"></textarea>
+        </td>
+
+        <td width='100px'>
+          <button class="btn btn-default" type="submit" (click)="add(i,2)">保存</button>
+          <button class="btn btn-default" type="submit" (click)="del(i,2)">删除</button>
+        </td>
+      </tr>
+  
+    </table>
+  </div>
+
+  <div style="margin-top:30px !important;margin-bottom:90px;margin-left:30px">
+    <h4 style="float:left;">粤菜</h4>
+    <div class="h4" (click)="addtable1(4)">添加</div>
+  </div>
+<div id="table">
+    <table id="tab01" class="table table-striped" border="1px">
+      <tr>
+        <td width='127px'>菜名</td>
+        <td width='127px'>taste</td>
+        <td width='100px'>收藏数</td>
+        <td>图片</td>
+        <td width='176px'>材料</td>
+        <td width='100px'>操作</td>
+      </tr>
+    </table>
+    <table id="tab02" class="table table-striped table-hover" border="1px">
+      <tr *ngFor="let food of foods_yue;let i = index">
+
+        <td width='80px'><input (change)="changeName($event,i,3)"  class="intName" type="text" value="{{food.name}}"></td>
+
+        <td width='80px'><input (change)="changeTaste($event,i,3)"  class="intName" type="text" value="{{food.taste}}"></td>
+
+        <td width='100px'><input (change)="changeCollection($event,i,3)"  class="intTime" type="text" value="{{food.collection}}"></td>
+
+        <td >
+        <textarea (change)="changePic($event,i,3)"  class="intText" cols="10" rows="10" value="{{food.pic}}"></textarea>
+        </td>
+
+        <td>
+        <textarea (change)="changeMaterial($event,i,3)"  class="intText" cols="10" rows="10" value="{{food.material}}"></textarea>
+        </td>
+
+        <td width='100px'>
+          <button class="btn btn-default" type="submit" (click)="add(i,3)">保存</button>
+          <button class="btn btn-default" type="submit" (click)="del(i,3)">删除</button>
+        </td>
+      </tr>
+  
+    </table>
+  </div>
+
+  <div style="margin-top:30px !important;margin-bottom:90px;margin-left:30px">
+    <h4 style="float:left;">饼干</h4>
+    <div class="h4" (click)="addtable1(5)">添加</div>
+  </div>
+<div id="table">
+    <table id="tab01" class="table table-striped" border="1px">
+      <tr>
+        <td width='127px'>名称</td>
+        <td width='289px'>图片</td>
+        <td>材料</td>
+        <td width='100px'>操作</td>
+      </tr>
+    </table>
+    <table id="tab02" class="table table-striped table-hover" border="1px">
+      <tr *ngFor="let food of sweet_binggan;let i = index">
+
+        <td width='80px'><input (change)="changeName($event,i,4)"  class="intName" type="text" value="{{food.name}}"></td>
+
+        <td >
+        <textarea (change)="changePic($event,i,4)"  class="intText" cols="10" rows="10" value="{{food.pic}}"></textarea>
+        </td>
+
+        <td>
+        <textarea (change)="changeMaterial($event,i,4)"  class="intText" cols="10" rows="10" value="{{food.material}}"></textarea>
+        </td>
+
+        <td width='100px'>
+          <button class="btn btn-default" type="submit" (click)="add(i,4)">保存</button>
+          <button class="btn btn-default" type="submit" (click)="del(i,4)">删除</button>
+        </td>
+      </tr>
+  
+    </table>
+  </div>
+
+  <div style="margin-top:30px !important;margin-bottom:90px;margin-left:30px">
+    <h4 style="float:left;">布丁</h4>
+    <div class="h4" (click)="addtable1(6)">添加</div>
+  </div>
+<div id="table">
+    <table id="tab01" class="table table-striped" border="1px">
+      <tr>
+        <td width='127px'>名称</td>
+        <td width='289px'>图片</td>
+        <td>材料</td>
+        <td width='100px'>操作</td>
+      </tr>
+    </table>
+    <table id="tab02" class="table table-striped table-hover" border="1px">
+      <tr *ngFor="let food of sweet_buding;let i = index">
+
+        <td width='80px'><input (change)="changeName($event,i,5)"  class="intName" type="text" value="{{food.name}}"></td>
+
+        <td >
+        <textarea (change)="changePic($event,i,5)"  class="intText" cols="10" rows="10" value="{{food.pic}}"></textarea>
+        </td>
+
+        <td>
+        <textarea (change)="changeMaterial($event,i,5)"  class="intText" cols="10" rows="10" value="{{food.material}}"></textarea>
+        </td>
+
+        <td width='100px'>
+          <button class="btn btn-default" type="submit" (click)="add(i,5)">保存</button>
+          <button class="btn btn-default" type="submit" (click)="del(i,5)">删除</button>
+        </td>
+      </tr>
+  
+    </table>
+  </div>
+
+  <div style="margin-top:30px !important;margin-bottom:90px;margin-left:30px">
+    <h4 style="float:left;">蛋糕</h4>
+    <div class="h4" (click)="addtable1(7)">添加</div>
+  </div>
+<div id="table">
+    <table id="tab01" class="table table-striped" border="1px">
+      <tr>
+        <td width='127px'>名称</td>
+        <td width='289px'>图片</td>
+        <td>材料</td>
+        <td width='100px'>操作</td>
+      </tr>
+    </table>
+    <table id="tab02" class="table table-striped table-hover" border="1px">
+      <tr *ngFor="let food of sweet_cake;let i = index">
+
+        <td width='80px'><input (change)="changeName($event,i,6)"  class="intName" type="text" value="{{food.name}}"></td>
+
+        <td >
+        <textarea (change)="changePic($event,i,6)"  class="intText" cols="10" rows="10" value="{{food.pic}}"></textarea>
+        </td>
+
+        <td>
+        <textarea (change)="changeMaterial($event,i)"  class="intText" cols="10" rows="10" value="{{food.material}}"></textarea>
+        </td>
+
+        <td width='100px'>
+          <button class="btn btn-default" type="submit" (click)="add(i,6)">保存</button>
+          <button class="btn btn-default" type="submit" (click)="del(i,6)">删除</button>
+        </td>
+      </tr>
+  
+    </table>
+  </div>
+
+  <div id='alert1'>
+    <h4 style="margin:30px">鲁菜攻略</h4>
+    <table>
+      <tr>
+        <td>菜名:</td>
+        <td><input type="text" (change)="changeName1($event,0,0)" value=''></td>
+      </tr>
+      <tr>
+        <td>味道:</td>
+        <td><input type="text" (change)="changeTaste1($event,0,0)"></td>
+      </tr>
+      <tr>
+        <td>收藏数:</td>
+        <td><input type="text" (change)="changeCollection1($event,0,0)" value=''></td>
+      </tr>
+      <tr>
+        <td>图片:</td>
+        <td><input type="text" (change)="changePic1($event,0,0)" value=''></td>
+      </tr>
+      <tr>
+        <td>材料:</td>
+        <td><input type="text" (change)="changeMaterial1($event,0,0)" value=''></td>
+      </tr>
+      <tr height="40px">
+        <td><button (click)="button1(0)">确定</button></td>
+        <td style="text-align:center;"><button (click)='button2(1)'>取消</button></td>
+      </tr>
+    </table>
+  </div>
+  <div id='alert2'>
+    <h4 style="margin:30px">川菜攻略</h4>
+    <table>
+      <tr>
+        <td>菜名:</td>
+        <td><input type="text" (change)="changeName1($event,1,0)" value=''></td>
+      </tr>
+      <tr>
+        <td>味道:</td>
+        <td><input type="text" (change)="changeTaste1($event,1,0)"></td>
+      </tr>
+      <tr>
+        <td>收藏数:</td>
+        <td><input type="text" (change)="changeCollection1($event,1,0)" value=''></td>
+      </tr>
+      <tr>
+        <td>图片:</td>
+        <td><input type="text" (change)="changePic1($event,1,0)" value=''></td>
+      </tr>
+      <tr>
+        <td>材料:</td>
+        <td><input type="text" (change)="changeMaterial1($event,1,0)" value=''></td>
+      </tr>
+      <tr height="40px">
+        <td><button (click)="button1(1)">确定</button></td>
+        <td style="text-align:center;"><button (click)='button2(2)'>取消</button></td>
+      </tr>
+    </table>
+  </div>
+  <div id='alert3'>
+    <h4 style="margin:30px">苏菜攻略</h4>
+    <table>
+      <tr>
+        <td>菜名:</td>
+        <td><input type="text" (change)="changeName1($event,2,0)" value=''></td>
+      </tr>
+      <tr>
+        <td>味道:</td>
+        <td><input type="text" (change)="changeTaste1($event,2,0)"></td>
+      </tr>
+      <tr>
+        <td>收藏数:</td>
+        <td><input type="text" (change)="changeCollection1($event,2,0)" value=''></td>
+      </tr>
+      <tr>
+        <td>图片:</td>
+        <td><input type="text" (change)="changePic1($event,2,0)" value=''></td>
+      </tr>
+      <tr>
+        <td>材料:</td>
+        <td><input type="text" (change)="changeMaterial1($event,2,0)" value=''></td>
+      </tr>
+      <tr height="40px">
+        <td><button (click)="button1(2)">确定</button></td>
+        <td style="text-align:center;"><button (click)='button2(3)'>取消</button></td>
+      </tr>
+    </table>
+  </div>
+  <div id='alert4'>
+    <h4 style="margin:30px">粤菜攻略</h4>
+    <table>
+      <tr>
+        <td>菜名:</td>
+        <td><input type="text" (change)="changeName1($event,3,0)" value=''></td>
+      </tr>
+      <tr>
+        <td>味道:</td>
+        <td><input type="text" (change)="changeTaste1($event,3,0)"></td>
+      </tr>
+      <tr>
+        <td>收藏数:</td>
+        <td><input type="text" (change)="changeCollection1($event,3,0)" value=''></td>
+      </tr>
+      <tr>
+        <td>图片:</td>
+        <td><input type="text" (change)="changePic1($event,3,0)" value=''></td>
+      </tr>
+      <tr>
+        <td>材料:</td>
+        <td><input type="text" (change)="changeMaterial1($event,3,0)" value=''></td>
+      </tr>
+      <tr height="40px">
+        <td><button (click)="button1(3)">确定</button></td>
+        <td style="text-align:center;"><button (click)='button2(4)'>取消</button></td>
+      </tr>
+    </table>
+  </div>
+  <div id='alert5'>
+    <h4 style="margin:30px">饼干攻略</h4>
+    <table>
+      <tr>
+        <td>名称:</td>
+        <td><input type="text" (change)="changeName1($event,4,0)" value=''></td>
+      </tr>
+      <tr>
+        <td>图片:</td>
+        <td><input type="text" (change)="changePic1($event,4,0)" value=''></td>
+      </tr>
+      <tr>
+        <td>材料:</td>
+        <td><input type="text" (change)="changeMaterial1($event,4,0)" value=''></td>
+      </tr>
+      <tr height="40px">
+        <td><button (click)="button1(4)">确定</button></td>
+        <td style="text-align:center;"><button (click)='button2(5)'>取消</button></td>
+      </tr>
+    </table>
+  </div>
+  <div id='alert6'>
+    <h4 style="margin:30px">布丁攻略</h4>
+    <table>
+      <tr>
+        <td>名称:</td>
+        <td><input type="text" (change)="changeName1($event,5,0)" value=''></td>
+      </tr>
+      <tr>
+        <td>图片:</td>
+        <td><input type="text" (change)="changePic1($event,5,0)" value=''></td>
+      </tr>
+      <tr>
+        <td>材料:</td>
+        <td><input type="text" (change)="changeMaterial1($event,5,0)" value=''></td>
+      </tr>
+      <tr height="40px">
+        <td><button (click)="button1(5)">确定</button></td>
+        <td style="text-align:center;"><button (click)='button2(6)'>取消</button></td>
+      </tr>
+    </table>
+  </div>
+  <div id='alert7'>
+    <h4 style="margin:30px">蛋糕攻略</h4>
+    <table>
+      <tr>
+        <td>名称:</td>
+        <td><input type="text" (change)="changeName1($event,6,0)" value=''></td>
+      </tr>
+      <tr>
+        <td>图片:</td>
+        <td><input type="text" (change)="changePic1($event,6,0)" value=''></td>
+      </tr>
+      <tr>
+        <td>材料:</td>
+        <td><input type="text" (change)="changeMaterial1($event,6,0)" value=''></td>
+      </tr>
+      <tr height="40px">
+        <td><button (click)="button1(6)">确定</button></td>
+        <td style="text-align:center;"><button (click)='button2(7)'>取消</button></td>
+      </tr>
+    </table>
+  </div>
+  
   
   
   

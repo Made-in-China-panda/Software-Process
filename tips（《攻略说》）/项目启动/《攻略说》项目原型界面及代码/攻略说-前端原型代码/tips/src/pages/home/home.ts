@@ -1,5 +1,15 @@
 import { Component ,ViewChild,ElementRef } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
+import { MenuController } from 'ionic-angular';
+import { ContactPage } from '../contact/contact';
+import { AboutPage } from '../about/about';
+import { MoviePage } from '../movie/movie';
+import { ShezhiPage } from '../shezhi/shezhi';
+import { DengluPage } from '../denglu/denglu';
+import { ShoucangPage } from '../shoucang/shoucang';
+import { XiaoxiPage } from '../xiaoxi/xiaoxi';
+import { DianpingPage } from '../dianping/dianping';
+import { SearchPage } from '../search/search';
 
 
 @Component({
@@ -7,136 +17,62 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  @ViewChild('container1') container:ElementRef;//与html中div #container1对应 
+
   chart :any;
 
-  constructor(public navCtrl: NavController) {
-
+  constructor(public modalCtrl: ModalController,public navCtrl: NavController, public navParams: NavParams,public menuCtrl: MenuController,) {
+	this.chart= localStorage.getItem('man');
+	//console.log(this.chart)
   }
-  data = [
-    
-    {name: '大庆', value: 279}
-];
-  geoCoordMap = {
-    
-    '大庆':[125.03,46.58]
-};
+  ionViewDidLoad(){
+    if(document.querySelector('#trips')){
+      document.querySelector('#trips').addEventListener('click',()=>{
+        let profileModal = this.modalCtrl.create(ContactPage);
+        profileModal.present();
+      },false)
 
-  convertData = function (data) {
-    var res = [];
-    for (var i = 0; i < data.length; i++) {
-        var geoCoord = this.geoCoordMap[data[i].name];
-        if (geoCoord) {
-            res.push({
-                name: data[i].name,
-                value: geoCoord.concat(data[i].value)
-            });
-        }
     }
-    return res;
-};
+    if(document.querySelector('#foods')){
+      document.querySelector('#foods').addEventListener('click',()=>{
+        let profileModal = this.modalCtrl.create(AboutPage);
+        profileModal.present();
+      },false)
 
-  renderItem(params, api) {
-    var coords = [
-        [116.7,39.53],
-        [103.73,36.03],
-        [112.91,27.87],
-        [120.65,28.01],
-        [119.57,39.95]
-    ];
-    
-    
+    }
+    if(document.querySelector('#movies')){
+      document.querySelector('#movies').addEventListener('click',()=>{
+        let profileModal = this.modalCtrl.create(MoviePage);
+        profileModal.present();
+      },false)
 
-
-    return {
-        type: 'polygon',
-        
-        
-    };
-}
+    }
+  }
   
-  ionViewDidLoad() {
- 
-    let ctx = this.container.nativeElement;
-		this.chart = echarts.init(ctx);
-		this.chart.setOption(
-			{
-				// backgroundColor: '#404a59',
-				title: {
-				   
-					
-					left: 'center',
-					
-				},
-				tooltip : {
-					trigger: 'item'
-				},
-				bmap: {
-					center: [104.114129, 37.550339],
-					zoom: 4,
-					roam: true,
-					mapStyle: {
-						styleJson: [
-							   
-								{
-									"featureType": "label",
-									"elementType": "all",
-									"stylers": {
-										"visibility": "off"
-									}
-								}
-						]
-					}
-				},
-				series : [
-					{
-						name: '黑龙江省',
-						type: 'effectScatter',
-						coordinateSystem: 'bmap',
-						data: this.convertData(this.data.sort(function (a, b) {
-							return b.value - a.value;
-						}).slice(0, 6)),
-						symbolSize: function (val) {
-							return val[2] / 10;
-						},
-						showEffectOn: 'emphasis',
-						rippleEffect: {
-							brushType: 'stroke'
-						},
-						hoverAnimation: true,
-						label: {
-							normal: {
-								formatter: '{b}',
-								position: 'right',
-								show: true
-							}
-						},
-						itemStyle: {
-							normal: {
-								color: '#000',
-								shadowBlur: 10,
-								shadowColor: '#000'
-							}
-						},
-						zlevel: 1
-					},
-					{
-						type: 'custom',
-						coordinateSystem: 'bmap',
-						renderItem: this.renderItem,
-						itemStyle: {
-							normal: {
-								opacity: 0.5
-							}
-						},
-						animation: false,
-						silent: true,
-						data: [0],
-						z: -10
-					}
-					
-				]
-			}
-    );
-      }
+closeMenu() {
+  this.menuCtrl.close();
+  console.log("end!");
+}
+
+
+
+
+
+gotodenglu(){
+this.navCtrl.push(DengluPage);
+}
+gotoshoucang(){
+this.navCtrl.push(ShoucangPage);
+}
+gotoxiaoxi(){
+this.navCtrl.push(XiaoxiPage);
+}
+gotodianping(){
+this.navCtrl.push(DianpingPage);
+}
+gotoshezhi(){
+this.navCtrl.push(ShezhiPage);
+} 
+search(){
+  this.navCtrl.push(SearchPage);
+} 
 }
