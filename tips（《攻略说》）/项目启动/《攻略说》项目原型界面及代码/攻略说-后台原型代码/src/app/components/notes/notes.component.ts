@@ -136,27 +136,25 @@ export class NotesComponent implements OnInit {
     this.input[number].userId = e.target.value;
   }
   ngOnInit() {
-    this.http.get('http://192.168.56.144:8080/food_comment').subscribe(data=>{
+    this.http.get('http://192.168.148.144:8080/food_comment').subscribe(data=>{
       this.food_comment = data;
       this.databases[0]=this.food_comment;
     });
-    this.http.get('http://192.168.56.144:8080/movie_comment').subscribe(data=>{
+    this.http.get('http://192.168.148.144:8080/movie_comment').subscribe(data=>{
       this.movie_comment = data;
       this.databases[1]=this.movie_comment;
     });
   }
-  del(i, number) {
-     // tslint:disable-next-line:max-line-length
-     this.http.delete('http://192.168.56.144:8080/' + this.database[number] + '/' + 'id' +'/'+this.databases[number][i].id,{headers:this.headers}).subscribe(data => {});
-    console.log(this.databases[number][i].id);
+  del(i,number) {
+    this.http.delete('http://192.168.148.144:8080/'+this.database[number]+'/'+'name'+'/'+this.databases[number][i].name,{headers:this.headers}).subscribe(data => {});
+    console.log(this.databases[number][i].name);
     console.log(this.database[number]);
-    this.databases[number].splice(i, 1);
+    this.databases[number].splice(i,1);
   }
   add(i,number){
-     // tslint:disable-next-line:max-line-length
-     this.http.post('http://192.168.56.144:8080/'+this.database[number],this.databases[number][i],{headers:this.headers}).subscribe(data => {
-       console.log(data);
-     });
+    // this.http.post('http://192.168.148.144:8080/'+this.database[number],this.databases[number][i],{headers:this.headers}).subscribe(data => {
+    //   console.log(data);
+    // });
     console.log(this.database[number]);
     console.log(this.databases[number][i]);
   }

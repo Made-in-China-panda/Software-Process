@@ -25,7 +25,7 @@ export class OwnerComponent implements OnInit {
   content = 'admin'
   ngOnInit() {
     
-      this.http.get('http://192.168.56.144:8080/'+this.content).subscribe((data) => { // 监听
+      this.http.get('http://192.168.148.144:8080/'+this.content).subscribe((data) => { // 监听
         this.numbers = data;
         console.log(this.numbers);
         this.users = this.numbers;
@@ -59,7 +59,7 @@ export class OwnerComponent implements OnInit {
       });  
     }
     del(i) {
-      this.http.delete('http://192.168.56.144:8080/'+this.content+'id'+this.users[i].id,{headers:this.headers}).subscribe(data => {});
+      this.http.delete('http://192.168.148.144:8080/'+this.content+'id'+this.users[i].id,{headers:this.headers}).subscribe(data => {});
       this.users.splice(i,1);
       
       this.key = i;

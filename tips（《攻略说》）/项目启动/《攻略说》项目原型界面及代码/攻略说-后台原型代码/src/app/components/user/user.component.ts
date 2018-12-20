@@ -48,7 +48,7 @@ export class UserComponent implements OnInit {
         return ;
       }
     }
-     this.http.post('http://192.168.56.144:8080/'+'users',this.input,{headers:this.headers}).subscribe(data => {});
+    // this.http.post('http://192.168.148.144:8080/'+'users',this.input,{headers:this.headers}).subscribe(data => {});
     console.log(this.input);
     window.location.reload() ;  
   }
@@ -74,18 +74,19 @@ export class UserComponent implements OnInit {
     this.input.mibao = e.target.value;
   }
   del(i) {
-     this.http.delete('http://192.168.56.144:8080/users/id/' + this.users[i].id,{headers:this.headers}).subscribe(data => {});
-
+    // this.http.delete('http://192.168.148.144:8080/users/id/'+this.users[i].id,{headers:this.headers}).subscribe(data => {});
+    
+    
     this.key = i;
     console.log(i);
     console.log(this.users[i]);
     this.users.splice(i,1);
   }
   add(i) {
-     console.log(this.users[i]);
-     this.http.post('http://192.168.56.144:8080/users', this.users[i], {headers:this.headers}).subscribe(data => {
-       console.log(data);
-     });
+    // console.log(this.users[i]);
+    // this.http.post('http://192.168.148.144:8080/users',this.users[i],{headers:this.headers}).subscribe(data => {
+    //   console.log(data);
+    // });
     console.log(this.users[i]);
       
   }
@@ -98,7 +99,7 @@ export class UserComponent implements OnInit {
     this.users[i].name = e.target.value;
    }
    changeStyle(e, i) {
-     //tslint:disable-next-line:no-unused-expression
+    // tslint:disable-next-line:no-unused-expression
     this.users[i].mibao = e.target.value;
    }
    changeBrithday(e, i) {
@@ -113,7 +114,7 @@ export class UserComponent implements OnInit {
     e.target.placeholder = ' 请输入关键字查找';
   }
   ngOnInit() {
-    this.http.get('http://192.168.56.144:8080' + '/users').subscribe((data) => { // 监听
+    this.http.get('http://192.168.148.144:8080' + '/users').subscribe((data) => { // 监听
           this.users = data;
           console.log(this.users);
         });

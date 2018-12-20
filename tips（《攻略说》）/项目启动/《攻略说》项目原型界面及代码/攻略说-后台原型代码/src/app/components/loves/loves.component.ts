@@ -11,7 +11,6 @@ export class LovesComponent implements OnInit {
     'Content-Type': 'application/x-www-form-urlencoded'
 
 });
-  users: any;
   constructor(private http: HttpClient) { }
   loves;
   input={
@@ -25,15 +24,15 @@ export class LovesComponent implements OnInit {
     e.target.placeholder = ' 请输入关键字查找';
   }
   del(i) {
-     this.http.delete('http://192.168.56.144:8080/shoucang/id/'+this.loves[i].id,{headers:this.headers}).subscribe(data => {});
+    // this.http.delete('http://192.168.148.144:8080/shoucang/id/'+this.loves[i].id,{headers:this.headers}).subscribe(data => {});
     console.log(this.loves[i].id);
     this.loves.splice(i,1);
   }
   add(i) {
-     //console.log(this.users[i]);
-     this.http.post('http://192.168.56.144:8080/shoucang',this.loves[i],{headers:this.headers}).subscribe(data => {
-       console.log(data);
-     });
+    // console.log(this.users[i]);
+    // this.http.post('http://192.168.148.144:8080/shoucang',this.loves[i],{headers:this.headers}).subscribe(data => {
+    //   console.log(data);
+    // });
     console.log(this.loves[i]);
       
   }
@@ -54,7 +53,7 @@ export class LovesComponent implements OnInit {
     this.input.name = e.target.value;
   } 
   ngOnInit() {
-    this.http.get('http://192.168.56.144:8080' + '/shoucang').subscribe((data) => { // 监听
+    this.http.get('http://192.168.148.144:8080' + '/shoucang').subscribe((data) => { // 监听
           this.loves = data;
           console.log(this.loves);
         });
@@ -73,7 +72,7 @@ export class LovesComponent implements OnInit {
         return ;
       }
     }
-      this.http.post('http://192.168.56.144:8080/'+'shoucang',this.input,{headers:this.headers}).subscribe(data => {});
+     // this.http.post('http://192.168.148.144:8080/'+'shoucang',this.input,{headers:this.headers}).subscribe(data => {});
     console.log(this.input);
     window.location.reload() ;  
   }

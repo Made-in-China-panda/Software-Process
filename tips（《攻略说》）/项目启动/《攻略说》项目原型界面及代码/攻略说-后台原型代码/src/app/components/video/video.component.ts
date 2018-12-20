@@ -104,19 +104,19 @@ export class VideoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get('http://192.168.56.144:8080/movies1').subscribe(data=>{
+    this.http.get('http://192.168.148.144:8080/movies1').subscribe(data=>{
       this.movies1 = data;
       this.databases[0]=this.movies1;
     });
-    this.http.get('http://192.168.56.144:8080/movies2').subscribe(data=>{
+    this.http.get('http://192.168.148.144:8080/movies2').subscribe(data=>{
       this.movies2 = data;
       this.databases[1]=this.movies2;
     });
-    this.http.get('http://192.168.56.144:8080/movies3').subscribe(data=>{
+    this.http.get('http://192.168.148.144:8080/movies3').subscribe(data=>{
       this.movies3 = data;
       this.databases[2]=this.movies3;
     });
-    this.http.get('http://192.168.56.144:8080/moviesRoles').subscribe(data=>{
+    this.http.get('http://192.168.148.144:8080/moviesRoles').subscribe(data=>{
       this.moviesRoles = data;
       this.databases[3]=this.moviesRoles;
     });

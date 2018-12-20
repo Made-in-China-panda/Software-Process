@@ -30,7 +30,7 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
 
-        this.http.get('http://192.168.56.144:8080' + '/main').subscribe((data) => { // 监听
+        this.http.get('http://192.168.148.144:8080' + '/main').subscribe((data) => { // 监听
           this.numbers = data[0];
           console.log(data);
           this.newPeople = this.numbers.newPeople;

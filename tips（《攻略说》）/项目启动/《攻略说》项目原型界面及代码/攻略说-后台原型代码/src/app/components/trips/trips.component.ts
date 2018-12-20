@@ -98,38 +98,38 @@ export class TripsComponent implements OnInit {
     this.input[i].content = e.target.value;
   }
   ngOnInit() {
-    this.http.get('http://192.168.56.144:8080/sichuan').subscribe(data=>{
+    this.http.get('http://192.168.148.144:8080/sichuan').subscribe(data=>{
       this.sichuan = data;
       this.databases[0]=this.sichuan;
     });
-    this.http.get('http://192.168.56.144:8080/shandong').subscribe(data=>{
+    this.http.get('http://192.168.148.144:8080/shandong').subscribe(data=>{
       this.shandong = data;
       this.databases[1]=this.shandong;
     });
-    this.http.get('http://192.168.56.144:8080/neimeng').subscribe(data=>{
+    this.http.get('http://192.168.148.144:8080/neimeng').subscribe(data=>{
       this.neimeng = data;
       this.databases[2]=this.neimeng;
     });
-    this.http.get('http://192.168.56.144:8080/xianggang').subscribe(data=>{
+    this.http.get('http://192.168.148.144:8080/xianggang').subscribe(data=>{
       this.xianggang = data;
       this.databases[3]=this.xianggang;
     });
-    this.http.get('http://192.168.56.144:8080/xizang').subscribe(data=>{
+    this.http.get('http://192.168.148.144:8080/xizang').subscribe(data=>{
       this.xizang = data;
       this.databases[4]=this.xizang;
     });
   }
   del(i,number) {
-     this.http.delete('http://192.168.56.144:8080/'+this.database[number]+'/'+name+'/'+this.databases[number][i].name,{headers:this.headers}).subscribe(data => {});
+    // this.http.delete('http://192.168.148.144:8080/'+this.database[number]+'/'+name+'/'+this.databases[number][i].name,{headers:this.headers}).subscribe(data => {});
     console.log(this.databases[number][i].name);
     this.databases[number].splice(i,1);
     console.log(this.database[number]);
     
   }
   add(i,number) {
-       this.http.post('http://192.168.56.144:8080/'+this.database[number],this.databases[number][i],{headers:this.headers}).subscribe(data => {
-       console.log(data);
-     });
+    // this.http.post('http://192.168.148.144:8080/'+this.database[number],this.databases[number][i],{headers:this.headers}).subscribe(data => {
+    //   console.log(data);
+    // });
     console.log(this.database[number]);
     console.log(this.databases[number][i]);
   }
@@ -144,19 +144,19 @@ export class TripsComponent implements OnInit {
       }
     }
     if(num==0){
-       this.http.post('http://192.168.56.144:8080/'+'sichuan',this.input[num],{headers:this.headers}).subscribe(data => {});
+      // this.http.post('http://192.168.148.144:8080/'+'sichuan',this.input[num],{headers:this.headers}).subscribe(data => {});
     }
     if(num==1){
-       this.http.post('http://192.168.56.144:8080/'+'shandong',this.input[num],{headers:this.headers}).subscribe(data => {});
+      // this.http.post('http://192.168.148.144:8080/'+'shandong',this.input[num],{headers:this.headers}).subscribe(data => {});
     }
     if(num==2){
-       this.http.post('http://192.168.56.144:8080/'+'neimeng',this.input[num],{headers:this.headers}).subscribe(data => {});
+      // this.http.post('http://192.168.148.144:8080/'+'neimeng',this.input[num],{headers:this.headers}).subscribe(data => {});
     }
     if(num==3){
-       this.http.post('http://192.168.56.144:8080/'+'xianggang',this.input[num],{headers:this.headers}).subscribe(data => {});
+      // this.http.post('http://192.168.148.144:8080/'+'xianggang',this.input[num],{headers:this.headers}).subscribe(data => {});
     }
     if(num==4){
-      this.http.post('http://192.168.56.144:8080/'+'xizang',this.input[num],{headers:this.headers}).subscribe(data => {});
+      // this.http.post('http://192.168.148.144:8080/'+'xizang',this.input[num],{headers:this.headers}).subscribe(data => {});
     }
      
     console.log(this.input[num]);
