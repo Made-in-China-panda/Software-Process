@@ -1,0 +1,51 @@
+<ion-header no-border color='transparent'>
+  <ion-navbar color="trans">
+    <div id="input">
+        <h2>我的点评</h2>
+    </div>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ul class="navList">
+    <li *ngFor="let item of arr;let idx = index" (click)="isClick(idx)" [class.first]="isActive==idx">{{item}}</li>
+
+  </ul><br>
+  <div [ngSwitch]="isActive">
+      <div *ngSwitchCase="0">
+        <ul id="food">
+          <li *ngFor="let item of foods let i=index" >
+            <ion-row>
+            <ion-col col-5>
+              <img src="{{item.pic}}" alt="" (click)="goFoodstep(item.name)">
+            </ion-col>
+            <ion-col col-7>
+              <h6 (click)="goFoodstep(item.name)">{{item.name}}</h6>
+              <p>{{item.content}}</p>
+              <div style="float: left">{{item.time}}</div><div class="del" (click)="deletecomment(item.id)">删除</div>
+            </ion-col>
+          </ion-row>
+          </li>
+        </ul>
+      </div>
+      <div *ngSwitchCase="1">
+        <ul id="food">
+          <li *ngFor="let item of foods let i=index" >
+            <ion-row>
+            <ion-col col-5>
+              <img src="{{item.pic}}" alt="" (click)="goFoodstep(item.name)">
+            </ion-col>
+            <ion-col col-7>
+              <h6 (click)="goFoodstep(item.name)">{{item.name}}</h6>
+              <p>{{item.content}}</p>
+              <div style="float: left">{{item.time}}</div><div class="del" (click)="deletecomment(item.name)">删除</div>
+            </ion-col>
+          </ion-row>
+          </li>
+        </ul>
+      </div>
+   
+  </div>
+  
+
+  
+</ion-content>

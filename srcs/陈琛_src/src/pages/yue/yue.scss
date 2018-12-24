@@ -1,0 +1,22 @@
+page-yue {
+    ion-title{font-family: "STCAIYUN";}
+    .hh{font-size:20px;
+        i{font-size:25px;}
+    }
+    .hot{color:red;font-size:23px;
+        i{font-size:30px;}
+    }
+    .new{color:blue;font-size:23px;
+        i{font-size:30px;}
+    }
+    ion-item{
+        background-color: #fafafa!important;
+        .grid{
+            padding:0px;
+            img{height:110px;width:100%;}
+            p{line-height: 25px;font-size: 1.3rem;}
+            h1{font-family: "LiSu";
+            font-size:2rem;}
+        }
+    }
+}

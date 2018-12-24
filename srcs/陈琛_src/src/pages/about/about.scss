@@ -1,0 +1,157 @@
+page-about {
+    ion-title{
+        ion-icon{
+            float: left;
+        }
+    }
+ion-content{
+    #slides{ border: 0px solid #ccc;
+        border-radius: 0.5em;
+        width: 97%;
+        margin: 0 auto;
+        margin-top: 10px;
+        overflow:hidden;
+        
+    }
+    ion-slides{
+        
+        margin: 0 auto;
+        border-radius: 0.5em;
+        
+        img{
+            border-radius: 0.5em;
+            height: 100px;
+            box-shadow:2px 2px 5px rgb(85, 84, 84);
+        }
+    }
+    ion-grid{
+        img{width:80%;}
+    }
+    #hot{
+        position:absolute;
+        left:2rem;
+        
+    }
+  #rank{
+      height:150px;
+  }
+    #rank1{position: absolute;left:14rem;top:21rem;font-size:7rem;
+    }
+    #rimg1{
+        position: absolute;left:10rem;top:27.2rem;height:100px;
+        width:38%;border-radius: 5px;
+    }
+    #rank2{position: absolute;left:4rem;top:23rem;font-size: 6rem;
+       }
+    #rimg2{
+        position: absolute;left:0.8rem;top:29rem;height:80px;
+        width:28%;border-radius: 5px;
+    }
+    #rank3{position: absolute;left:24rem;top:24rem;font-size: 6rem;
+        }
+    #rimg3{
+        position: absolute;left:22.2rem;top:30rem;height:70px;
+        width:24%; border-radius: 5px;
+    }
+    ion-grid{
+        ion-row{
+            margin-top:0.5rem;
+            line-height: 0.5rem;
+            h4{color:red;}
+            h6,h4{line-height: 10px;}
+            p{font-family:"STKaiti"}
+        }
+    }
+    #r1,#r2,#r3{font-family: "STXinwei"}
+    .xiahuaxian{width:99%;height: 8%;}
+    ion-item{
+        background-color: #fafafa!important;
+       ion-row{
+           img{
+               width:100%;
+               height:100px;
+           }
+           ion-col{
+               ion-row{
+                   margin-bottom: 10px;
+                   img{width:50%!important;
+                height:80px!important;}
+               }
+           }
+       }
+    }
+
+    .list-md .item-block .item-inner{
+        border-bottom-width: 0px !important;
+    }
+
+    ion-menu{
+        ion-list{
+            .picture{
+                width: 100%!important;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            ion-col{
+                div{
+                    margin-left: 14%;
+                }
+                p{
+                    margin-left: 14%;
+                }
+                #head-pic{
+                    border: 1px grey solid;
+                    width: 30%;
+                    height: 30%;
+                }
+                #name{
+                    border: 1px grey solid;
+                }
+            }
+        }
+        i{
+            font-size: 1.8em!important;
+        }
+        #left{
+            display: inline-block;
+            margin-left: 10%;
+            font-size: 18px;
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+}
+
+
+
+@font-face{ font-family: WebFont;
+    src: url('../../assets/fonts/singlemalta-webfont.ttf');      
+}
+    #rank1,#rank2,#rank3{ font-family: WebFont;text-shadow:		
+        3px 3px 3px black;
+        color:#FF7E67;
+    }
+
+    @font-face{ font-family: WebFont;
+        src: url('../../assets/fonts/singlemalta-webfont.ttf');      
+    }
+    
