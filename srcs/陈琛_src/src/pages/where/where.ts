@@ -23,43 +23,38 @@ export class WherePage {
 	loves=[];
 	userid: string;
 	user: string[];
+	arr=[];
 	headers=new HttpHeaders({
 		'Content-Type': 'application/x-www-form-urlencoded'
 	});
-
-	
-
-	
-	  
-	
-  constructor(public alertCtrl: AlertController,private http: HttpClient,public navCtrl: NavController,public navParams: NavParams) {
+	constructor(public alertCtrl: AlertController,private http: HttpClient,public navCtrl: NavController,
+		public navParams: NavParams) {
 		this.places = navParams.data;
-    this.where = navParams.data[0].where.split('/');
+    	this.where = navParams.data[0].where.split('/');
 		//console.log(this.places[0].name);
 		this.http.get('http://192.168.30.144:8080/'+this.places[0].name,{
-        headers:new HttpHeaders({
-        }),
-      }).subscribe((data) => { // 监听
+        headers:new HttpHeaders({ }),
+      	}).subscribe((data) => { // 监听
         //console.log(data);
         this.allplace = data;
-      });
-			if(this.places[0].name=='xizang'){
-				this.city=6;
-			}
-			else if(this.places[0].name=='sichuan'){
-				this.city=6.5;
-			}
-			else if(this.places[0].name=='shandong'){
-				this.city=7;
-			}
-			else if(this.places[0].name=='xianggang'){
-				this.city=10.5;
-			}
-			else if(this.places[0].name=='neimeng'){
-				this.city=7;
-			}
-  }
-  data = [
+    });
+		if(this.places[0].name=='xizang'){
+			this.city=6;
+		}
+		else if(this.places[0].name=='sichuan'){
+			this.city=6.5;
+		}
+		else if(this.places[0].name=='shandong'){
+			this.city=7;
+		}
+		else if(this.places[0].name=='xianggang'){
+			this.city=10.5;
+		}
+		else if(this.places[0].name=='neimeng'){
+			this.city=7;
+		}
+  	}
+  	data = [
 		{name: '香港', value: 150},
 		{name: '迪士尼乐园', value: 100},
 		{name: '海洋公园', value: 100},
@@ -85,8 +80,8 @@ export class WherePage {
 		{name: '成都市', value: 150},
 		{name: '扎什伦布寺', value:100},
 		{name: '拉萨市', value:150},
-];
-  geoCoordMap = {
+	];
+ 	geoCoordMap = {
 		'香港':[114.15,22.15],
 		'迪士尼乐园':[114.05,22.31],
 		'海洋公园':[113.41,23.12],
@@ -112,150 +107,144 @@ export class WherePage {
 		'都江堰景区':[103.61,31.00],
 		'稻城亚丁':[100.29,28.46],
 		'九寨沟景区':[103.92,33.16]
-};
+	};
 
-convertData = function (data) {
-	var res = [];
-	for (var i = 0; i < data.length; i++) {
+	convertData = function (data) {
+		var res = [];
+		for (var i = 0; i < data.length; i++) {
 			var geoCoord = this.geoCoordMap[data[i].name];
 			if (geoCoord) {
-					res.push({
-							name: data[i].name,
-							value: geoCoord.concat(data[i].value)
-					});
+				res.push({
+					name: data[i].name,
+					value: geoCoord.concat(data[i].value)
+				});
 			}
-	}
-	return res;
-};
+		}
+		return res;
+	};
 
-  renderItem(params, api) {
-    var coords = [
+  	renderItem(params, api) {
+    	var coords = [
 			[116.7,39.53],
 			[103.73,36.03],
 			[112.91,27.87],
 			[120.65,28.01],
 			[119.57,39.95]
-	];
-	var points = [];
-	for (var i = 0; i < coords.length; i++) {
+		];
+		var points = [];
+		for (var i = 0; i < coords.length; i++) {
 			points.push(api.coord(coords[i]));
-	}
-	var color = api.visual('color');
-	return {
-		type: 'polygon',
-		
-		style: api.style({
+		}
+		var color = api.visual('color');
+		return {
+			type: 'polygon',
+			style: api.style({
 				fill: color,
-				
-		})
-};
-}
+			})
+		};
+	}
   
   ionViewDidLoad() {
- this.man = localStorage.getItem('man');
+ 	this.man = localStorage.getItem('man');
 		this.user = this.man.split('/');
 		console.log(this.user);
 		this.userid = this.user[0];
 		
     let ctx = this.container.nativeElement;
 		this.chart = echarts.init(ctx);
-		this.chart.setOption(
-			{
-				// backgroundColor: '#404a59',
-				title: {
-				   
-					
-					left: 'center',
-					
-				},
-				tooltip : {
-					trigger: 'item'
-				},
-				bmap: {
-					center: this.where,
-					zoom: this.city,
-					roam: true,
-					mapStyle: {
+		this.chart.setOption({
+			// backgroundColor: '#404a59',
+			title: {
+				left: 'center',	
+			},
+			tooltip : {
+				trigger: 'item'
+			},
+			bmap: {
+				center: this.where,
+				zoom: this.city,
+				roam: true,
+				mapStyle: {
 						styleJson: [
 							{
-									"featureType": "water",
-									"elementType": "all",
-									"stylers": {
-											"color": "#e6e6fa"
-									}
+								"featureType": "water",
+								"elementType": "all",
+								"stylers": {
+									"color": "#e6e6fa"
+								}
 							},
 							{
-									"featureType": "land",
-									"elementType": "all",
-									"stylers": {
-											"color": "#fffff0"
-									}
+								"featureType": "land",
+								"elementType": "all",
+								"stylers": {
+									"color": "#fffff0"
+								}
 							},
 							{
-									"featureType": "boundary",
-									"elementType": "geometry",
-									"stylers": {
-											"color": "#064f85"
-									}
+								"featureType": "boundary",
+								"elementType": "geometry",
+								"stylers": {
+									"color": "#064f85"
+								}
 							},
 							{
-									"featureType": "railway",
-									"elementType": "all",
-									"stylers": {
-											"visibility": "off"
-									}
+								"featureType": "railway",
+								"elementType": "all",
+								"stylers": {
+									"visibility": "off"
+								}
 							},
 							{
-									"featureType": "highway",
-									"elementType": "geometry",
-									"stylers": {
-											"color": "#cccccc"
-									}
+								"featureType": "highway",
+								"elementType": "geometry",
+								"stylers": {
+									"color": "#cccccc"
+								}
 							},
 							{
-									"featureType": "highway",
-									"elementType": "geometry.fill",
-									"stylers": {
-											"color": "#faebd7",
-											"lightness": 1
-									}
+								"featureType": "highway",
+								"elementType": "geometry.fill",
+								"stylers": {
+									"color": "#faebd7",
+									"lightness": 1
+								}
 							},
 							{
-									"featureType": "highway",
-									"elementType": "labels",
-									"stylers": {
-											"visibility": "off"
-									}
+								"featureType": "highway",
+								"elementType": "labels",
+								"stylers": {
+									"visibility": "off"
+								}
 							},
 							{
-									"featureType": "arterial",
-									"elementType": "geometry",
-									"stylers": {
-											"color": "#004981"
-									}
+								"featureType": "arterial",
+								"elementType": "geometry",
+								"stylers": {
+										"color": "#004981"
+								}
 							},
 							
 							
 						 
 							{
-									"featureType": "boundary",
-									"elementType": "geometry.fill",
-									"stylers": {
-											"color": "#029fd4"
-									}
+								"featureType": "boundary",
+								"elementType": "geometry.fill",
+								"stylers": {
+										"color": "#029fd4"
+								}
 							},
 							
 							{
-									"featureType": "label",
-									"elementType": "all",
-									"stylers": {
-											"visibility": "off"
-									}
+								"featureType": "label",
+								"elementType": "all",
+								"stylers": {
+									"visibility": "off"
+								}
 							}
 			]
-					}
-				},
-				series : [
+				}
+			},
+			series : [
 					{
 						name: this.city,
 						type: 'effectScatter',
@@ -303,41 +292,46 @@ convertData = function (data) {
 					}
 					
 				]
-			}
-    );
-	  }
-	  shoucang(e){
+		});
+	}
+	shoucang(e){
 		var str = e.target.parentNode.parentNode.firstElementChild.innerHTML.split("&")[0];
 		this.love.id = this.userid;
 		this.love.name = str.split(' ')[1];
-		console.log(this.love);
-		////////////////////////////////////////////////////////////////
-		this.http.get('http://192.168.30.144:8080/'+'shoucang',{
-    headers:new HttpHeaders({
-    }),
-  }).subscribe((data) => { // 监听
-    for(var j in data){
-      this.loves[j] = data[j].name;
-    }
-    if(this.loves.indexOf(str.split(' ')[1])>-1){
-		const alert = this.alertCtrl.create({
-			title: 'Hi Friend!',
-			subTitle: '您已经收藏过了',
-			buttons: ['OK']
-		  });
-		  alert.present();
-    }else{
-      	this.http.post('http://192.168.30.144:8080/'+'shoucang',this.love,
-          {headers:this.headers}).subscribe((data) => {});
-          console.log(this.loves)
-		  const alert = this.alertCtrl.create({
-			title: 'Hi Friend!',
-			subTitle: '收藏成功',
-			buttons: ['OK']
-		  });
-		  alert.present();
-    }
-  });
+		console.log(str);//str是收藏地点-字符串
+		console.log(this.love);//love是现登录用户的ID和该用户收藏地点构成的对象
+	/*=========================================================================================*/
+		this.http.get('http://192.168.30.144:8080/'+'shoucang',
+		{headers:new HttpHeaders({}),
+		}).subscribe((data) => { // 监听
+			for(var j in data){
+				this.loves[j] = data[j].name;
+				if(this.userid == data[j].id){
+					this.arr.push(data[j].name);
+				}
+			}
+			console.log(data);//所有用户收藏的的所有东西组成的数组对象
+			console.log(this.loves);//在收藏里面的所有收藏组成的数组
+			console.log(this.arr);//现在登录用户收藏过得所有
+
+			if(this.arr.indexOf(str.split(' ')[1])>-1){
+				const alert = this.alertCtrl.create({
+					title: 'Hi Friend!',
+					subTitle: '您已经收藏过了',
+					buttons: ['OK']
+				});
+				alert.present();
+			}else{
+				this.http.post('http://192.168.30.144:8080/'+'shoucang',this.love,
+				{headers:this.headers}).subscribe((data) => {});
+				console.log(this.loves)
+				const alert = this.alertCtrl.create({
+					title: 'Hi Friend!',
+					subTitle: '收藏成功',
+					buttons: ['OK']
+				});
+				alert.present();
+    		}
+  		});
 	}
-	
 }

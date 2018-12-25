@@ -25,6 +25,8 @@ export class LovePage {
 
   man;
   isActive=0;
+  user: any;
+  userid: any;
   jingdian = [];
   allplace = [];
   splace = ['xianggang','shandong','neimeng','sichuan','xizang'];
@@ -32,8 +34,6 @@ export class LovePage {
   food = []
   loveJingdian = [];
   allFoods = [];
-  user: any;
-  userid: any;
   loveJingdian02: any;
   foods=[];
   allmovies=[];
@@ -63,21 +63,10 @@ export class LovePage {
     this.man = localStorage.getItem('man');
     this.user = this.man.split('/');
     this.userid = this.user[0];
-    //console.log(this.userid)
+    console.log(this.userid)
     
-    ///////////////////////////////////////////////////////////////////////////////
-    for(var j in this.caixi){
-      this.http.get('http://192.168.30.144:8080/'+this.caixi[j],{
-        headers:new HttpHeaders({
-        }),
-      }).subscribe((data) => { // 监听
-        for(var j in data){
-          this.allFoods.push(data[j]);
-        }
-      });
-      }
 //////////////////////////////获取数据库所有电影信息///////////////////////////////////////////////////
-      for(var x=1;x<4;x++){
+    for(var x=1;x<4;x++){
         this.http.get('http://192.168.30.144:8080/'+'movies'+x,{
           headers:new HttpHeaders({
           }),
@@ -87,74 +76,79 @@ export class LovePage {
           }
           //console.log(this.allmovies)
         });
-        }
-//////////////////////////////获取电影收藏表与已登录账号匹配的电影名/////////////////////////////////////////////////////
-this.http.get('http://192.168.30.144:8080/'+'shoucang_movie',{
-  headers:new HttpHeaders({
-  }),
-}).subscribe((data) => { // 监听
-  console.log(data)
-  for(var i in data){
-    if(this.userid == data[i].id){
-      this.movies.push(data[i].name);
-    }
-  }
-  for(var s in this.allmovies){
-    this.allmoviesName.push(this.allmovies[s].moviesName);
-    //console.log(this.allmovies[s].moviesName);
-  }
-  //console.log(this.allmoviesName);
-  console.log(this.movies)
-  for(var y in this.movies){
-    for(var f in this.allmovies){
-      if(this.movies[y] == this.allmovies[f].moviesName){
-        this.movie.push(this.allmovies[f])
       }
-    }
-  }
-  //console.log(this.movie)
-});
+//////////////////////////////获取电影收藏表与已登录账号匹配的电影名/////////////////////////////////////////////////////
+    this.http.get('http://192.168.30.144:8080/'+'shoucang_movie',{
+      headers:new HttpHeaders({
+      }),
+    }).subscribe((data) => { // 监听
+      console.log(data)
+      for(var i in data){
+        if(this.userid == data[i].id){
+          this.movies.push(data[i].name);
+        }
+      }
+      for(var s in this.allmovies){
+        this.allmoviesName.push(this.allmovies[s].moviesName);
+        //console.log(this.allmovies[s].moviesName);
+      }
+      //console.log(this.allmoviesName);
+      console.log(this.movies)
+      for(var y in this.movies){
+        for(var f in this.allmovies){
+          if(this.movies[y] == this.allmovies[f].moviesName){
+            this.movie.push(this.allmovies[f])
+          }
+        }
+      }
+      //console.log(this.movie)
+    });
 //////////////////////////////根据电影名获取对应电影信息/////////////////////////////////////////////////////////
 
 
 
-
-////////////////////////////////////////////////////////////////////////////////////
-      this.http.get('http://192.168.30.144:8080/'+'shoucang_food',{
+/*---------------------------------------------------美食收藏-----------------------------------------------------*/
+    for(var j in this.caixi){
+      this.http.get('http://192.168.30.144:8080/'+this.caixi[j],{
         headers:new HttpHeaders({
         }),
       }).subscribe((data) => { // 监听
-        
-        for(var i in data){
-            this.food[i] = data[i].name;
+        for(var k in data){
+          this.allFoods.push(data[k]);
         }
-        
-        
-        /////////////////////////////////////////////////////////////////////////////
-        for(var j in this.food){
-          for(var s in this.allFoods){
-            if(this.allFoods[s].name==this.food[j]){
-              this.foods.push(this.allFoods[s]);
-            }
-          }
-        }
-        //console.log(this.foods)
-        /////////////////////////////////////////////////////////////////////////////////
-       
       });
-      
-      
-    /////////////////////////////////////////////////////////////////////////////
-    for(var i in this.splace){
-    this.http.get('http://192.168.30.144:8080/'+this.splace[i],{
+    }
+/*----------------------------------------匹配现登陆用户的美食收藏----------------------------------------------*/
+    this.http.get('http://192.168.30.144:8080/'+'shoucang_food',{
       headers:new HttpHeaders({
       }),
     }).subscribe((data) => { // 监听
       for(var i in data){
-        this.allplace.push(data[i]);
+        if(this.userid == data[i].id){
+          this.food[i] = data[i].name;
+        }
+      }     
+/*----------------------------------------显示现登陆用户的美食收藏----------------------------------------------*/
+      for(var j in this.food){
+        for(var s in this.allFoods){
+          if(this.allFoods[s].name==this.food[j]){
+            this.foods.push(this.allFoods[s]);
+          }
+        }
       }
-      //console.log(this.allplace)
     });
+      
+      
+    /////////////////////////////////////////////////////////////////////////////
+    for(var i in this.splace){
+      this.http.get('http://192.168.30.144:8080/'+this.splace[i],{
+        headers:new HttpHeaders({}),
+      }).subscribe((data) => { // 监听
+        for(var i in data){
+          this.allplace.push(data[i]);
+        }
+        //console.log(this.allplace)
+      });
     }
     ////////////////////////////////////////////////////////////////////////////
     this.http.get('http://192.168.30.144:8080/'+'shoucang',{
@@ -184,34 +178,19 @@ this.http.get('http://192.168.30.144:8080/'+'shoucang_movie',{
       for(var x in this.loveJingdian){
         this.loveJingdian[x].name = this.loveJingdian[x].name.split(' ')[1];
       }
-    });
-    
-    
+    });  
   }
   
   ionViewDidLoad() {
     console.log('ionViewDidLoad LovePage');
   }
-  objs=[{
-    id:0,
-    img:"../../assets/imgs/movies/venom3.jpg",
-    headName:"蓝大海",
-    
-    title:"麻婆豆腐",
-    data:"09-9"},
-    {id:1,
-    img:"../../assets/imgs/movies/寻梦5.jpg",
-    headName:"蓝大海",
-    
-    title:"水煮肉片",
-    data:"06-24"}
-]
-isClick(i){
-  this.isActive=i;
-}
-where(e){
-  this.navCtrl.push(WherePage)
-}
+ 
+  isClick(i){
+    this.isActive=i;
+  }
+  where(e){
+    this.navCtrl.push(WherePage)
+  }
 shoucang(e,index){
   
   var str = e.target.parentNode.parentNode.parentNode.firstElementChild.innerHTML.split('<')[0];
