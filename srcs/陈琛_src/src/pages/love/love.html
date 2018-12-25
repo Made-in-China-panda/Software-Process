@@ -1,0 +1,55 @@
+<ion-header no-border color='transparent'>
+  <ion-navbar color="trans">
+    <div id="input">
+        <h2>我的收藏</h2>
+    </div>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ul class="navList">
+    <li *ngFor="let item of arr;let idx = index" (click)="isClick(idx)" [class.first]="isActive==idx">{{item}}</li>
+
+  </ul><br>
+  <div [ngSwitch]="isActive">
+      <div *ngSwitchCase="0">
+        <ul id="movie">
+          <li *ngFor="let item of movie let i=index">
+              <img src="{{item.moviesImg}}" (click)="movDetail(item.moviesName)">
+              <div class="movDet1">
+                <h5 (click)="movDetail(item.moviesName)">{{item.moviesName}}</h5>
+                <p class="actor">主演：{{item.rolesActor}}</p>
+                <p>豆瓣评分：{{item.moviesSco}}</p><div><ion-icon (click)="shoucang_movie($event,i)" name="star-outline"></ion-icon></div>
+                <p class="pIntro">影片简介：{{item.moviesIntro}}</p>
+              </div>
+
+          </li>
+        </ul>
+      </div>
+      <div *ngSwitchCase="1">
+        <ul id="food">
+          <li *ngFor="let item of foods let i=index" (click)="goFoodstep(item.name,'a')">
+            <img src="{{item.pic}}" alt=""><br>
+              <div id="h6"><h6>{{item.name}}</h6></div><ion-icon (click)="shoucang_food($event,i)" name="star-outline"></ion-icon>
+              <span>口味：{{item.taste}}<br>{{item.material}}</span>
+          </li>
+        </ul>
+      </div>
+      <div *ngSwitchCase="2">
+          <ul id="jingdian">
+              <li *ngFor="let place of loveJingdian let i=index">
+                <h6>{{place.name}}<ion-icon name="md-pin">&nbsp;关于行程</ion-icon></h6>
+                <img id="liImg" src="../../assets/imgs/旅游/分割线.png" alt="">
+                <div id="area">
+                  <img src={{place.src}} alt="">
+                  <p>{{place.texts}}</p>
+                  <div><ion-icon (click)="shoucang($event,i)" name="star-outline"></ion-icon></div>
+                </div>
+                
+              </li>
+            </ul>
+      </div>
+  </div>
+  
+
+  
+</ion-content>

@@ -1,0 +1,150 @@
+page-movie {
+    ion-title{
+        ion-icon{
+        float: left;
+    }
+    }
+    
+    ion-content{
+        #slides{ border: 0px solid #ccc;
+            border-radius: 0.5em;
+            width: 97%;
+            margin: 0 auto;
+            margin-top: 10px;
+            overflow:hidden;
+            
+        }
+        ion-slides{
+            
+            margin: 0 auto;
+            border-radius: 0.5em;
+            
+            img{
+                border-radius: 0.5em;
+                height: 100px;
+                box-shadow:2px 2px 5px rgb(85, 84, 84);
+            }
+        }
+        *{
+            margin:0;
+            padding:0
+        }
+        .sli{
+            height: 40%;
+        }
+        #hot{
+            font-size:25px!important;
+        }
+        .navList{
+            padding-left: 0!important;
+            list-style: none;
+            .first{
+                color:#ea6953!important;
+            }
+                li{
+                    float: left;
+                    text-align: center;
+                    width: 33%;
+                }
+        }
+        .movpage{
+            .subtitle{
+                height: 10%!important;
+                margin-top: 12%!important;
+                text-align: center;
+                background: url(../../assets/imgs/movies/dec1.png);
+                background-size: auto 125%;
+                background-position: -40% 50%;
+                h4{
+                   height: 10%!important;
+                   margin-bottom:-1%!important;
+                }
+                p{
+                    text-align: center;
+                    margin-bottom: 12%!important;
+                }
+            }
+            li{
+                border: 3px dotted #86ccc1;
+                border-radius:50px;
+            }
+            .movIntro{
+                margin-top: 5%!important;
+                .movImg1{
+                    float: left;
+                    height: 70px;
+                    margin-top: 1%;
+                    margin-left: 5%;
+                }
+                .movDet1{
+                    height: 70px;
+                    width: 50%;
+                    float: right;
+                    line-height: 2em;
+                    margin-top: 0;
+                    margin-right: 5%!important;
+                    h5:hover{
+                            color: #ea6953!important;
+                        }
+                    h5{
+                        cursor: pointer !important;
+                    }
+                    .actor{
+                        height: 26px!important;
+                        overflow: hidden!important;
+                    }
+                    .pIntro{
+                        height: 60px!important;
+                        overflow: hidden!important;
+                    }
+                }
+                .movImg2{
+                    float: left;
+                    height: 65px;
+                    margin-top: 6%;
+                    margin-left: 5%;
+                }
+                .movDet2{
+                    height: 65px;
+                    width: 50%;
+                    float: right;
+                    line-height: 2em;
+                    margin-top: 7%;
+                    margin-right: 5%!important;;
+                    h5:hover{
+                        color: #ea6953;
+                    }
+                    h5{
+                        cursor:pointer
+                    }
+                    .actor{
+                        height: 26px!important;
+                        overflow: hidden!important;
+                    }
+                    .pIntro{
+                        height: 50px!important;
+                        overflow: hidden!important;
+                    }
+                }
+            }
+            .detail{
+                // padding-left: 0!important;
+                list-style: none;
+                margin-top: -2%;
+                .first{
+                    color:#ea6953!important;
+                }
+                    li{
+                        float: left;
+                        text-align: center;
+                        width: 33%;
+                        // border: 2px solid #ea6953!important;
+                    }
+            }
+            .score{
+                color: #ea6953
+            }
+        }
+        
+    }
+}

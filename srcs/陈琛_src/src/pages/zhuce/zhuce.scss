@@ -1,0 +1,46 @@
+page-zhuce {
+    ion-content{
+        
+        background-color: #FAFAFA !important;
+        ion-icon{
+            font-size: 1.4em !important;
+        }
+        i{
+            font-size: 1.4em !important;
+        }
+        ion-grid{
+            ion-row{border-bottom: 1px lightgrey solid;
+                margin: 4px 0%;
+                padding-left: 10px;
+            }
+            .list-1{
+                ion-col{
+                     
+                    padding-left: 2%;
+                    width: 90%;
+                }
+                ion-input{
+                    margin-left: -20px;
+                }
+            }
+            #button{
+                width: 95%;
+            }
+        }
+        ion-list{
+            padding: 0px 0%;
+            ion-item{
+                background-color: #FAFAFA !important;
+            }
+        }
+        #enroll{
+            width: 80%;
+            margin-left: 10%;
+            text-align: center;
+        }
+        span{
+            float: right;
+            margin-right: 0%;
+        }
+    }
+}
