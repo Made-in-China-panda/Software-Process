@@ -252,5 +252,10 @@ export class FoodstepPage {
       this.isno=false;
     }
   }
-
+  ionViewDidEnter() {
+    if(this.foodcomments.length!=0){
+      this.isno=false;
+    }
+   
+  }
 }
