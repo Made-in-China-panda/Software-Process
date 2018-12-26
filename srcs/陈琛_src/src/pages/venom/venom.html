@@ -1,0 +1,78 @@
+<!--
+  Generated template for the VenomPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{movie.moviesName}}<ion-icon id="ion-icon" (click)="shoucang($event)" name="star-outline"></ion-icon></ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+
+
+<ion-content>
+  <div class="pic">
+      <img src="{{movie.moviesPic}}">
+  </div>
+  <h5 id="mov">影片简介</h5>
+  <img src="../../assets/imgs/movies/dec3.png" id="dec3">
+    <p class="intro">{{movie.moviesIntro}}</p>
+  <img src="../../assets/imgs/movies/dec4.png" id="dec4">
+  <img src="../../assets/imgs/movies/dec3.png" id="dec5">
+  <h5 id="role">角色介绍</h5>
+  <div class="desc" *ngFor="let item of role">
+    <div class="roles">
+        <img src="{{item.rolesImg}}">
+    </div>
+    <div class="text">
+      <h6>{{item.rolesName}}</h6>
+      {{item.rolesIntro}}
+    </div>
+    <img src="../../assets/imgs/movies/dec2.png"  class="dec6">
+  </div>  
+  <!-- <img src="../../assets/imgs/movies/dec4.png"> -->
+  <div>
+      <img src="../../assets/imgs/movies/dec3.png" id="dec7">
+      <h5 id="com">精彩影评</h5>
+      <img src="../../assets/imgs/movies/dec4.png">
+      <div *ngFor="let item of moviecomments" >
+          <ion-grid >
+            <ion-row>
+              <ion-col col-3 text-center>
+                <img src="{{item.userhead}}">
+                <p id="username">{{item.userName}}</p>
+              </ion-col>
+              <ion-col col-9>
+                <p id="content">{{item.content}}</p>
+                <p style="text-align:end">{{item.time}}</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        <img src="../../assets/imgs/movies/dec4.png">
+      </div>
+        <h5 id="myCom">我要评论<ion-icon md="md-text"></ion-icon></h5>
+        <img src="../../assets/imgs/movies/dec3.png" id="dec8">
+        <div class="nocomment" [ngStyle]="{'display': isno===true ? 'block' : 'none'}">
+            暂无评论
+        </div>
+        <ion-grid class="pinglun" id="mypinglun">
+          <ion-row>
+            <ion-col col-3 text-center>
+              <img src="{{moviecomment.userhead}}">
+              <p id="username">{{moviecomment.userName}}</p>
+            </ion-col>
+            <ion-col col-9>
+                <textarea row="30" cols="30"></textarea>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <div class="bts">
+          <button type="submit" (click)="submit1()">提交</button>
+        </div>
+        <div style="height:80px; width:100%"></div>
+  </div>
+  
+</ion-content>
