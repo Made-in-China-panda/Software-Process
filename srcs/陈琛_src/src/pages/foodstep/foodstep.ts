@@ -202,22 +202,23 @@ export class FoodstepPage {
       }
     }
     // 设置评论id
-   if(this.allcomments.length==0){
-     this.ids=[];
-   }
-   else{
-     for(var i=0;i<this.allcomments.length;i++){
-     this.ids.push(Number(this.allcomments[i].id));
-     }
-   }
-   
-   this.id=Math.max.apply(null,this.ids)==-Infinity?0:Math.max.apply(null,this.ids);
-    
-  });
-   
-   
+    if(this.allcomments.length==0){
+      this.ids=[];
+    }
+    else{
+      for(var i=0;i<this.allcomments.length;i++){
+        this.ids.push(Number(this.allcomments[i].id));
+      }
+    }
+    this.id=Math.max.apply(null,this.ids)==-Infinity?0:Math.max.apply(null,this.ids);
+  });   
 }
 
+  ionViewDidEnter() {
+    if(this.foodcomments.length!=0){
+      this.isno=false;
+    } 
+  }
   submit(){
     var mypl=document.getElementsByTagName('textarea')[0];
     this.id++;
@@ -225,21 +226,19 @@ export class FoodstepPage {
     if(Boolean(mypl.value)!=false){
       console.log(this.pinglunpic);
       this.foodcomment={
-      id:this.id,
-      name:this.pinglunname,
-      pic:this.pinglunpic,
-      userid:this.userid,
-      userName:this.username,
-      userhead:'assets/imgs/logo.png',
-      content:mypl.value,
-      time:this.time
+        id:this.id,
+        name:this.pinglunname,
+        pic:this.pinglunpic,
+        userid:this.userid,
+        userName:this.username,
+        userhead:'assets/imgs/logo.png',
+        content:mypl.value,
+        time:this.time
       }
       this.foodcomments.push(this.foodcomment);
       this.http.post('http://192.168.30.144:8080/'+'food_comment',this.foodcomment,
-            {headers:this.headers}).subscribe((data) => {});
-               
-    }
-     else {
+        {headers:this.headers}).subscribe((data) => {});          
+    }else {
         const alert = this.alertCtrl.create({
           title: 'Hi Friend!',
           subTitle: '评论不能为空!',
@@ -253,24 +252,10 @@ export class FoodstepPage {
       this.isno=false;
     }
   }
-
   ionViewDidEnter() {
     if(this.foodcomments.length!=0){
       this.isno=false;
     }
    
   }
-
-
-
-
-
-
-
-
-
-
-
- 
-
 }

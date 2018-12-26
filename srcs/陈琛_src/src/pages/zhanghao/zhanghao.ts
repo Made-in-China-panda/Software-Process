@@ -72,34 +72,36 @@ export class ZhanghaoPage {
     this.userid = this.user[0];
   }
 
-  
-  // 暂时先自己定义的id
-  baocun(){
+  test(){
+    console.log(this.age);
     var reg=/^([0-9]|[0-9]{2}|100)$/;
-    this.people.name = this.nickname;
-    this.people.age = this.gender;
-    this.people.birthday = this.age;
-    this.people.style = this.style;
-    console.log(this.people);
     if(!reg.test(this.age)){
       const alert = this.alertCtrl.create({
         subTitle: "请输入数字！",
         buttons: ['OK']
         });
       alert.present();
-    }else{
-      this.http.delete('http://192.168.30.144:8080/'+'users'+'/id/'+this.people.id,
-        {headers:this.headers}).subscribe(data => {console.log('5')});
-        this.http.post('http://192.168.30.144:8080/'+'users',this.people,
-          {headers:this.headers}).subscribe((data) => {});
-          const alert = this.alertCtrl.create({
-            title: 'Hi Friend!',
-            subTitle: '保存成功',
-            buttons: ['OK']
-            });
-          alert.present();
-    }  
+    }
   }
+  // 暂时先自己定义的id
+  baocun(){
+    this.people.name = this.nickname;
+    this.people.age = this.gender;
+    this.people.birthday = this.age;
+    this.people.style = this.style;
+    console.log(this.people);
+    this.http.delete('http://192.168.30.144:8080/'+'users'+'/id/'+this.people.id,
+      {headers:this.headers}).subscribe(data => {console.log('5')});
+      this.http.post('http://192.168.30.144:8080/'+'users',this.people,
+        {headers:this.headers}).subscribe((data) => {});
+        const alert = this.alertCtrl.create({
+          title: 'Hi Friend!',
+          subTitle: '保存成功',
+          buttons: ['OK']
+          });
+        alert.present();
+  } 
+      
   shezhi(){
     this.navCtrl.push(ShezhiPage);
   }

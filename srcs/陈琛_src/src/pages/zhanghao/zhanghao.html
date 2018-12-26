@@ -21,7 +21,8 @@
       </ion-select>
     </ion-item>
     <ion-item>
-      年龄<input type="text" [(ngModel)]="age">
+      <ion-label>年龄</ion-label>
+      <ion-input type="text" [(ngModel)]="age" (ionBlur)="test()" id="ages"></ion-input>
     </ion-item>
     <ion-item no-border>
         <ion-label>个性签名</ion-label><br>
