@@ -47,22 +47,32 @@ export class ForgetMimaPage {
   change(){
     var i = this.userId.indexOf(this.count);
     this.user = this.users[i]
-    //console.log(this.user);
-    this.text = this.user.mibao.split('/')[0];
-  }
-  back(e){
-    if(this.count === this.user.id && this.answer == this.user.mibao.split('/')[1]){
-      if(!this.correct){
-        this.correct = document.createTextNode('您的密码是：'+this.user.password);
-        e.target.parentNode.parentNode.appendChild(this.correct);
-      }
+    if(this.user){
+      this.text = this.user.mibao.split('/')[0];
     }else{
       const alert = this.alertCtrl.create({
         title: 'Hi Friend!',
-        subTitle: '账号或密保答案错误',
+        subTitle: '账号不存在',
         buttons: ['OK']
         });
         alert.present();
     }
   }
-}
+  back(e){
+    if(this.user){
+      if(this.count === this.user.id && this.answer == this.user.mibao.split('/')[1]){
+        if(!this.correct){
+          this.correct = document.createTextNode('您的密码是：'+this.user.password);
+          e.target.parentNode.parentNode.appendChild(this.correct);
+        }
+      }else{
+        const alert = this.alertCtrl.create({
+          title: 'Hi Friend!',
+          subTitle: '账号或密保答案错误',
+          buttons: ['OK']
+          });
+          alert.present();
+      }
+  }
+
+  }}
