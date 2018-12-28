@@ -13,7 +13,7 @@
   <div [ngSwitch]="isActive">
       <div *ngSwitchCase="0">
         <ul id="food">
-          <li *ngFor="let item of foods let i=index" >
+          <li *ngFor="let item of realfoods          let i=index" >
             <ion-row>
             <ion-col col-5>
               <img src="{{item.pic}}" alt="" (click)="goFoodstep(item.name)">
@@ -29,7 +29,7 @@
       </div>
       <div *ngSwitchCase="1">
         <ul id="food">
-          <li *ngFor="let item of foods let i=index" >
+          <li *ngFor="let item of realfoods          let i=index" >
             <ion-row>
             <ion-col col-5>
               <img src="{{item.pic}}" alt="" (click)="goFoodstep(item.name)">

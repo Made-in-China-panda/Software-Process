@@ -54,17 +54,27 @@ export class VenomPage {
     this.http.get('http://192.168.56.144:8080/'+'shoucang_movie',{
     headers:new HttpHeaders({
     }),
-  }).subscribe((data) => { //
+  }).subscribe((data) => { // 监听
     for(var j in data){
       this.loves[j] = data[j].name;
     }
     if(this.loves.indexOf(this.movie.moviesName)>-1){
-      alert('�����ղع���')
+      const alert = this.alertCtrl.create({
+        title: 'Hi Friend!',
+        subTitle: '您已经收藏过了',
+        buttons: ['OK']
+      });
+      alert.present();
     }else{
       	this.http.post('http://192.168.56.144:8080/'+'shoucang_movie',this.love,
           {headers:this.headers}).subscribe((data) => {});
           console.log(this.love)
-		alert('�ղسɹ�')
+          const alert = this.alertCtrl.create({
+            title: 'Hi Friend!',
+            subTitle: '收藏成功',
+            buttons: ['OK']
+          });
+          alert.present();
     }
   });
   ///////////////////////////////////////////////////////////////////////////
@@ -94,7 +104,7 @@ export class VenomPage {
      else {
         const alert = this.alertCtrl.create({
           title: 'Hi Friend!',  
-          subTitle: '���۲���Ϊ��!',
+          subTitle: '评论不能为空!',
           buttons: ['OK']
         });
         alert.present();
@@ -131,7 +141,7 @@ export class VenomPage {
     };
     this.http.get('http://192.168.56.144:8080/'+'movies1',{
         headers:new HttpHeaders({}),
-        }).subscribe((data) => { //
+        }).subscribe((data) => { // 监听
           this.movies=data;
           for(var i=0;i<this.movies.length;i++){
             if(this.movies[i].moviesName==navParams.data){
@@ -143,7 +153,7 @@ export class VenomPage {
         });
       this.http.get('http://192.168.56.144:8080/'+'movies2',{
           headers:new HttpHeaders({}),
-          }).subscribe((data) => { // ����
+          }).subscribe((data) => { // 监听
             this.movies=data;
             for(var i=0;i<this.movies.length;i++){
               if(this.movies[i].moviesName==navParams.data){
@@ -154,7 +164,7 @@ export class VenomPage {
           });
       this.http.get('http://192.168.56.144:8080/'+'movies3',{
         headers:new HttpHeaders({}),
-        }).subscribe((data) => { // ����
+        }).subscribe((data) => { // 监听
           this.movies=data;
           for(var i=0;i<this.movies.length;i++){
             if(this.movies[i].moviesName==navParams.data){
@@ -165,7 +175,7 @@ export class VenomPage {
         });
       this.http.get('http://192.168.56.144:8080/'+'moviesRoles',{
         headers:new HttpHeaders({}),
-        }).subscribe((data) => { // ����
+        }).subscribe((data) => { // 监听
           this.roles=data;
           // console.log(this.roles);
           for(var i=0;i<this.roles.length;i++){
@@ -176,7 +186,7 @@ export class VenomPage {
             }
           }
         });
-        // ��������
+        // 请求评论
      this.http.get('http://192.168.56.144:8080/'+'movie_comment',{
       headers:new HttpHeaders({})
     }).subscribe((data)=>{
@@ -186,7 +196,7 @@ export class VenomPage {
           this.moviecomments.push(this.allcomments[i]);     
         }
       }
-       // ��������id
+       // 设置评论id
     if(this.allcomments.length==0){
       this.ids=[];
     }

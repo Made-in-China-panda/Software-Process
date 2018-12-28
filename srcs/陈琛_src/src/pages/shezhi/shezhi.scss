@@ -1,0 +1,15 @@
+page-shezhi {
+    ion-content{
+        background-color: #fafafa !important;
+        ion-item {
+            background-color: #fafafa !important;
+            span{
+                float: right;
+            }
+        }
+        button{
+            width: 80%;
+            margin-left: 10% !important; 
+        }
+    }
+}

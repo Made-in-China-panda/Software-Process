@@ -1,0 +1,37 @@
+<ion-header no-border color='transparent'>
+  <ion-navbar color="trans">
+    <div id="input">
+        <h2>账号资料</h2>
+    </div>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>昵称</ion-label>
+      <ion-input type="text" [(ngModel)]="nickname"></ion-input>
+    </ion-item>
+    <ion-item>ID <span>{{userid}}</span></ion-item>
+    <ion-item>
+      <ion-label>性别</ion-label>
+      <ion-select [(ngModel)]="gender">
+        <ion-option value="女">女</ion-option>
+        <ion-option value="男">男</ion-option>
+        <ion-option value="secret">保密</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>年龄</ion-label>
+      <ion-input type="text" [(ngModel)]="age" (ionBlur)="test()" id="ages"></ion-input>
+    </ion-item>
+    <ion-item no-border>
+        <ion-label>个性签名</ion-label><br>
+    </ion-item>
+      <ion-item>
+          <textarea name="" id="" cols="30" rows="4" [(ngModel)]="style"></textarea>
+      </ion-item>
+    <ion-item (click)="gotomima()">修改密码 <span> > </span></ion-item>
+    <ion-item (click)="shezhi()">账号管理<span> > </span></ion-item>
+    <button id="baocun" ion-button (click)="baocun()">保存</button>
+  </ion-list>
+</ion-content>

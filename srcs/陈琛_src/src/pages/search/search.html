@@ -1,0 +1,55 @@
+<ion-header no-border>
+    <ion-navbar  >
+      <ion-grid>
+          <ion-row>
+            <ion-col col-10><ion-searchbar color="trans" type="text"
+              [(ngModel)]="myInput"
+              [showCancelButton]="shouldShowCancel"
+              (ionCancel)="onCancel($event)" 
+              (click)="getinformation()"
+              (ionInput)="output()"
+              ></ion-searchbar></ion-col>
+            <ion-col col-2 id="back" (click)="back()">取消</ion-col>
+          </ion-row>
+        </ion-grid>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ul>
+    <li *ngFor="let item of objfood" (click)="foodjump(item.name)">
+      <div id="left"><img src="{{item.pic}}"></div>
+      <div id="right">
+        <div id="title">{{item.name}}</div>
+        <div id="content">{{item.material}}</div>
+      </div>
+    </li>
+  </ul>
+  <ul>
+      <li *ngFor="let item of objsweet" (click)="sweetjump(item.name)">
+        <div id="left"><img src="{{item.pic}}"></div>
+        <div id="right">
+          <div id="title">{{item.name}}</div>
+          <div id="content">{{item.material}}</div>
+        </div>
+      </li>
+    </ul>
+  <ul>
+    <li *ngFor="let item of objtrip" (click)="tripjump(item.name)">
+      <div id="left"><img src="{{item.src}}"></div>
+      <div id="right">
+        <div id="title">{{item.name}}</div>
+        <div id="content">{{item.texts}}</div>
+      </div>
+    </li>
+  </ul>
+  <ul>
+    <li *ngFor="let item of objmovies" (click)="moviesjump(item.moviesName)">
+      <div id="left"><img src="{{item.moviesImg}}"></div>
+      <div id="right">
+        <div id="title">{{item.moviesName}}</div>
+        <div id="content">{{item.moviesIntro}}</div>
+      </div>
+    </li>
+  </ul>
+
+</ion-content>

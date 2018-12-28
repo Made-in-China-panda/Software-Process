@@ -1,0 +1,20 @@
+<ion-header no-border>
+  <ion-navbar color="nav">
+    <div id="input">
+        <input type="text" id="text" placeholder=" 请输入关键字查找" (focus)='focus($event)' (blur)='blur($event)'>
+    </div>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    
+  
+  <ul>
+    <li *ngFor="let item of objs">
+      <div id="header">
+        <img src="{{item.img}}" alt="">
+      </div>
+      <div id="title">{{item.title}}</div>
+    </li>
+  </ul>
+
+</ion-content>

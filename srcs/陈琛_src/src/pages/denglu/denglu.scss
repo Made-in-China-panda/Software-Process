@@ -1,0 +1,24 @@
+page-denglu {
+    ion-content{
+        background-color:  #FAFAFA !important;
+        button{
+            margin: 10px auto !important;
+        }
+        .list-1{
+            ion-input{
+                border-bottom: 1px lightgrey solid; 
+            }
+        }
+        #span1{
+            display: inline-block;
+            position: absolute;
+            bottom: 2px;
+        }
+        #span2{
+            display: inline-block;
+            position: absolute;
+            margin-left: 75%;
+            bottom: 2px;
+        }
+    }
+}

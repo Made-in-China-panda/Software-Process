@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DengluPage } from '../denglu/denglu';
 
@@ -27,7 +27,7 @@ export class MimaPage {
     'Content-Type': 'application/x-www-form-urlencoded'
   });
 
-  constructor(private http: HttpClient,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public alertCtrl: AlertController,private http: HttpClient,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -71,7 +71,12 @@ export class MimaPage {
         this.http.post('http://192.168.56.144:8080/'+'users',this.olduser,
           {headers:this.headers}).subscribe((data) => {});
             
-        alert('请重新登录')
+          const alert = this.alertCtrl.create({
+            title: 'Hi Friend!',
+            subTitle: '请重新登录',
+            buttons: ['OK']
+            });
+            alert.present();
         
         
 

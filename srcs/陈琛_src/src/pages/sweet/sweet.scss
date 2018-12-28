@@ -1,0 +1,69 @@
+page-sweet {
+    .pic{
+        position: relative;
+        text-align: center;
+        p{
+        position: absolute;
+        width: 100%;
+        top:4px;
+        font-size: 35px;font-family: 'STXinwei';
+        color: rgb(73,73,73);
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        background-color:rgba(256,256,256,0.3);
+        }
+        margin:0px;
+    }
+    // .fir{
+    //     position: relative;
+    //     img{margin-bottom: 1rem;
+    //     margin-top: 2rem;}
+    //     p{
+    //         
+    //     }
+    // }
+    .pw{
+        margin-bottom: -6rem;
+    }
+    .p1{
+        position: relative;
+        top:-5rem;left:-5rem;
+        font-family: 'LiSu';font-size: 30px;color:#FFCD3C;
+    }
+    .p2{
+        position: relative;
+        top:-5rem;left:-5rem;
+        font-family: 'LiSu';font-size: 30px;color:#FFCD3C;
+    }
+    .p3{
+        position: relative;
+        top:-5rem;left:-5rem;
+        font-family: 'LiSu';font-size: 30px;color:#FFCD3C;
+    }
+    .cake{
+        position: relative;
+        width:160px;
+        margin-left: 1.15rem;
+        margin-top: 5px;
+        float: left;
+        img{width:100%;
+            border-radius: 5%;
+            height:150px;
+        }
+        .wenzi{
+            text-align: center;
+            border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;
+            position: absolute;
+            font-size:20px;
+            width:100%;
+            bottom:5px;
+            color:white!important;
+            background-color: rgba(0,0,0,0.5)
+        }
+    }
+
+
+
+
+}
