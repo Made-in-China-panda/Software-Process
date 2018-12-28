@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-navbar color="bgblue">
+
+    <ion-title text-center><ion-icon name="md-arrow-round-back" (click)="back()"></ion-icon>攻略说</ion-title>
+    <ion-buttons end>
+      <button ion-button ion-only (click)="search()" id="search">
+        <ion-icon name = "search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<!-- 侧边栏 -->
+
+
+
+  <ion-nav #mycontent [root]="rootPage"></ion-nav>
+  <ion-content>
+    <!-- 轮播图 -->
+    <div id="slides">
+      <ion-slides pager="true" autoplay="1500" loop="true" class="sli">
+          <ion-slide>
+            <img src="../../assets/imgs/旅游/沙漠.png">
+          </ion-slide>
+          <ion-slide>
+            <img src="../../assets/imgs/旅游/海边.png">
+          </ion-slide>
+          <ion-slide>
+            <img src="../../assets/imgs/旅游/土楼.png">
+          </ion-slide>
+      </ion-slides>
+    </div>
+    
+    <!-- 灵感 -->
+    <!-- *************************----- -->
+    <div id="linggan">
+      <h2>旅行灵感</h2><h6>探索你内心的目的地&nbsp;</h6>
+      <img  src="../../assets/imgs/旅游/分割线.png" alt="">
+    </div>
+    <div id="city">
+      <ul>
+        <li *ngFor="let citySrc of citysSrc" (click) = "lDetail($event)" >
+          <img src='{{citySrc.imgSrc}}' alt="{{citySrc.name}}"><br>
+          <span>&nbsp;{{citySrc.name}}</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 主题 -->
+    <!-- *************************----- -->
+    <div id="zhuti">
+      <h2>旅行主题</h2><h6>全世界每天都很好玩&nbsp;</h6>
+      <img margin-top="-10px" src="../../assets/imgs/旅游/分割线.png" alt="">
+    </div>
+    <div id="zhutiImg">
+      <ul>
+        <li *ngFor="let zhuti of zhutis" (click) = "detail($event)">
+          <img src={{zhuti.imgSrc}} alt="{{zhuti.name}}"><br>
+          <div id="name">{{zhuti.name}}</div>
+        </li>
+      </ul>
+    </div>
+    <img margin-left="60px" width="90%" src="../../assets/imgs/旅游/小旗.png" alt="">
+
+    <!-- 目的地攻略 -->
+    <!-- *************************----- -->
+    <div id="finally">
+      <h2>目的地攻略</h2><h6>了解更多美丽的地方&nbsp;</h6>
+      <img margin-top="-10px" src="../../assets/imgs/旅游/分割线.png" alt="">
+    </div>
+    <div id="finallyText">
+      <ul>
+        <li *ngFor="let finally of finallys">
+          <p>{{finally.texts}}</p>
+          <img src="{{finally.imgSrc}}" alt="">
+        </li>
+      </ul>
+    </div>
+
+
+
+
+      
+
+  </ion-content>
+
+

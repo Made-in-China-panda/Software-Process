@@ -1,0 +1,51 @@
+page-l-details {
+    ion-title{
+        margin-left: 45px;
+    }
+    ion-content{
+        ul{border: 0px solid #ccc;
+            margin-top: -12px;
+            margin-left: -10px;
+            width: 106%;
+            li{border: 1px solid #ccc;
+                padding: 5px;
+                padding-top: 10px;
+                border-radius: 5px;
+                list-style: none;
+                margin-bottom: 10px;
+                margin-left: -40px;
+                h6{border:0px solid #ccc;
+                    
+                    font-weight: bold;
+                    ion-icon{
+                        float: right;
+                        font-size: 0.9em;
+                    }
+                }
+                #area{
+                    margin-top: -10px;
+                    img{
+                        width: 100%;
+                        height: 150px;
+                        border-radius: 10px;
+                        box-shadow:1px 1px 5px rgb(73, 72, 72);
+                    }
+                    p{border:0px solid #ccc;
+                        text-indent:2em;
+                        margin-top: 4px;
+                        height: 85px;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 4;
+                        overflow: hidden;
+                    }
+                }
+                #liImg{
+                    margin-top: -40px;
+                }
+
+            }
+        }
+    }
+
+}

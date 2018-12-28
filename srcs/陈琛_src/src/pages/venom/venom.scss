@@ -1,0 +1,259 @@
+page-venom {
+    #ion-icon{
+        float: right;
+        font-size: 35px;
+        color: #ea6953;
+    }
+    ion-content{
+    *{
+    margin: 0!important;
+    padding: 0!important;
+    }
+        .pic{
+            height: 230px;
+            img{
+                margin-top: 50px!important;
+                height: 100%;
+                width: 100%;
+            }
+        }
+        #mov{
+            float: left;
+            width: 50%;
+            height: 6%;
+            line-height: 200%;
+            text-align: center;
+            margin-top: 15%!important;
+            color: #86ccc1;
+            border: 1px solid #ea6953;
+            border-radius: 10px;
+            background-color: #ea6953;
+        }
+        #dec3{
+            margin-top: 15%!important;
+            float: right;
+            width: 50%;
+            height: 6%;
+        }
+        .intro{
+            float: left;
+            margin-top: 5%!important;
+            height: auto;
+            text-indent:2em;
+            // border: 1px solid #FAFAFA;
+            
+        }
+        #dec4{
+            margin-top: 0!important;
+        }
+        #dec5{
+            float: left;
+            width: 50%;
+            height: 6%;
+            margin-top: -5%!important;
+        }
+        #role{
+            float: right!important;
+            width: 50%!important;
+            height: 6%!important;
+            line-height: 200%;
+            text-align: center;
+            margin-top:-5%!important;
+            color: #ea6953;
+            border: 1px solid #86ccc1;
+            border-radius: 10px;
+            background-color:#86ccc1;
+        }
+        
+        .roles{
+            float: left;
+            width: 30%;
+            margin-top: 10%!important;
+            margin-left: 4%!important;
+        }
+        .text{
+            float: left;
+            width: 60%;
+            margin-top: 10%!important;
+            margin-left: 3%!important;
+            padding-top: 0;
+            line-height:1.4em;
+            h6{
+                line-height: 1em;
+                margin: 0!important;
+            }
+        }
+        #role{
+            float: left;
+            height: 30%;
+            width: 30%;
+            margin-top: 15%;
+            // padding: 0;
+            margin: 0
+        }
+        .dec6{
+            margin-top: 5%!important;
+            margin-bottom: -5%!important;
+        }
+    }
+
+}
+page-venom {
+    ion-content{
+    *{
+    margin: 0!important;
+    padding: 0!important;
+    }
+        .pic{
+            height: 230px;
+            img{
+                margin-top: 50px!important;
+                height: 100%;
+                width: 100%;
+            }
+        }
+        #mov{
+            float: left;
+            width: 50%;
+            height: 6%;
+            line-height: 200%;
+            text-align: center;
+            margin-top: 15%!important;
+            color: #86ccc1;
+            border: 1px solid #ea6953;
+            border-radius: 10px;
+            background-color: #ea6953;
+        }
+        #dec3{
+            margin-top: 15%!important;
+            float: right;
+            width: 50%;
+            height: 6%;
+        }
+        .intro{
+            float: left;
+            margin-top: 5%!important;
+            height: auto;
+            text-indent:2em;
+            // border: 1px solid #FAFAFA;
+        }
+        #dec4{
+            margin-top: 0!important;
+        }
+        #dec5{
+            float: left;
+            width: 50%;
+            height: 6%;
+            margin-top: -6%!important;
+        }
+        #role{
+            float: right!important;
+            width: 50%!important;
+            height: 6%!important;
+            line-height: 200%;
+            text-align: center;
+            margin-top:-6%!important;
+            color: #ea6953;
+            border: 1px solid #86ccc1;
+            border-radius: 10px;
+            background-color:#86ccc1;
+        }
+        
+        .roles{
+            float: left!important;
+            height: 150px!important;
+            width:110px!important;
+            margin-top: 35px!important;
+            margin-left: 10px!important;
+        }
+        .text{
+            float: right;
+            width: 60%;
+            margin-top: 10%!important;
+            margin-right: 3%!important;
+            padding-top: 0;
+            line-height:1.4em;
+            h6{
+                line-height: 1em;
+                margin: 0!important;
+            }
+        }
+        #role{
+            float: left;
+            height: 30%;
+            width: 30%;
+            margin-top: 15%;
+            // padding: 0;
+            margin: 0
+        }
+        .dec6{
+            margin-top: 5%!important;
+            margin-bottom: -5%!important;
+        }
+        #dec7{
+            margin-top: 7%!important;
+            float: left;
+            width:50%!important;
+            height: 40px;
+        }
+        #com{
+            float: right;
+            width: 50%;
+            height: 40px;
+            line-height: 200%;
+            text-align: center;
+            margin-top: 7%!important;
+            color: #86ccc1;
+            border: 1px solid #ea6953;
+            border-radius: 10px;
+            background-color: #ea6953;
+        }
+        #myCom{
+            float: left;
+            width: 50%;
+            height: 40px;
+            margin-top: -4%!important;
+            line-height: 200%;
+            text-align: center;
+            // margin-top: 15%!important;
+            color: #ea6953;
+            border: 1px solid #86ccc1;
+            border-radius: 10px;
+            background-color: #86ccc1;
+        }
+        #dec8{
+            margin-top: -4%!important;
+            float: right;
+            width:50%!important;
+            height: 40px;
+        }
+        .nocomment{
+            display: block;
+            width:100%;
+            height:7rem;
+            text-align: center;
+            line-height: 5rem;
+            font-size: 1.5em;
+        }
+        textarea{
+            height: 90px;
+            width: 265px;
+            border: 1px solid #ea6953;
+        }
+        .pinglun{
+            margin-top: 40px!important;
+        }
+        .bts{
+            text-align: right;
+            // margin-top: -5%!important;
+            button{
+                height: 30px;
+                width: 50px;
+                background-color: #ea6953;
+                color:black;
+                border-radius: 10px;
+                border: 3px solid #ea6953;        
+            }
+        }
+    }
+}
