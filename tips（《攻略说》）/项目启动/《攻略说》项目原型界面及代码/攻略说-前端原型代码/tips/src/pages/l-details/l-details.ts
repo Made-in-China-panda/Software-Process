@@ -44,7 +44,7 @@ export class LDetailsPage {
       this.http.get('http://192.168.56.144:8080/'+'sichuan',{
           headers:new HttpHeaders({}),
           }).subscribe((data) => { // 监听
-            //console.log(data);
+            console.log(data);
             this.place=data;
           });
           this.places = [{
@@ -56,7 +56,7 @@ export class LDetailsPage {
       this.http.get('http://192.168.56.144:8080/'+'shandong',{
           headers:new HttpHeaders({}),
           }).subscribe((data) => { // 监听
-            //console.log(data);
+            console.log(data);
             this.place=data;
           });
           this.places = [{
