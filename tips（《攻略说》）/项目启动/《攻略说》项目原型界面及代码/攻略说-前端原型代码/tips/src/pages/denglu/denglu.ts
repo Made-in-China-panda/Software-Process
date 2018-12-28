@@ -70,9 +70,19 @@ export class DengluPage {
     }
     var NO = this.usersId.indexOf(this.id);
     this.user = this.users[NO];
-    console.log(this.user);
-    this.man = String(this.user.id)+'/'+String(this.user.name)+'/'+String(this.user.password)+'/'+String(this.user.mibao);
+    if(this.user){
+       console.log(this.user);
+        this.man = String(this.user.id)+'/'+String(this.user.name)+'/'+String(this.user.password)+'/'+String(this.user.mibao);
     
+    }else{
+      const alert = this.alertCtrl.create({
+        title: 'Hi Friend!',
+        subTitle: '用户不存在',
+        buttons: ['OK']
+      });
+      alert.present();
+    }
+   
   }
   change(e){
     if(this.usersId.indexOf(this.id)&& this.password == this.code && this.correct){

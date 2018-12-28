@@ -26,12 +26,31 @@ foods;
 arr1=['sweet_cake','sweet_buding','sweet_binggan']
 sweet=[];realsweet=[];
 names=[];
+man: string;
+user: string[];
+userid: string;
+realfoods=[];
   constructor(public navCtrl: NavController, public navParams: NavParams,public http:HttpClient,public alertCtrl: AlertController) {
+    this.man = localStorage.getItem('man');
+    // console.log(this.man);
+		this.user = this.man.split('/');
+		// console.log(this.user);
+    this.userid = this.user[0];
+   
+   
     this.http.get('http://192.168.56.144:8080/'+'food_comment',{
       headers:new HttpHeaders({
       }),
     }).subscribe((data) => { // 监听
      this.foods=data;
+     console.log(this.foods);
+     for(var j=0;j<this.foods.length;j++){
+       console.log(this.foods[j].userid);
+       console.log(this.userid);
+       if(this.foods[j].userid==this.userid){
+         this.realfoods.push(this.foods[j]);
+       }
+     }
   });
 
    for(var i=0;i<this.arr1.length;i++){
@@ -89,6 +108,12 @@ names=[];
       }),
     }).subscribe((data) => { // 监听
      this.foods=data;
+     this.realfoods=[];
+     for(var j=0;j<this.foods.length;j++){
+       if(this.foods[j].userid==this.userid){
+         this.realfoods.push(this.foods[j]);
+       }
+     }
   });
 
 
