@@ -38,10 +38,10 @@
 <ion-content padding>
   
   <div (click)="search()" id="search"><i class="iconfont">&#xe625;</i></div>
-  <div id="movie">
-    <i id="movies" class="iconfont">&#xe60c;<br><div>电影</div></i>
+  <div id="movie" (click)="gotomovimg()">
+    <i id="movies" class="iconfont" >&#xe60c;<br><div>电影</div></i>
     <!-- <div>影视</div> -->
   </div>
-  <div id="trip"><i id="trips" class="iconfont">&#xe611;<br><div>旅行</div></i></div>
-  <span id="food"><i id="foods" class="iconfont">&#xe65d;<br><div>美食</div></i></span>
+  <div id="trip"><i id="trips" class="iconfont" (click)="gototourimg()">&#xe611;<br><div (click)="gototourimg()">旅行</div></i></div>
+  <span id="food"><i id="foods" class="iconfont" (click)="gotofoodimg()">&#xe65d;<br><div (click)="gotofoodimg()">美食</div></i></span>
 </ion-content>

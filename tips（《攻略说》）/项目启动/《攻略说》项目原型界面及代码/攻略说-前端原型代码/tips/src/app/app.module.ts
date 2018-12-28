@@ -37,6 +37,10 @@ import { SweetPage } from '../pages/sweet/sweet';
 import { LovePage } from '../pages/love/love';
 import { FoodstepPage } from '../pages/foodstep/foodstep';
 import { SweetstepPage } from '../pages/sweetstep/sweetstep';
+import { MovImgPage }from '../pages/mov-img/mov-img';
+import { FoodImgPage }from '../pages/food-img/food-img';
+import { TourImgPage }from '../pages/tour-img/tour-img';
+
 
 @NgModule({
   declarations: [
@@ -69,7 +73,10 @@ import { SweetstepPage } from '../pages/sweetstep/sweetstep';
     SweetPage,
     LovePage,
     FoodstepPage,
-    SweetstepPage
+    SweetstepPage,
+    MovImgPage,
+    FoodImgPage,
+    TourImgPage
   ],
   imports: [
     HttpClientModule,
@@ -109,7 +116,10 @@ import { SweetstepPage } from '../pages/sweetstep/sweetstep';
     SweetPage,
     LovePage,
     FoodstepPage,
-    SweetstepPage
+    SweetstepPage,
+    MovImgPage,
+    FoodImgPage,
+    TourImgPage
   ],
   providers: [
     StatusBar,
